@@ -15,9 +15,24 @@ const Home = () => {
     return (
         <>
             <main className=" home">
+
+
                 <div className="banner-home">
+
+
                     <h1 className="home-title">MyTinerary</h1>
+                    
+
+
+
+
                 </div>
+
+
+
+
+
+
 
 
 
@@ -54,7 +69,7 @@ const Home = () => {
 
                         <div className="col-xs-12 col-sm-12 col-md-5  col-lg-5  about-image">
 
-                            <img src={flag} alt="" className="" width={400}></img>
+                            <img src={flag} alt="" className="" width={350}></img>
 
 
                         </div>
