@@ -35,7 +35,7 @@ const Cities = () => {
                                 <div className="bottom">
                                     <div className="left">
                                     <div className="details">
-                                            <h2 className="txt_products">Río de Janeiro</h2>
+                                            <h2 className="txt_products">Rio de Janeiro</h2>
                                             <p>Brasil</p>
                                         </div>
                                         <div className="buy">
@@ -51,7 +51,7 @@ const Cities = () => {
                                     <i className="far fa-eye"></i>
                                 </div>
                                 <div className="contents">
-                                    <h1>Río de Janeiro</h1>
+                                    <h1>Rio de Janeiro</h1>
                                     <p>Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches, 38m Christ the Redeemer statue atop Mount Corcovado and for Sugarloaf Mountain, a granite peak with cable cars to its summit.</p>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@ const Cities = () => {
                                     <div className="left">
                                         <div className="details">
                                             <h2 className="txt_products">Tokio</h2>
-                                            <p>Japón</p>
+                                            <p>Japan</p>
                                         </div>
                                         <div className="buy">
                                             <LinkRouter to="/city">
@@ -92,8 +92,8 @@ const Cities = () => {
                                 <div className="bottom">
                                     <div className="left">
                                         <div className="details">
-                                            <h2 className="txt_products">Roma</h2>
-                                            <p>Italia</p>
+                                            <h2 className="txt_products">Rome</h2>
+                                            <p>Italy</p>
                                         </div>
                                         <div className="buy">
                                             <LinkRouter to="/city">
@@ -108,7 +108,7 @@ const Cities = () => {
                                     <i className="far fa-eye"></i>
                                 </div>
                                 <div className="contents">
-                                    <h1>Roma</h1>
+                                    <h1>Rome</h1>
                                     <p>A sprawling cosmopolitan city with nearly 3,000 years of world-influenced art, architecture, and culture on display. Ancient ruins like those of the Forum and the Colosseum evoke the power of the ancient Roman Empire. Vatican City, the headquarters of the Roman Catholic Church, is home to St. Peter's Basilica and the Vatican Museums, which house masterpieces such as the frescoes in Michelangelo's Sistine Chapel</p>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@ const Cities = () => {
                                     <div className="left">
                                         <div className="details">
                                             <h2 className="txt_products">Paris</h2>
-                                            <p>Francia</p>
+                                            <p>France</p>
                                         </div>
                                         <div className="buy">
                                             <LinkRouter to="..">
@@ -167,11 +167,6 @@ const Cities = () => {
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
 
 
 

@@ -9,13 +9,11 @@ import maracana1 from "../imagen/tours/maracana1.jpg";
 import maracana2 from "../imagen/tours/maracana2.jpg";
 import maracana3 from "../imagen/tours/maracana3.jpg";
 
-
+import avatar1 from "../imagen/avatar/avatar1.jpg";
 
 import Avatar from '@mui/material/Avatar';
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import { grey } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
@@ -26,10 +24,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Typography from '@mui/material/Typography';
 
 import { makeStyles } from '@mui/styles';
-
+import { useState } from "react";
 
 
 
@@ -38,9 +35,7 @@ import { makeStyles } from '@mui/styles';
 const useStyle = makeStyles({
     root: {
         backgroundColor: '#2B6086',
-        borderLeft:0,
-        borderBottom:0,
-        
+        border:0
 
     }
 })
@@ -49,6 +44,14 @@ const useStyle = makeStyles({
 const Comentario = () => {
 
     const classes = useStyle()
+
+    const [like, setLike] = useState(0);
+    const aumentar=()=>{
+        setLike(like + 1)
+        // console.log(contador)
+    }
+
+    
     return (
         <>
 
@@ -63,63 +66,71 @@ const Comentario = () => {
             </div>
 
             <div className='fondo-comentario mx-auto'>
-                <h2 className='name-comentario'>Praia de Copacabana</h2>
+                <h2 className='name-comentario mb-4'>Praia de Copacabana</h2>
                 <div className='imagenes-comentario'>
 
                     <div className='mb-2'>
                         <div className='comentario-card'>
                             <div className="comentario-imag" >
-                                <img src={copaCabana} alt="images" className='card-img-top'></img>
+                                <img src={copaCabana} alt="images" ></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
                             <div className="comentario-imag" >
-                                <img src={copaCabana2} alt="images" className='card-img-top'></img>
+                                <img src={copaCabana2} alt="images"></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
                             <div className="comentario-imag" >
-                                <img src={copaCabana3} alt="images" className='card-img-top'></img>
+                                <img src={copaCabana3} alt="images"></img>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div className='usuario-comentario my-4'>
-                    <Avatar></Avatar>
-                    Usuario
+                <div className='content-usuario my-4 mx-auto'>
+
+                    <div className='avatar'>
+                        <img src={avatar1} alt=""></img>
+                        <p className='user'>User</p>
+                    </div>
+
+                    <div className='like '>
+                        <button className="btn love" onClick={aumentar}><i className="fas fa-heart"></i></button>
+                        <span>{like}</span>
+
+                    </div>
+
                 </div>
 
-                <Button variant="contained"
-                        size="large"
-                        className={classes.root} >
-                        <FavoriteIcon sx={{ color: grey['A100'], mr:2}} /> 2
-                </Button>
 
                 <Accordion className={classes.root}>
 
                     <AccordionSummary
 
-                        
+
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         className={classes.root}
-                        sx={{ border: 0 }}> Ver mas
+                        sx={{ border: 0 }}> 
 
-                      
+
+
+
+
                     </AccordionSummary>
 
                     <AccordionDetails
                         className={classes.root}
                         sx={{ border: 0 }}
                     >
-                        <div className='row'>
+                        <div className='row mb-4'>
                             <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
 
 
@@ -137,7 +148,7 @@ const Comentario = () => {
 
                             <div className='col-sm-12 col-md-7 col-lg-7 texto'>
                                 <p className='texto-comentario'>
-                                Lively beach with a promenade and bars.
+                                    Lively beach with a promenade and bars.
                                 </p>
                             </div>
                         </div>
@@ -188,7 +199,7 @@ const Comentario = () => {
             </div>
 
             <div className='fondo-comentario mx-auto'>
-                <h2 className='name-comentario'>The Maracana Stadium</h2>
+                <h2 className='name-comentario mb-4'>The Maracana Stadium</h2>
                 <div className='imagenes-comentario'>
 
                     <div className='mb-2'>
@@ -215,30 +226,40 @@ const Comentario = () => {
 
                 </div>
 
-                <div className='usuario-comentario my-4'>
-                    <i className="fab fa-discord"></i> Usuario
+                <div className='content-usuario my-4 mx-auto'>
+
+                    <div className='avatar'>
+                        <img src=".." alt=""></img>
+                        <p className='user'>User</p>
+                    </div>
+
+                    <div className='like '>
+
+                    <button className="btn love" onClick={aumentar}><i className="fas fa-heart"></i></button>
+                        <span>{like}</span>
+
+                    </div>
+
                 </div>
 
-                <Accordion className={classes.root}>
+                <Accordion className={classes.root} sx={{ border: 0 }}>
 
                     <AccordionSummary
+                        
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         className={classes.root}
                         sx={{ border: 0 }}
                     >
-                        <FavoriteIcon sx={{ color: grey['A100'] }} />
-                        <Typography sx={{ color: grey['A100'], textAlign: 'right' }}>
-                            Leave a comment!
-                        </Typography>
+                      <div className='text-center'>Click to Expand</div>
                     </AccordionSummary>
 
                     <AccordionDetails
                         className={classes.root}
                         sx={{ border: 0 }}
                     >
-                        <div className='row'>
+                        <div className='row mb-4'>
                             <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
                                 <div className='col-sm-12 col-md-12 price'>
                                     <h4 >The Maracana Stadium</h4>
@@ -256,7 +277,7 @@ const Comentario = () => {
 
                             <div className='col-sm-12 col-md-7 col-lg-7 texto'>
                                 <p className='texto-comentario'>
-                                Formally Estadio Jornalista Mario Filho, is a football stadium located in the city of Rio de Janeiro, Brazil. Its address is Rua Professor Eurico Rabelo, Maracana. It is the largest stadium in Brazil
+                                    Formally Estadio Jornalista Mario Filho, is a football stadium located in the city of Rio de Janeiro, Brazil. Its address is Rua Professor Eurico Rabelo, Maracana. It is the largest stadium in Brazil
                                 </p>
                             </div>
 
@@ -268,9 +289,9 @@ const Comentario = () => {
                             <div className="mb-3">
 
                                 <div className='no-comments'>
-                                    <div className='no-comments-tex'>
-                                        <p>There are no comments on this itinerary, be the first!</p>
-                                    </div>
+                                   
+                                    <p className='no-comments-tex'>There are no comments on this itinerary, be the first!</p>
+                                   
                                 </div>
 
 

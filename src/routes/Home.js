@@ -19,21 +19,9 @@ const Home = () => {
 
                 <div className="banner-home">
 
-
                     <h1 className="home-title">MyTinerary</h1>
                     
-
-
-
-
                 </div>
-
-
-
-
-
-
-
 
 
                 <div className="container mt-5">

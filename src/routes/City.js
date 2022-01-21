@@ -22,8 +22,8 @@ export default class City extends React.Component {
             city: "Rio de Janeiro",
             country: "Brasil",
             moneda: "Real",
-            idioma: "Portugues",
-            continente: "Sur America",
+            idioma: "Portuguese",
+            continente: "South America",
             description: " Is a huge coastal city in Brazil, famous for its Copacabana and Ipanema beaches, the 38-meter-high Christ the Redeemer statue on Corcovado hill, and the Sugarloaf Mountain, a granite peak with cable cars that ascend to its top. The city is also known for its extensive favelas. The raucous Carnival festival, with float parades, flamboyant costumes and samba dancers, is considered the largest in the world."
         }
     }
@@ -44,11 +44,18 @@ export default class City extends React.Component {
                     </div>
 
                     <div className="mt-5 mb-5">
+
+
+
+                        
                         <div className='container my-5 bandera'>
                             <div className="flip">
                                 <img src={bb} alt='' className="flip-1" ></img>
                             </div>
                         </div>
+
+
+
 
                         <div className="information " style={{ backgroundImage: `url(${Background})` }}>
                             <div className=" container container-information  mx-auto" >
