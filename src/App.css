@@ -265,8 +265,9 @@ header {
 
 /********************************** C O M P O N E N T -  C O M E N T A R I O  *********************************************************/
 
+
 .fondo-comentario {
-  background-color: #2b6086;
+  background-color: #2b6086 !important;
   padding: 2%;
   margin-top: 2%;
   margin-bottom: 4%;
@@ -368,13 +369,19 @@ header {
 .like {
   margin-right: 10%;
 }
-.love {
+.btn-like {
   box-shadow: 2px 1px 1px 1px rgb(5, 133, 160);
 }
 
 .fa-heart {
-  font-size: 20px;
   color: white;
+  font-size: 20px;
+  
+}
+
+.dos{
+  color: red;
+  font-size: 20px;
 }
 
 .like span {
@@ -410,26 +417,44 @@ header {
 
 .accordion-body {
   background-color: #2b6086;
-  border: 2px solid rgb(5, 133, 160);
+  border: none;
+ 
+ 
+}
+
+.comentarios-user{
+  box-shadow: 0px 1px 5px 2px rgba(51, 50, 50, 0.75);
   border-radius: 20px;
+  padding: 2%;
 }
 
 .acordion-box {
-  box-shadow: 2px 1px 1px 1px rgb(5, 133, 160);
+  box-shadow: 2px 1px 1px 1px rgb(21, 161, 189);
   background-color: rgb(217, 233, 255);
   border-radius: 20px;
   margin-bottom: 4%;
   color: black;
 }
 
-.acordion-image {
-  padding: 1%;
+.comentario-user-imag{
+  width: 45px;
+  height:45px;
+  
 }
 
-.acordion-tex {
-  padding-left: 8%;
+.comentario-user-imag img{
+  width: 100%;
+  border-radius: 50%;
+  margin:15%;
+
+}
+
+.comentario-user-tex{
+  padding: 1% 5% 1% 5%;
   text-align: justify;
 }
+
+
 
 .city-texarea {
   width: 100%;
@@ -438,6 +463,18 @@ header {
   border-radius: 10px;
   margin-bottom: 1%;
   padding: 2%;
+}
+
+
+.btn-comentario-form{
+  text-align: right;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.btn-primary{
+  background: #00c3ff;
+  font-weight: bold;
 }
 
 .no-comments {
@@ -456,6 +493,28 @@ header {
   font-size: 17px;
   text-align: center;
 }
+
+
+.accordion-item{
+  border: none !important;
+}
+
+
+
+.accordion-collapse, .accordion-button, .accordion-header{
+  background-color: #2b6086 !important;
+  border: none !important;
+  border-style: none !important;
+  
+}
+
+.boton-comentario-text{
+  color: white;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+
 
 /* ************************************C O M P O N E N T E -  F O T E R   ****************************************** */
 footer {
@@ -1204,4 +1263,14 @@ form i {
   .no-comments-tex {
     font-size: 11px;
   }
+}
+
+
+.pruebaText{
+  text-align: center !important;
+  color:#ffff1c;
+  font-size: 20px;
+  border: 2px solid red;
+  margin-right: 0 !important;
+
 }

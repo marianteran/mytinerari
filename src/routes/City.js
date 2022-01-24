@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import Slider from "../components/Slider";
 
@@ -15,7 +15,7 @@ import Comentario from '../components/Comentario';
 
 
 export default class City extends React.Component {
-
+   
     constructor(props) {
         super(props);
         this.state = {
@@ -32,6 +32,7 @@ export default class City extends React.Component {
 
 
     render() {
+        
 
         return (
             <>

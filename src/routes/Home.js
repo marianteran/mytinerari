@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 import foto3 from "../imagen/foto3.jpg"
 import paris from "../imagen/slider/paris.jpg"
@@ -12,6 +12,12 @@ import Tours from "../components/Tours";
 
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
+      
+
     return (
         <>
             <main className=" home">

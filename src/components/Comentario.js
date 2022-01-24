@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useState } from "react";
 
 // fotos
 import copaCabana from "../imagen/tours/copaCabana.jpg";
@@ -8,50 +8,22 @@ import copaCabana3 from "../imagen/tours/copaCabana3.jpg";
 import maracana1 from "../imagen/tours/maracana1.jpg";
 import maracana2 from "../imagen/tours/maracana2.jpg";
 import maracana3 from "../imagen/tours/maracana3.jpg";
-
-import avatar1 from "../imagen/avatar/avatar1.jpg";
-
-import Avatar from '@mui/material/Avatar';
-
-
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-
-import { Box } from '@mui/system';
-
-
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-import { makeStyles } from '@mui/styles';
-import { useState } from "react";
+import tijuca1 from "../imagen/tours/tijuca1.jpg";
+import tijuca2 from "../imagen/tours/tijuca2.jpg";
+import tijuca3 from "../imagen/tours/tijuca3.jpg";
+import avatar1 from '../imagen/avatar/avatar1.jpg'
 
 
 
 
-
-const useStyle = makeStyles({
-    root: {
-        backgroundColor: '#2B6086',
-        border:0
-
-    }
-})
 
 
 const Comentario = () => {
 
-    const classes = useStyle()
+   const [like, setLike] = useState(0);
+   const [see, setSee] = useState(false);
+   
 
-    const [like, setLike] = useState(0);
-    const aumentar=()=>{
-        setLike(like + 1)
-        // console.log(contador)
-    }
-
-    
     return (
         <>
 
@@ -71,21 +43,21 @@ const Comentario = () => {
 
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
-                                <img src={copaCabana} alt="images" ></img>
+                            <div className="comentario-imag">
+                                <img src={copaCabana} alt="images"></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
+                            <div className="comentario-imag">
                                 <img src={copaCabana2} alt="images"></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
+                            <div className="comentario-imag">
                                 <img src={copaCabana3} alt="images"></img>
                             </div>
                         </div>
@@ -101,125 +73,116 @@ const Comentario = () => {
                     </div>
 
                     <div className='like '>
-                        <button className="btn love" onClick={aumentar}><i className="fas fa-heart"></i></button>
+                        <button className="btn btn-like" onClick={()=> setLike(like+1)}><i className="fas fa-heart"></i></button>
                         <span>{like}</span>
 
                     </div>
 
                 </div>
 
+                <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
 
-                <Accordion className={classes.root}>
+                        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                                <div className='row mb-4'>
+                                    <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
 
-                    <AccordionSummary
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            <h4>Praia de Copacabana</h4>
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            Duration: 2 horas
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price '>
+                                            Price: 2<i className="fas fa-money-bill-alt"></i>
+                                        </div>
 
+                                    </div>
 
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        className={classes.root}
-                        sx={{ border: 0 }}> 
-
-
-
-
-
-                    </AccordionSummary>
-
-                    <AccordionDetails
-                        className={classes.root}
-                        sx={{ border: 0 }}
-                    >
-                        <div className='row mb-4'>
-                            <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
-
-
-                                <div className='col-sm-12 col-md-12 price'>
-                                    <h4 >Praia de Copacabana</h4>
-                                </div>
-                                <div className='col-sm-12 col-md-12 price'>
-                                    Duration: 2 horas
-                                </div>
-                                <div className='col-sm-12 col-md-12 price '>
-                                    Price: 2<i className="fas fa-money-bill-alt"></i>
+                                    <div className='col-sm-12 col-md-7 col-lg-7 texto'>
+                                        <p className='texto-comentario'>
+                                            Lively beach with a promenade and bars.
+                                        </p>
+                                    </div>
                                 </div>
 
-                            </div>
+                                <div className="comentarios-user">
+                                    <div className='acordion-box'>
+                                        <div className='comentario-user-imag'>
+                                            <img src={avatar1} alt=""></img>
+                                        </div>
+                                        <div className='comentario-user-tex'>
+                                            <p>I like Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo cum ad, odit
+                                                provident earum voluptatibus magnam aut velit placeat ex reiciendis doloremque,
+                                                excepturi itaque, laboriosam dolorum consequatur ducimus sed est! </p>
+                                        </div>
+                                    </div>
+                                    <div className='acordion-box'>
+                                        <div className='comentario-user-imag'>
+                                            <img src={avatar1} alt=""></img>
+                                        </div>
+                                        <div className='comentario-user-tex'>
+                                            <p>I like Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo cum ad, odit
+                                                provident earum voluptatibus magnam aut velit placeat ex reiciendis doloremque,
+                                                excepturi itaque, laboriosam dolorum consequatur ducimus sed est! </p>
+                                        </div>
+                                    </div>
 
-                            <div className='col-sm-12 col-md-7 col-lg-7 texto'>
-                                <p className='texto-comentario'>
-                                    Lively beach with a promenade and bars.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="accordion-body">
-                            <div className='acordion-box'>
-                                <div className='acordion-image'>
-                                    <Avatar alt="Remy Sharp" src="../imagen/avatar/avatar1.jpg" />
+                                    <div className="mb-3">
+
+                                        <form>
+                                            <textarea name="textarea" placeholder="Write us ....."
+                                                className='city-texarea'></textarea>
+                                        </form>
+
+                                        <div className="btn-comentario-form">
+                                            <button className="btn btn-primary">Send <i className="fas fa-paper-plane"></i></button>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div className='acordion-tex'>
-                                    <p>I like </p>
-                                </div>
-                            </div>
-                            <div className='acordion-box'>
-                                <div className='acordion-image'>
-                                    <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                                </div>
-                                <div className='acordion-tex'>
-                                    <p>I like </p>
-                                </div>
-                            </div>
-
-                            <div className="mb-3">
-
-                                <form>
-                                    <textarea name="textarea" placeholder="Write us ....." className='city-texarea' ></textarea>
-                                </form>
-
-                                <Box textAlign='right'
-                                >
-                                    <Button variant="contained"
-                                        size="large"
-                                        sx={{ mr: 8 }}
-                                        endIcon={<SendIcon />}
-                                    >
-                                        Send
-                                    </Button>
-                                </Box>
-
-
-
                             </div>
                         </div>
 
-                    </AccordionDetails>
-                </Accordion>
 
 
+                        <h2 className="accordion-header" id="headingOne">
+                            <button className="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" 
+                                onClick={()=> setSee(!see)}>
+                                <span className="boton-comentario-text">{!see ? 'See more': 'Hide'} </span>
+                            </button>
+                        </h2>
+                    </div>
+
+                 
+                </div>
             </div>
 
             <div className='fondo-comentario mx-auto'>
-                <h2 className='name-comentario mb-4'>The Maracana Stadium</h2>
+                <h2 className='name-comentario mb-4'>Maracana Stadium</h2>
                 <div className='imagenes-comentario'>
 
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
-                                <img src={maracana1} alt="images" className='card-img-top'></img>
+                            <div className="comentario-imag">
+                                <img src={maracana1} alt="images"></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
-                                <img src={maracana2} alt="images" className='card-img-top'></img>
+                            <div className="comentario-imag">
+                                <img src={maracana2} alt="images"></img>
                             </div>
                         </div>
                     </div>
                     <div className='mb-2'>
                         <div className='comentario-card'>
-                            <div className="comentario-imag" >
-                                <img src={maracana3} alt="images" className='card-img-top'></img>
+                            <div className="comentario-imag">
+                                <img src={maracana3} alt="images"></img>
                             </div>
                         </div>
                     </div>
@@ -234,92 +197,207 @@ const Comentario = () => {
                     </div>
 
                     <div className='like '>
-
-                    <button className="btn love" onClick={aumentar}><i className="fas fa-heart"></i></button>
+                        <button className="btn btn-like" onClick={()=> setLike(like+1)}><i className="fas fa-heart"></i></button>
                         <span>{like}</span>
 
                     </div>
 
                 </div>
 
-                <Accordion className={classes.root} sx={{ border: 0 }}>
+                <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
 
-                    <AccordionSummary
-                        
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        className={classes.root}
-                        sx={{ border: 0 }}
-                    >
-                      <div className='text-center'>Click to Expand</div>
-                    </AccordionSummary>
+                        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                                <div className='row mb-4'>
+                                    <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
 
-                    <AccordionDetails
-                        className={classes.root}
-                        sx={{ border: 0 }}
-                    >
-                        <div className='row mb-4'>
-                            <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
-                                <div className='col-sm-12 col-md-12 price'>
-                                    <h4 >The Maracana Stadium</h4>
-                                </div>
-                                <div className='col-sm-12 col-md-12 price'>
-                                    Duration: 2 horas
-                                </div>
-                                <div className='col-sm-12 col-md-12 price '>
-                                    Price: 2<i className="fas fa-money-bill-alt"></i>
-                                </div>
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            <h4>Maracana Stadium</h4>
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            Duration: 2 horas
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price '>
+                                            Price: 2<i className="fas fa-money-bill-alt"></i>
+                                        </div>
 
+                                    </div>
 
-
-                            </div>
-
-                            <div className='col-sm-12 col-md-7 col-lg-7 texto'>
-                                <p className='texto-comentario'>
-                                    Formally Estadio Jornalista Mario Filho, is a football stadium located in the city of Rio de Janeiro, Brazil. Its address is Rua Professor Eurico Rabelo, Maracana. It is the largest stadium in Brazil
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div className="accordion-body">
-
-                            <div className="mb-3">
-
-                                <div className='no-comments'>
-                                   
-                                    <p className='no-comments-tex'>There are no comments on this itinerary, be the first!</p>
-                                   
+                                    <div className='col-sm-12 col-md-7 col-lg-7 texto'>
+                                        <p className='texto-comentario'>
+                                            Formally Estadio Jornalista Mario Filho, is a football stadium located in the city of Rio de Janeiro, Brazil. Its address is Rua Professor Eurico Rabelo, Maracana. It is the largest stadium in Brazil
+                                        </p>
+                                    </div>
                                 </div>
 
+                                <div className="comentarios-user">
+
+                                    <div className='no-comments'>
+
+                                        <p className='no-comments-tex'>There are no comments on this itinerary, be the first!</p>
+
+                                    </div>
 
 
-                                <form>
-                                    <textarea name="textarea" placeholder="Write us ....." className='city-texarea' ></textarea>
-                                </form>
+                                    <div className="mb-3">
 
-                                <Box textAlign='right'
-                                >
-                                    <Button variant="contained"
-                                        size="large"
-                                        sx={{ mr: 8 }}
-                                        endIcon={<SendIcon />}
-                                    >
-                                        Send
-                                    </Button>
-                                </Box>
+                                        <form>
+                                            <textarea name="textarea" placeholder="Write us ....."
+                                                className='city-texarea'></textarea>
+                                        </form>
 
+                                        <div className="btn-comentario-form">
+                                            <button className="btn btn-primary">Send <i className="fas fa-paper-plane"></i></button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                    </AccordionDetails>
-                </Accordion>
 
 
+                        <h2 className="accordion-header" id="headingOne">
+                            <button className="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" 
+                                onClick={()=> setSee(!see)}>
+                                 <span className="boton-comentario-text">{!see ? 'See more': 'Hide'} </span>
+                            </button>
+                        </h2>
+                    </div>
+
+
+                </div>
             </div>
 
+            <div className='fondo-comentario mx-auto'>
+                <h2 className='name-comentario mb-4'>Tijuca National Park</h2>
+                <div className='imagenes-comentario'>
+
+                    <div className='mb-2'>
+                        <div className='comentario-card'>
+                            <div className="comentario-imag">
+                                <img src={tijuca1} alt="images"></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mb-2'>
+                        <div className='comentario-card'>
+                            <div className="comentario-imag">
+                                <img src={tijuca2} alt="images"></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mb-2'>
+                        <div className='comentario-card'>
+                            <div className="comentario-imag">
+                                <img src={tijuca3} alt="images"></img>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className='content-usuario my-4 mx-auto'>
+
+                    <div className='avatar'>
+                        <img src={avatar1} alt=""></img>
+                        <p className='user'>User</p>
+                    </div>
+
+                    <div className='like '>
+                        <button className="btn btn-like" onClick={()=> setLike(like+1)}><i className="fas fa-heart"></i></button>
+                        <span>{like}</span>
+
+                    </div>
+
+                </div>
+
+                <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
+
+                        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                                <div className='row mb-4'>
+                                    <div className='col-sm-12 col-md-5 col-lg-5  titulo-comentario text-center'>
+
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            <h4>Tijuca National Park</h4>
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price'>
+                                            Duration: 2 horas
+                                        </div>
+                                        <div className='col-sm-12 col-md-12 price '>
+                                            Price: 2<i className="fas fa-money-bill-alt"></i>
+                                        </div>
+
+                                    </div>
+
+                                    <div className='col-sm-12 col-md-7 col-lg-7 texto'>
+                                        <p className='texto-comentario'>
+                                         Is a national park in Brazil that is located in the city and state of Rio de Janeiro. Among the park's tourist spots, in addition to trails, caves and waterfalls, there are famous places in the city, such as Pedra da Gávea, Corcovado hill and Tijuca peak, the top of the park, at 1,022 meters above sea level. The park presents a mountainous relief, including areas of the Tijuca massif
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="comentarios-user">
+                                    <div className='acordion-box'>
+                                        <div className='comentario-user-imag'>
+                                            <img src={avatar1} alt=""></img>
+                                        </div>
+                                        <div className='comentario-user-tex'>
+                                            <p>I like Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo cum ad, odit
+                                                provident earum voluptatibus magnam aut velit placeat ex reiciendis doloremque,
+                                                excepturi itaque, laboriosam dolorum consequatur ducimus sed est! </p>
+                                        </div>
+                                    </div>
+                                    <div className='acordion-box'>
+                                        <div className='comentario-user-imag'>
+                                            <img src={avatar1} alt=""></img>
+                                        </div>
+                                        <div className='comentario-user-tex'>
+                                            <p>I like Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo cum ad, odit
+                                                provident earum voluptatibus magnam aut velit placeat ex reiciendis doloremque,
+                                                excepturi itaque, laboriosam dolorum consequatur ducimus sed est! </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="mb-3">
+
+                                        <form>
+                                            <textarea name="textarea" placeholder="Write us ....."
+                                                className='city-texarea'></textarea>
+                                        </form>
+
+                                        <div className="btn-comentario-form">
+                                            <button className="btn btn-primary">Send <i className="fas fa-paper-plane"></i></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <h2 className="accordion-header" id="headingOne">
+                            <button className="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" 
+                                onClick={()=> setSee(!see)}>
+                                 <span className="boton-comentario-text">{!see ? 'See more': 'Hide'} </span>
+                            </button>
+                        </h2>
+                    </div>
+
+
+                </div>
+            </div>
+           
+
+         
 
         </>
     )

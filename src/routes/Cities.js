@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Link as LinkRouter } from "react-router-dom";
 
 
@@ -12,6 +12,11 @@ import Switch from "../components/Switch";
 
 
 const Cities = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, []) 
+
+      
     return (
         <>
             <main className="cities">
@@ -123,7 +128,7 @@ const Cities = () => {
                                             <p>Venezuela</p>
                                         </div>
                                         <div className="buy">
-                                            <LinkRouter to="..">
+                                        <LinkRouter to="/city">
                                                 <i className="fas fa-angle-double-right"></i>
                                             </LinkRouter>
                                         </div>
@@ -150,7 +155,7 @@ const Cities = () => {
                                             <p>France</p>
                                         </div>
                                         <div className="buy">
-                                            <LinkRouter to="..">
+                                        <LinkRouter to="/city">
                                                 <i className="fas fa-angle-double-right"></i>
                                             </LinkRouter>
                                         </div>

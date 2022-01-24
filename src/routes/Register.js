@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{useEffect} from "react";
 import { Link as LinkRouter } from "react-router-dom";
 
 const Register = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
+      
     return (
         <>
             <main className='register'>
