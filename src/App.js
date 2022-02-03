@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import City from './routes/City';
@@ -7,8 +8,18 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
+
+
+
 
 function App() {
+  
+  useEffect(() => {
+    axios.get("http://localhost:4000/api/datos")
+    .then(response=> console.log(response))
+  });
+
   return (
     <div className="App">
           <BrowserRouter>

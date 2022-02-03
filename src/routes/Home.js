@@ -3,7 +3,7 @@ import React,{useEffect} from "react";
 import foto3 from "../imagen/foto3.jpg"
 import paris from "../imagen/slider/paris.jpg"
 import amsterdam from "../imagen/slider/amsterdam.jpg"
-import flag from "../imagen/fondos/flag.png"
+import flag from "../imagen/fondos/flag.gif"
 
 
 

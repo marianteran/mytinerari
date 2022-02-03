@@ -267,13 +267,16 @@ header {
 
 
 .fondo-comentario {
-  background-color: #2b6086 !important;
+  /* background-color: #2b6086 !important; */
+  background: url(./imagen/fondos/texture.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 2%;
   margin-top: 2%;
   margin-bottom: 4%;
-  width: 60%;
+  width: 70%;
   border-radius: 1rem;
-  color: white;
   box-shadow: 2px 3px 28px -4px rgba(0, 0, 0, 0.75);
 }
 
@@ -281,8 +284,9 @@ header {
   text-transform: uppercase;
   font-size: 20px;
   text-align: center;
-  color: #f5f5f5;
-  margin-bottom: 2%;
+  /* color: #f5f5f5; */
+  margin-bottom: 4%;
+  margin-top: 2%;
 }
 
 /* tarjetas de imagenes */
@@ -297,8 +301,8 @@ header {
 
 .comentario-card {
   position: relative;
-  width: 230px;
-  height: 250px;
+  width: 270px;
+  height: 260px;
   background: #00c3ff;
   background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);
   background: linear-gradient(to right, #ffff1c, #00c3ff);
@@ -369,23 +373,26 @@ header {
 .like {
   margin-right: 10%;
 }
-.btn-like {
+
+.btn-like{
   box-shadow: 2px 1px 1px 1px rgb(5, 133, 160);
+  background-color: rgb(245, 245, 245);
 }
 
 .fa-heart {
-  color: white;
   font-size: 20px;
+  color: black;
+  
   
 }
 
-.dos{
-  color: red;
+.fa-heart .dos{
   font-size: 20px;
+  color: red;
+  
 }
 
 .like span {
-  color: white;
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 8px;
@@ -393,33 +400,58 @@ header {
 
 /* acordion */
 
-.titulo-comentario {
+.accordion-item{
+  border: none !important;
+}
+
+
+.accordion-body {
+  /* background-color: #2b6086; */
+  border: none !important;
+  background: url(./imagen/fondos/texture.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.accordion-collapse, .accordion-button, .accordion-header{
+  background-color: rgb(240, 247, 255) !important;
+  border: none !important;
+  border-style: none !important;
+}
+
+
+.acordion-left{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #f5f5f5;
+  padding-top: 4%;
+  
 }
 
-.price {
-  font-size: 20px;
+
+.acordion-left-sub{
+  display: flex;
+  margin: 1%;
 }
 
-.fa-money-bill-alt {
-  padding: 2%;
+.acordion-left-sub span{
+  margin-left:2% ;
+  margin-top: 1%;
+}
+
+.imagen-left{
+  width: 10%;
+  height: 5%;
+}
+
+.imagen-left img{
+  width: 100%;
 }
 
 .texto-comentario {
   text-align: justify;
   padding: 2%;
-  color: #f5f5f5;
-}
-
-.accordion-body {
-  background-color: #2b6086;
-  border: none;
- 
- 
+  
 }
 
 .comentarios-user{
@@ -435,6 +467,7 @@ header {
   margin-bottom: 4%;
   color: black;
 }
+
 
 .comentario-user-imag{
   width: 45px;
@@ -455,7 +488,6 @@ header {
 }
 
 
-
 .city-texarea {
   width: 100%;
   box-shadow: 2px 1px 1px 1px rgb(5, 133, 160);
@@ -470,12 +502,15 @@ header {
   text-align: right;
   margin-right: 10%;
   margin-top: 2%;
+  
 }
 
 .btn-primary{
   background: #00c3ff;
   font-weight: bold;
+  
 }
+
 
 .no-comments {
   display: flex;
@@ -494,25 +529,16 @@ header {
   text-align: center;
 }
 
-
-.accordion-item{
-  border: none !important;
-}
-
-
-
-.accordion-collapse, .accordion-button, .accordion-header{
-  background-color: #2b6086 !important;
-  border: none !important;
-  border-style: none !important;
-  
-}
-
 .boton-comentario-text{
-  color: white;
+  /* color: white; */
   margin-left: auto;
   font-weight: bold;
+  color: rgb(5, 133, 160);
 }
+
+
+
+
 
 
 
@@ -548,12 +574,13 @@ footer i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./imagen/fondos/caracasp.jpeg");
+  background-image: url("./imagen/fondos/1863864.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   color: white;
-  height: 400px;
-  margin-top: 7%;
+  height: 450px;
+  margin-top: 12vh;
   width: 100%;
   text-align: center;
   clip-path: polygon(
@@ -568,6 +595,7 @@ footer i {
     0 0,
     21% 0
   );
+ 
 }
 
 .home-title {
@@ -575,6 +603,7 @@ footer i {
   color: white;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive !important;
+  text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .texto-baner {
@@ -665,12 +694,13 @@ footer i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./imagen/fondos/beach.jpg");
+  background-image: url("./imagen/fondos/city.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   color: white;
-  height: 400px;
-  margin-top: 7%;
+  height: 450px;
+  margin-top: 12vh;
   text-align: center;
   clip-path: polygon(
     50% 0%,
@@ -691,6 +721,7 @@ footer i {
   color: white;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive !important;
+  text-shadow: black 0.1em 0.1em 0.2em
 }
 
 /* contenido de cars */
@@ -853,45 +884,26 @@ footer i {
   width: 100%;
 }
 
-.banner-city {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-image: url("./imagen/fondos/city.jpg");
-  background-size: cover;
+.information {
+  /* background:url(./imagen/prueba/city/athens2.svg); */
+  height: 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  color: white;
-  height: 400px;
-  margin-top: 7%;
-  text-align: center;
-  clip-path: polygon(
-    50% 0%,
-    82% 0,
-    100% 0,
-    100% 90%,
-    81% 94%,
-    50% 100%,
-    20% 94%,
-    0 90%,
-    0 0,
-    21% 0
-  );
+  background-size: cover;
+  background-position:center;
+  padding: 4% 2% 2% 2%;
+  margin-top: 12vh;
 }
 
 .city-title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: white;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive !important;
-}
+  text-shadow: black 0.1em 0.1em 0.2em;
+  /* margin-top: 50px; */
+  text-align: left;
 
-.information {
-  /* background:url(../imagen/city/rio2.jpg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 2%;
+  
 }
 
 .container-information {
@@ -900,20 +912,23 @@ footer i {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
   color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+
+  /* margin: 2%; */
 }
 
 .information-text {
-  padding: 2%;
-  text-align: justify;
+  /* padding: 4%; */
+  text-align: center;
 }
 
-.container-information img {
-  padding: 1%;
-  max-width: 80%;
-  height: 50vh;
-  background-size: contain;
+
+
+.information-text p {
+  padding: 4%;
+ 
 }
 
 
@@ -921,62 +936,58 @@ footer i {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-.fa-money-bill-wave,
-.fa-language,
-.fa-map-marker-alt {
-  font-size: 30px;
-  margin-top: 20px;
-  margin-right: 5px;
-  color: rgb(91, 145, 198);
+  padding: 3%;
 }
 
-.flip {
-  margin: auto;
-  width: 18vw;
 
-  /* background-repeat: no-repeat;
-background-size: cover; 
-position: relative; */
-  /* transition: all 1s ease;
-transform: perspective(600px);
-transform-origin: 100% 50%;
-transform-style: preserve-3d; */
+.information-iconos{
+  text-align: center !important;
+  width: 9%;
+  height: 9%;
 }
 
-.flip img {
-  max-width: 100%;
-  border-radius: 20px;
+.information-iconos span{
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-weight: bold;
 }
 
-/* .flip {
- 
-  animation: flip 3s infinite;
- 
+
+.city-container-image{
+  width: 400px;
+  height: 350px;
+  padding: 1%;
+  
 }
 
-@keyframes flip {
- 
-  25%{
-    transform: translateY(-20px);
-    opacity: 0;
-  }
+.container-information img {
+
+  width: 100%;
+  height: 100%;
   
   
-  100% {
-    transform: translateY(5vh);
-    opacity: 1;
-  }
-
-} */
-
-.flip img:hover {
-  /* transform: perspective(600px) rotateY(360deg) translateX(100%); 
--webkit-transform:scale(1.3);transform:scale(1.3); */
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-  transition: 2s ease-in-out;
 }
+
+.imagen-central{
+  box-shadow: 0px 0px 5px 3px rgba(100, 100, 100, 0.75);
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.imagen-central:hover{
+  transform:scale(1.1);
+}
+
+
+.slogan{
+  font-size: 25px;
+  color: #13aba6;
+  /* text-shadow: black 0.1em 0.1em 0.2em; */
+  font-weight: bold;
+  padding: 4% 2% 1% 2%;
+  font-style: oblique;
+  text-align: center;
+}
+
 
 /* *******************************R O U T E S   L O G I N ****************************************************** */
 .login {
@@ -1148,17 +1159,23 @@ form i {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .banner-home,
+  /* .banner-home,
   .banner-cities,
   .banner-city {
     margin-top: 15%;
-  }
+  } */
 
   .home-title,
-  .cities-title,
-  .city-title {
+  .cities-title {
     font-size: 4rem;
   }
+
+  .city-title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+
 
   .about-image img {
     text-align: center;
@@ -1189,17 +1206,21 @@ form i {
 }
 
 @media screen and (max-width: 575px) {
-  .banner-home,
+  /* .banner-home,
   .banner-cities,
   .banner-city {
     margin-top: 20%;
     padding-top: 100px;
-  }
+  } */
 
   .home-title,
-  .cities-title,
-  .city-title {
+  .cities-title{
     font-size: 3rem;
+  }
+
+   .city-title {
+    font-size: 3rem;
+    text-align: center;
   }
 
   .about-image img {
@@ -1243,17 +1264,21 @@ form i {
 }
 
 @media screen and (max-width: 420px) {
-  .banner-home,
+  /* .banner-home,
   .banner-cities,
   .banner-city {
     margin-top: 20%;
     padding-top: 100px;
-  }
+  } */
 
   .home-title,
-  .cities-title,
+  .cities-title{
+    font-size: 2rem;
+  }
+
   .city-title {
     font-size: 2rem;
+    text-align: center;
   }
 
   .fondo-comentario {
@@ -1266,11 +1291,13 @@ form i {
 }
 
 
-.pruebaText{
+/* .pruebaText{
   text-align: center !important;
   color:#ffff1c;
   font-size: 20px;
   border: 2px solid red;
   margin-right: 0 !important;
 
-}
+} */
+
+
