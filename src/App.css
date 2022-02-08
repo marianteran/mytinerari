@@ -745,8 +745,8 @@ footer i {
   margin-top: 10vh;
 }
 .wrapper {
-  width: 500px;
-  height: 400px;
+  width: 370px;
+  height: 360px;
   background: #00c3ff;
   background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);
   background: linear-gradient(to right, #ffff1c, #00c3ff);
@@ -758,6 +758,11 @@ footer i {
   transition: box-shadow 0.5s, transform 0.5s;
   z-index: 1000;
   margin-bottom: 2%;
+}
+
+
+.txt_name_city{
+  font-size: 25px;
 }
 .wrapper:hover {
   transform: scale(1);
@@ -795,9 +800,7 @@ footer i {
   width: calc(70% - 40px);
 }
 
-.wrapper .container .bottom .left .details .txt_name {
-  font-size: 25px;
-}
+
 
 .wrapper .container .bottom .left .buy {
   float: right;
@@ -863,13 +866,13 @@ footer i {
   transform: translateY(-200%);
   transition: opacity 0.2s, transform 0.8s;
 }
-.wrapper .inside .contents h1,
+.wrapper .inside .contents h2,
 .wrapper .inside .contents p {
   color: white;
 }
 
 .wrapper .inside .contents p {
-  font-size: 15px;
+  font-size: 14px;
   text-align: justify;
 }
 
@@ -906,6 +909,14 @@ footer i {
   
 }
 
+.contenedor-bandera{
+  width: 195px;
+  height: 148;
+}
+
+.contenedor-bandera img{
+  width: 100%;
+}
 .container-information {
   display: flex;
   flex-direction: row;
@@ -916,7 +927,7 @@ footer i {
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em;
 
-  /* margin: 2%; */
+  margin-top: -20px;
 }
 
 .information-text {
@@ -927,7 +938,11 @@ footer i {
 
 
 .information-text p {
-  padding: 4%;
+  font-size: 18px;
+  padding: 3%;
+  font-weight: 400;
+  text-shadow: black 0.1em 0.1em 0.2em;
+
  
 }
 
@@ -936,7 +951,7 @@ footer i {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 3%;
+  padding: 1%;
 }
 
 
@@ -981,7 +996,6 @@ footer i {
 .slogan{
   font-size: 25px;
   color: #13aba6;
-  /* text-shadow: black 0.1em 0.1em 0.2em; */
   font-weight: bold;
   padding: 4% 2% 1% 2%;
   font-style: oblique;

@@ -11,7 +11,10 @@ import Slider from "../components/Slider";
 import Tours from "../components/Tours";
 
 
-const Home = () => {
+const Home = (props) => {
+    const cities = props.data
+    console.log(cities)
+
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
@@ -79,8 +82,11 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <Slider />
+                    <Slider cities={cities} />
                 </div>
+
+
+
 
                 <div className="container-slid">
                     <div className="container">
@@ -133,6 +139,8 @@ const Home = () => {
                                 </div>
                             </div>
 
+
+
                             <div className="carousel-item">
                                 <img
                                     src={amsterdam}
@@ -146,6 +154,8 @@ const Home = () => {
                                     <button className="btn btn-dark">Read Moore</button>
                                 </div>
                             </div>
+
+
                             <div className="carousel-item">
                                 <img
                                     src={paris}

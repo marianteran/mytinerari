@@ -8,26 +8,29 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from 'react';
+import React from "react";
 
 
 
 
 function App() {
-  
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/datos")
-    .then(response=> console.log(response))
-  });
 
+  const data=[]
+ 
+   axios.get("http://localhost:4000/api/datos")
+    .then(response=> data.push(...response.data.response.cities))
+  
+  console.log(data)
+  
+ 
   return (
     <div className="App">
           <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="cities" element={<Cities />} />
-          <Route path="city" element={<City />} />
+          <Route index element={<Home data={data}/>} />
+          <Route path="cities" element={<Cities data={data}/>} />
+          <Route path="city" element={<City data={data} />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
 

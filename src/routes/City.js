@@ -1,117 +1,28 @@
 import React from "react";
 
-import Slider from "../components/Slider";
-
-// import bb from "../imagen/city/bb.jpg";
-import rio from "../imagen/city/rio.jpg";
-import Background from "../imagen/city/rio2.jpg";
-
-import bb from "../imagen/city/brasil.gif";
-// import auckland1 from "../imagen/city/auckland1.jpg";
-// import Background from '../imagen/city/auckland2.jpg';
-//import brasil from "../imagen/city/brasil.gif";
-
-
-import moneda from '../imagen/fondos/moneda.png'
-import ubicacion from '../imagen/fondos/ubicacion.png'
-import ubicacion2 from '../imagen/fondos/ubicacion2.png'
-import idioma2 from '../imagen/fondos/idioma2.png'
-
-
-
-
 
 import Button from "@mui/material/Button";
+import InformationCity from "../components/InformationCity";
 import Comentario from "../components/Comentario";
+import Slider from "../components/Slider";
 
 export default class City extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: "Rio de Janeiro",
-            country: "Brasil",
-            moneda: "Real",
-            idioma: "Spanish",
-            continente: "South America",
-            description:
-                "Is a huge coastal city in Brazil, famous for its Copacabana and Ipanema beaches, the 38-meter-high Christ the Redeemer statue on Corcovado hill, and the Sugarloaf Mountain, a granite peak with cable cars that ascend to its top. The city is also known for its extensive favelas. The raucous Carnival festival, with float parades, flamboyant costumes and samba dancers, is considered the largest in the world.",
-            slogan:"City of Brazil with Copacabana beach, Sugar Loaf, Carnival and the statue of Christ the Redeemer.",
-        };
+            cities:props.data
+           
+        }
+        console.log(props)
     }
 
     render() {
         return (
             <>
                 <main className="city">
+
+                    <InformationCity cities={this.state.cities}  />
                    
-                    <div className=" text-center">
-                       
-                        <div
-                            className="information"
-                            style={{ backgroundImage: `url(${Background})` }}
-
-                        >
-
-                            <div className="row">
-                                <div className="col-sm-12 col-md-3 col-lg3 pt-2">
-                                    <img src={bb} alt="" className=""></img>
-                                </div>
-
-                                <div className="col-sm-12 col-md-9 col-lg-9 pt-5">
-                                    <h1 className="city-title ">{this.state.city}</h1>
-                                </div>
-
-                            </div>
-
-                            <div className=" container-information text-center  mx-auto">
-                                <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
-                                    
-                                    <p>{this.state.description}</p>
-                                   
-                                  
-                                    
-
-                                    <div className="information-lin">
-
-                                        <div className="information-iconos">
-                                            <img src={ubicacion2} alt=""></img>
-                                            <span>{this.state.country}</span> 
-                                        </div>
-
-                                        <div className="information-iconos">
-                                            <img src={ubicacion} alt=""></img>
-                                            <span>{this.state.continente} </span>     
-                                        </div>
-
-                                        <div className="information-iconos">
-                                            <img src={moneda} alt=""></img>
-                                            <span>{this.state.moneda} </span>     
-                                        </div>
-
-                                        <div className="information-iconos">
-                                            <img src={idioma2} alt=""></img>
-                                            <span>{this.state.idioma} </span>     
-                                        </div>
-
-                                      
-                                       
-                                    </div>
-                                </div>
-
-                                <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
-                                    <img src={rio} alt="" className="imagen-central"></img>
-                                </div>
-
-
-                            </div>
-
-                            
-
-                        </div>
-
-                        <p className="slogan">{this.state.slogan}</p>
-                    </div>
-
                     <Comentario />
 
                     <div className="mt-5 mb-5">
@@ -128,7 +39,7 @@ export default class City extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Slider />
+                        <Slider cities={this.state.cities}   />
                     </div>
                 </main>
             </>
