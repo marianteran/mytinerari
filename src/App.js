@@ -8,33 +8,29 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
+import { actionTypes } from './core/context/reducer';
+import { useStateValue } from './core/context/StateProvider';
 
 
 
 
 function App() {
 
-  const data=[]
- 
-   axios.get("http://localhost:4000/api/datos")
-    .then(response=> data.push(...response.data.response.cities))
-  
-    console.log(data)
+  const [{cities}, dispatch]= useStateValue()
 
-  const itinerary=[]
+ useEffect(()=>{
+  axios.get("http://localhost:4000/api/datos")
+  .then(response =>{
+    dispatch({
+      type:actionTypes.CITIESDB,
+      cities: response.data.response.cities
+    })
+  })
 
-  axios.get("http://localhost:4000/api/itinerary")
-  .then(response=> itinerary.push(...response.data.response.itinerary))
 
-  console.log(itinerary)
- 
- 
-  const comments=[]
-  axios.get("http://localhost:4000/api/comments")
-  .then(response=> comments.push(...response.data.response.comments))
-  
- console.log(comments) 
+  }, [])
+
 
 
   return (
@@ -42,9 +38,9 @@ function App() {
           <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route index element={<Home data={data}/>} />
-          <Route path="cities" element={<Cities data={data}/>} />
-          <Route path="city" element={<City data={data} itinerary={itinerary} />} />
+          <Route index element={<Home />} />
+          <Route path="cities" element={<Cities />} />
+          <Route path="city/:id" element={<City />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
 

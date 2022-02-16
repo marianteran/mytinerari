@@ -2,14 +2,12 @@ import React from 'react'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-// import rio from "../imagen/city/rio.jpg";
-// import paris from "../imagen/city/paris.jpg";
-// import roma from "../imagen/city/roma.jpg";
-// import caracas from "../imagen/city/caracas.jpg";
 import { Link } from "react-router-dom";
 
-const Slider=(props) => {
-    const cities = props.cities
+import {useStateValue} from "../core/context/StateProvider"
+
+const Slider=() => {
+    const [{cities}, dispatch]= useStateValue()
 
     const responsive = {
         superLargeDesktop: {

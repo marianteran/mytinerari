@@ -1,23 +1,28 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 
 import Button from "@mui/material/Button";
 import InformationCity from "../components/InformationCity";
 import Itinerary from "../components/Itinerary";
 import Slider from "../components/Slider";
+import {useStateValue} from "../core/context/StateProvider"
+import { useParams } from "react-router-dom";
 
-const City = (props) => {
-    const itineraries = props.itinerary
-    console.log(itineraries)
+const City = () => {
+    const [{cities}, dispatch]= useStateValue()
+    const{id}= useParams()
+    const citySelect= cities.filter(item=>item._id === id)
 
-    const cities=props.data
-    console.log (cities)
+    console.log(citySelect)
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return (
         <>
             <main className="city">
 
-                <InformationCity cities={cities}  />
+                <InformationCity citySelect={citySelect} />
 
                 <div className="container mt-5 mb-0">
                     <div className="row">
@@ -29,7 +34,7 @@ const City = (props) => {
                     </div>
                 </div>
 
-                <Itinerary itineraries={itineraries} />
+                {/* <Itinerary itineraries={itineraries} /> */}
 
                 <div className="mt-5 mb-5">
                     <div className="container mt-5 mb-0">
@@ -45,7 +50,7 @@ const City = (props) => {
                             </div>
                         </div>
                     </div>
-                    <Slider cities={cities} />
+                    <Slider />
                 </div>
             </main>
         </>

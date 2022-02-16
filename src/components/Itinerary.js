@@ -1,16 +1,6 @@
 import React from 'react'
 import { useState } from "react";
 
-// fotos
-// import copaCabana from "../imagen/tours/copaCabana.jpg";
-// import copaCabana2 from "../imagen/tours/copaCabana2.jpg";
-// import copaCabana3 from "../imagen/tours/copaCabana3.jpg";
-// import maracana1 from "../imagen/tours/maracana1.jpg";
-// import maracana2 from "../imagen/tours/maracana2.jpg";
-// import maracana3 from "../imagen/tours/maracana3.jpg";
-// import tijuca1 from "../imagen/tours/tijuca1.jpg";
-// import tijuca2 from "../imagen/tours/tijuca2.jpg";
-// import tijuca3 from "../imagen/tours/tijuca3.jpg";
 import avatar1 from '../imagen/avatar/avatar1.jpg'
 
 import billete from '../imagen/fondos/billete.png'

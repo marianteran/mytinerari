@@ -1,111 +1,13 @@
 import React from 'react';
 
-
-import brasil from "../imagen/city/brasil.gif"
-import rio from "../imagen/city/rio.jpg";
-import Background from "../imagen/city/rio2.jpg";
-
 import moneda from '../imagen/fondos/moneda.png'
 import ubicacion from '../imagen/fondos/ubicacion.png'
 import ubicacion2 from '../imagen/fondos/ubicacion2.png'
 import idioma2 from '../imagen/fondos/idioma2.png'
 
-// const InformationCity = (props) => {
-//     const cities = props.cities
-//     console.log(cities)
-
-//     return (
-
-//         <> 
-
-        
-
-//             <div className=" text-center">
-
-//                 <div
-//                     className="information"
-//                     style={{ backgroundImage: `url(${Background})`}}
-
-//                 >
-
-//                     <div className="row">
-//                         <div className="col-sm-12 col-md-3 col-lg3 pt-2 contenedor-bandera">
-//                             <img src={brasil} alt="" className=""></img>
-//                         </div>
-
-//                         <div className="col-sm-12 col-md-9 col-lg-9 pt-4">
-//                             <h1 className="city-title ">Rio de Janeiro</h1>
-//                         </div>
-
-//                     </div>
-
-//                     <div className=" container-information text-center  mx-auto">
-//                         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
-
-//                             <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//                             </p>
-
-
-
-
-//                             <div className="information-lin">
-
-//                                 <div className="information-iconos">
-//                                     <img src={ubicacion2} alt=""></img>
-//                                     <span>Brazil</span>
-//                                 </div>
-
-//                                 <div className="information-iconos">
-//                                     <img src={ubicacion} alt=""></img>
-//                                     <span>America</span>
-//                                 </div>
-
-//                                 <div className="information-iconos">
-//                                     <img src={moneda} alt=""></img>
-//                                     <span>Real</span>
-//                                 </div>
-
-//                                 <div className="information-iconos">
-//                                     <img src={idioma2} alt=""></img>
-//                                     <span>Potugues</span>
-//                                 </div>
-
-
-
-//                             </div>
-//                         </div>
-
-//                         <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
-//                             <img src={rio} alt="" className="imagen-central"></img>
-//                         </div>
-
-
-//                     </div>
-
-
-
-//                 </div>
-
-//                 <p className="slogan">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            
-            
-            
-            
-//             </div>
-
-//         </>
-
-//     );
-// };
-
-// export default InformationCity;
-
-
 
 const InformationCity = (props) => {
-    const cities = props.cities
+    const cities = props.citySelect
     console.log(cities)
 
     return (

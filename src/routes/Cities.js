@@ -1,15 +1,11 @@
 import React,{useEffect} from "react";
-
 import CardCities from "../components/CardCities";
 import Switch from "../components/Switch";
-
 import Button from "@mui/material/Button";
 
 
-const Cities = (props) => {
-    const cities = props.data
+const Cities = () => {
 
-    console.log(cities)
     
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -24,14 +20,8 @@ const Cities = (props) => {
 
                 </div>
 
-                <Button variant="contained" href="/city" size="large">
-                                            Prueba City
-                </Button>
-
                 <Switch />
-
-
-                <CardCities cities={cities} />       
+                <CardCities/>       
 
             </main>
         </>

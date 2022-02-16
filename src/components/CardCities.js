@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link as LinkRouter } from "react-router-dom";
 
-const CardCities = (props) => {
-    const cities = props.cities
+import {useStateValue} from "../core/context/StateProvider"
+
+const CardCities = () => {
+    const [{cities}, dispatch]= useStateValue()
 
     return (
         <>
-
             <div className="container contenedor-city">
                 <div className="card_city_body center" >
                     {cities.map((item) => { 

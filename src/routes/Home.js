@@ -9,13 +9,10 @@ import flag from "../imagen/fondos/flag.gif"
 
 import Slider from "../components/Slider";
 import Tours from "../components/Tours";
-import Prueba from "../components/Prueba";
 
 
-const Home = (props) => {
-    const cities = props.data
-    // console.log(cities)
-
+const Home = () => {
+   
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
@@ -83,7 +80,7 @@ const Home = (props) => {
                         </div>
                     </div>
 
-                    <Slider cities={cities} />
+                    <Slider />
                 </div>
 
 
@@ -214,13 +211,6 @@ const Home = (props) => {
 
                     <Tours />
                 </div>
-
-
-
-                <h2>PRUEBA ARRAI</h2>
-
-                <Prueba />
-
 
 
             </main>
