@@ -20,9 +20,23 @@ function App() {
    axios.get("http://localhost:4000/api/datos")
     .then(response=> data.push(...response.data.response.cities))
   
-  console.log(data)
-  
+    console.log(data)
+
+  const itinerary=[]
+
+  axios.get("http://localhost:4000/api/itinerary")
+  .then(response=> itinerary.push(...response.data.response.itinerary))
+
+  console.log(itinerary)
  
+ 
+  const comments=[]
+  axios.get("http://localhost:4000/api/comments")
+  .then(response=> comments.push(...response.data.response.comments))
+  
+ console.log(comments) 
+
+
   return (
     <div className="App">
           <BrowserRouter>
@@ -30,7 +44,7 @@ function App() {
         <Routes>
           <Route index element={<Home data={data}/>} />
           <Route path="cities" element={<Cities data={data}/>} />
-          <Route path="city" element={<City data={data} />} />
+          <Route path="city" element={<City data={data} itinerary={itinerary} />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
 

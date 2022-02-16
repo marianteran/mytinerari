@@ -909,14 +909,14 @@ footer i {
   
 }
 
-.contenedor-bandera{
+/* .contenedor-bandera{
   width: 195px;
   height: 148;
 }
 
 .contenedor-bandera img{
   width: 100%;
-}
+} */
 .container-information {
   display: flex;
   flex-direction: row;

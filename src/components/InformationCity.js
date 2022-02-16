@@ -10,129 +10,31 @@ import ubicacion from '../imagen/fondos/ubicacion.png'
 import ubicacion2 from '../imagen/fondos/ubicacion2.png'
 import idioma2 from '../imagen/fondos/idioma2.png'
 
-const InformationCity = (props) => {
-    const cities = props.cities
-    console.log(cities)
-
-    return (
-
-        <>
-
-        
-
-            <div className=" text-center">
-
-                <div
-                    className="information"
-                    style={{ backgroundImage: `url(${Background})`}}
-
-                >
-
-                    <div className="row">
-                        <div className="col-sm-12 col-md-3 col-lg3 pt-2 contenedor-bandera">
-                            <img src={brasil} alt="" className=""></img>
-                        </div>
-
-                        <div className="col-sm-12 col-md-9 col-lg-9 pt-4">
-                            <h1 className="city-title ">Rio de Janeiro</h1>
-                        </div>
-
-                    </div>
-
-                    <div className=" container-information text-center  mx-auto">
-                        <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
-
-                            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                            </p>
-
-
-
-
-                            <div className="information-lin">
-
-                                <div className="information-iconos">
-                                    <img src={ubicacion2} alt=""></img>
-                                    <span>Brazil</span>
-                                </div>
-
-                                <div className="information-iconos">
-                                    <img src={ubicacion} alt=""></img>
-                                    <span>America</span>
-                                </div>
-
-                                <div className="information-iconos">
-                                    <img src={moneda} alt=""></img>
-                                    <span>Real</span>
-                                </div>
-
-                                <div className="information-iconos">
-                                    <img src={idioma2} alt=""></img>
-                                    <span>Potuguess</span>
-                                </div>
-
-
-
-                            </div>
-                        </div>
-
-                        <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
-                            <img src={rio} alt="" className="imagen-central"></img>
-                        </div>
-
-
-                    </div>
-
-
-
-                </div>
-
-                <p className="slogan">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-            
-            
-            
-            
-            </div>
-
-        </>
-
-    );
-};
-
-export default InformationCity;
-
-
-
 // const InformationCity = (props) => {
 //     const cities = props.cities
 //     console.log(cities)
 
 //     return (
 
-//         <>
+//         <> 
 
-//         {cities.map((item)=>{
+        
 
-//             const fondo= process.env.PUBLIC_URL + `/imagen/city/${item.image.second}`
-
-//             return(
-
-//             <div className=" text-center" key={item.city}>
+//             <div className=" text-center">
 
 //                 <div
 //                     className="information"
-//                     style={{ backgroundImage: `url(${fondo})`}}
+//                     style={{ backgroundImage: `url(${Background})`}}
 
 //                 >
 
 //                     <div className="row">
 //                         <div className="col-sm-12 col-md-3 col-lg3 pt-2 contenedor-bandera">
-//                             <img src={process.env.PUBLIC_URL + `/imagen/bandera/${item.flag}`} alt="" className=""></img>
+//                             <img src={brasil} alt="" className=""></img>
 //                         </div>
 
 //                         <div className="col-sm-12 col-md-9 col-lg-9 pt-4">
-//                             <h1 className="city-title ">{item.city}</h1>
+//                             <h1 className="city-title ">Rio de Janeiro</h1>
 //                         </div>
 
 //                     </div>
@@ -140,7 +42,10 @@ export default InformationCity;
 //                     <div className=" container-information text-center  mx-auto">
 //                         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
 
-//                             <p>{item.description}</p>
+//                             <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//                                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//                             </p>
 
 
 
@@ -149,22 +54,22 @@ export default InformationCity;
 
 //                                 <div className="information-iconos">
 //                                     <img src={ubicacion2} alt=""></img>
-//                                     <span>{item.country}</span>
+//                                     <span>Brazil</span>
 //                                 </div>
 
 //                                 <div className="information-iconos">
 //                                     <img src={ubicacion} alt=""></img>
-//                                     <span>{item.continent}</span>
+//                                     <span>America</span>
 //                                 </div>
 
 //                                 <div className="information-iconos">
 //                                     <img src={moneda} alt=""></img>
-//                                     <span>{item.currency}</span>
+//                                     <span>Real</span>
 //                                 </div>
 
 //                                 <div className="information-iconos">
 //                                     <img src={idioma2} alt=""></img>
-//                                     <span>{item.language}s</span>
+//                                     <span>Potugues</span>
 //                                 </div>
 
 
@@ -173,7 +78,7 @@ export default InformationCity;
 //                         </div>
 
 //                         <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
-//                             <img src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt="" className="imagen-central"></img>
+//                             <img src={rio} alt="" className="imagen-central"></img>
 //                         </div>
 
 
@@ -183,17 +88,112 @@ export default InformationCity;
 
 //                 </div>
 
-//                 <p className="slogan">{item.slogan}</p>
+//                 <p className="slogan">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
             
             
             
             
 //             </div>
 
-// )})}
 //         </>
 
 //     );
 // };
 
 // export default InformationCity;
+
+
+
+const InformationCity = (props) => {
+    const cities = props.cities
+    console.log(cities)
+
+    return (
+
+        <>
+
+          {cities.map((item)=>{
+
+            const fondo= process.env.PUBLIC_URL + `/imagen/city/${item.image.second}`
+
+            return(
+
+            <div className=" text-center" key={item.city}>
+
+                <div
+                    className="information"
+                    style={{ backgroundImage: `url(${fondo})`}}
+
+                >
+
+                    <div className="row">
+                        <div className="col-sm-12 col-md-3 col-lg3 pt-2 contenedor-bandera">
+                            <img src={process.env.PUBLIC_URL + `/imagen/bandera/${item.flag}`} alt="" className=""></img>
+                        </div>
+
+                        <div className="col-sm-12 col-md-9 col-lg-9 pt-4">
+                            <h1 className="city-title ">{item.city}</h1>
+                        </div>
+
+                    </div>
+
+                    <div className=" container-information text-center  mx-auto">
+                        <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
+
+                            <p>{item.description}</p>
+
+
+
+
+                            <div className="information-lin">
+
+                                <div className="information-iconos">
+                                    <img src={ubicacion2} alt=""></img>
+                                    <span>{item.country}</span>
+                                </div>
+
+                                <div className="information-iconos">
+                                    <img src={ubicacion} alt=""></img>
+                                    <span>{item.continent}</span>
+                                </div>
+
+                                <div className="information-iconos">
+                                    <img src={moneda} alt=""></img>
+                                    <span>{item.currency}</span>
+                                </div>
+
+                                <div className="information-iconos">
+                                    <img src={idioma2} alt=""></img>
+                                    <span>{item.language}s</span>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
+                            <img src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt="" className="imagen-central"></img>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+                <p className="slogan">{item.slogan}</p>
+            
+            
+            
+            
+            </div>
+
+)})}
+        </>
+
+    );
+};
+
+export default InformationCity;

@@ -9,7 +9,7 @@ const CardCities = (props) => {
 
             <div className="container contenedor-city">
                 <div className="card_city_body center" >
-                    {cities.map((item) => {
+                    {cities.map((item) => { 
 
                         return (
                             <div className="wrapper" key={item.city}>

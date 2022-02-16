@@ -9,11 +9,12 @@ import flag from "../imagen/fondos/flag.gif"
 
 import Slider from "../components/Slider";
 import Tours from "../components/Tours";
+import Prueba from "../components/Prueba";
 
 
 const Home = (props) => {
     const cities = props.data
-    console.log(cities)
+    // console.log(cities)
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -216,6 +217,9 @@ const Home = (props) => {
 
 
 
+                <h2>PRUEBA ARRAI</h2>
+
+                <Prueba />
 
 
 
