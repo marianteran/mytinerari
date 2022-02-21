@@ -8,14 +8,24 @@ import Slider from "../components/Slider";
 import {useStateValue} from "../core/context/StateProvider"
 import { useParams } from "react-router-dom";
 
+import fondo from '../imagen/fondos/plano.jpg'
+
 const City = () => {
-    const [{cities}, dispatch]= useStateValue()
+    const [{cities, itineraries}, dispatch]= useStateValue()
     const{id}= useParams()
     const citySelect= cities.filter(item=>item._id === id)
 
-    console.log(citySelect)
+
+    
+    console.log(itineraries)
+
+
+   
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
+        
       }, [])
 
     return (
@@ -34,9 +44,9 @@ const City = () => {
                     </div>
                 </div>
 
-                {/* <Itinerary itineraries={itineraries} /> */}
+                {/* <Itinerary citySelect={citySelect[0].city} /> */}
 
-                <div className="mt-5 mb-5">
+                <div className="mt-5 mb-5" >
                     <div className="container mt-5 mb-0">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">
@@ -50,7 +60,10 @@ const City = () => {
                             </div>
                         </div>
                     </div>
+                    <div style={{ backgroundImage: `url(${fondo})` }}>
                     <Slider />
+                    </div>
+                    
                 </div>
             </main>
         </>

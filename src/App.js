@@ -17,25 +17,39 @@ import { useStateValue } from './core/context/StateProvider';
 
 function App() {
 
-  const [{cities}, dispatch]= useStateValue()
+  const [{ cities}, dispatch] = useStateValue()
 
- useEffect(()=>{
-  axios.get("http://localhost:4000/api/datos")
-  .then(response =>{
-    dispatch({
-      type:actionTypes.CITIESDB,
-      cities: response.data.response.cities
-    })
-  })
+
+  useEffect(() => {
+    axios.get("http://localhost:4000/api/datos")
+      .then(response => {
+        dispatch({
+          type: actionTypes.CITIESDB,
+          cities: response.data.response.cities
+        })
+      })
+
+      axios.get("http://localhost:4000/api/itinerary")
+      .then(response => {
+        dispatch({
+          type: actionTypes.ITINERARIESDB,
+          itineraries: response.data.response.itinerary
+        })
+         
+      })
+      
 
 
   }, [])
 
 
+  console.log(cities)
+  // console.log(itineraries)
+
 
   return (
     <div className="App">
-          <BrowserRouter>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route index element={<Home />} />

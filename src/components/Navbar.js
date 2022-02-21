@@ -2,6 +2,14 @@ import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import logo from "../imagen/fondos/logo.png"
 
+import gmail from '../imagen/fondos/g.png'
+import face from '../imagen/fondos/f.png'
+import discord from '../imagen/fondos/d.png'
+import twiter from '../imagen/fondos/t.png'
+import insta from '../imagen/fondos/i.png'
+
+
+
 const Navbar = () => {
     return (
         <>
@@ -18,12 +26,13 @@ const Navbar = () => {
                             </nav>
                         </div>
                         <div className="col-xs-8 col-sm-8 col-md-8 d-flex" id="navbarNavAltMarkup">
-                            <div className="nav-first-icon text-center">
-                            <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><i className="fas fa-envelope-open-text"></i></a>
-                                <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><i className="fab fa-instagram-square"></i></a>
-                                <a href="https://es-la.facebook.com/" target="blank" className="nav-first" ><i className="fab fa-facebook"></i></a>
-                                <a href="https://twitter.com/?lang=es" target="blank" className="nav-first"><i className="fab fa-twitter"></i></a>
-                                <a href="https://discord.com/login" target="blank" className="nav-first"  ><i className="fab fa-discord"></i></a>
+                            <div className="nav-first-icon ">
+                            <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
+                                <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><img src={insta} alt=""></img></a>
+                                <a href="https://es-la.facebook.com/" target="blank" className="nav-first" ><img src={face} alt=""></img></a>
+                                <a href="https://twitter.com/?lang=es" target="blank" className="nav-first"><img src={twiter} alt=""></img></a>
+                                <a href="https://discord.com/login" target="blank" className="nav-first"  ><img src={discord} alt=""></img></a>
+
 
 
                             </div>
@@ -35,7 +44,7 @@ const Navbar = () => {
                         <div className="col-md-4 d-flex ">
                             <nav className="navbar navbar-light ">
                                 <div className="container titulo-page">
-                                    <LinkRouter className="navbar-brand1 " to="/">
+                                    <LinkRouter className="navbar-brand1" to="/">
                                         <span>MYTINERARY</span>
                                     </LinkRouter>
                                 </div>

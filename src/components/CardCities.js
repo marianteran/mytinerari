@@ -13,7 +13,7 @@ const CardCities = () => {
                     {cities.map((item) => { 
 
                         return (
-                            <div className="wrapper" key={item.city}>
+                            <div className="wrapper" key={item._id}>
                                 <div className="container">
 
                                     <img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />

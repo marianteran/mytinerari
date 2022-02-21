@@ -2,17 +2,27 @@ import React from 'react'
 import { useState } from "react";
 
 import avatar1 from '../imagen/avatar/avatar1.jpg'
-
 import billete from '../imagen/fondos/billete.png'
 import clock from '../imagen/fondos/clock.png'
 import idioma from '../imagen/fondos/idioma.png'
+
 import Comments from './Comments';
+import {useStateValue} from "../core/context/StateProvider"
 
 
 
 const Itinerary = (props) => {
-    const itineraries = props.itineraries
-    console.log(itineraries)
+    const [{cities,itineraries}, dispatch]= useStateValue()
+
+    const itinerarySelect= props.citySelect
+
+    const cityItinerary= itineraries.filter(city=> city.city == itinerarySelect)
+
+   
+    console.log(cityItinerary)
+
+    // const itineraries = props.itineraries
+    // console.log(itineraries)
 
 
     const [like, setLike] = useState(0);

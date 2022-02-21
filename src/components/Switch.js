@@ -15,7 +15,7 @@ export default function Buscador() {
     return (
         <>
 
-            <div className="container mt-5">
+            <div className="container mt-4">
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-12">
                         <div className="titlepage text-center ">
