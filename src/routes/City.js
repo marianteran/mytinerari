@@ -1,5 +1,5 @@
-import React,{useEffect} from "react";
-
+import React,{useEffect, useState} from "react";
+import axios from 'axios';
 
 import Button from "@mui/material/Button";
 import InformationCity from "../components/InformationCity";
@@ -11,22 +11,31 @@ import { useParams } from "react-router-dom";
 import fondo from '../imagen/fondos/plano.jpg'
 
 const City = () => {
-    const [{cities, itineraries}, dispatch]= useStateValue()
+    const [itineraries, setItineraries]=useState([])
+    const [{cities}, dispatch]= useStateValue()
     const{id}= useParams()
     const citySelect= cities.filter(item=>item._id === id)
 
-
-    
     console.log(itineraries)
+
+     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        
+        citySelect.map(city=> 
+        
+          axios.get(`http://localhost:4000/api/itinerary/${city.city}`)
+          .then(response =>setItineraries(response.data.response.itinerary))
+          )
+    
+      }, [])
+
+      console.log(itineraries)
 
 
    
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-        
-      }, [])
+   
 
     return (
         <>
@@ -44,7 +53,7 @@ const City = () => {
                     </div>
                 </div>
 
-                {/* <Itinerary citySelect={citySelect[0].city} /> */}
+                <Itinerary itineraries={itineraries} />
 
                 <div className="mt-5 mb-5" >
                     <div className="container mt-5 mb-0">

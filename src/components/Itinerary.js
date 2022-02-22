@@ -12,14 +12,16 @@ import {useStateValue} from "../core/context/StateProvider"
 
 
 const Itinerary = (props) => {
-    const [{cities,itineraries}, dispatch]= useStateValue()
 
-    const itinerarySelect= props.citySelect
+    const itineraries=props.itineraries
+    /* const [{cities,itineraries}, dispatch]= useStateValue()
+
+    const itinerarySelect= props.itineraries
 
     const cityItinerary= itineraries.filter(city=> city.city == itinerarySelect)
 
    
-    console.log(cityItinerary)
+    console.log(cityItinerary) */
 
     // const itineraries = props.itineraries
     // console.log(itineraries)

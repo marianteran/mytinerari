@@ -11,6 +11,7 @@ const citiesSchema= new mongoose.Schema ({
     currency: {type:String, require:true},
     continent: {type:String, require:true},
     region:{type:String, require:true},
+    icon:{type:String},
     image: {type:Object, require:true}
 })
 

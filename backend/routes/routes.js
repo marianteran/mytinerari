@@ -8,7 +8,7 @@ Router.route("/datos")
 .get(ObtenerTodosLosDatos)
 
 
-Router.route("/itinerary")
+Router.route("/itinerary/:city")
 .get(ObtenerItinerary)
 
 Router.route("/comments")

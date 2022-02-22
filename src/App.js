@@ -29,22 +29,13 @@ function App() {
         })
       })
 
-      axios.get("http://localhost:4000/api/itinerary")
-      .then(response => {
-        dispatch({
-          type: actionTypes.ITINERARIESDB,
-          itineraries: response.data.response.itinerary
-        })
-         
-      })
-      
-
+     
 
   }, [])
 
 
   console.log(cities)
-  // console.log(itineraries)
+
 
 
   return (

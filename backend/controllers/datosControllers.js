@@ -25,11 +25,13 @@ const citiesController={
 
     ObtenerItinerary:async(req,resp)=>{
         let itinerary
+        console.log(req.params)
+        const city =req.params.city
 
         let error=null
 
         try {
-            itinerary= await Itinerary.find()
+            itinerary= await Itinerary.find({city:city})
             
         } catch (err) {
             error=err

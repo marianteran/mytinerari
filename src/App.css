@@ -1077,6 +1077,86 @@ footer i {
 }
 
 
+
+.box p {
+  color: rgb(122, 129, 146);
+}
+
+.box {
+  border-radius: 20px;
+  box-shadow: 0px 30px 40px -20px rgb(122, 129, 146);
+  padding: 0px 5px 5px 10px;
+  margin: 20px;  
+ 
+}
+
+.box img {
+  float: right;
+}
+
+@media (max-width: 450px) {
+  .box {
+      height: 200px;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+  .box {
+      text-align: center;
+      height: 150px;
+  }
+}
+
+.cyan {
+  border-top: 10px solid cyan;
+  border-bottom: 10px solid cyan;
+}
+.red {
+  border-top: 10px solid red;
+  border-bottom: 10px solid red;
+}
+.blue {
+  border-top: 10px solid blue;
+  border-bottom: 10px solid blue;
+}
+.orange {
+  border-top: 10px solid orange;
+  border-bottom: 10px solid orange;
+}
+
+h2 {
+  color: rgb(66, 66, 85);
+  font-weight: bold;
+}
+
+
+@media (min-width: 950px) {
+  .row1-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .row2-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .box-down {
+      position: relative;
+      top: 150px;
+  }
+  .box {
+      width: 15%;
+   
+  }
+  .header p {
+      width: 30%;
+  }
+  
+}
+
+
 /* *******************************R O U T E S   L O G I N ****************************************************** */
 .login {
   background-image: url("imagen/fondos/login.svg");
