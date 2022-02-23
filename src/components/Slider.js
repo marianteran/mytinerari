@@ -30,7 +30,7 @@ const Slider = () => {
     };
     return (
         <>
-            <main className='container'>
+            <main className='container'> 
 
                 <Carousel responsive={responsive} infinite={true} >
                     {cities.map((item) => {

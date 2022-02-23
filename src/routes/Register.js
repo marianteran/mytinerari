@@ -23,34 +23,34 @@ const Register = () => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" className="form-control my-2" placeholder="First Name"></input>
+                                        <input type="text" className="form-control my-2" name="first-name" placeholder="First Name"></input>
 
                                     </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-users-cog"></i></span>
                                         </div>
-                                        <input type="text" className="form-control my-2" placeholder="Last Name"></input>
+                                        <input type="text" className="form-control my-2" name="last-name" placeholder="Last Name"></input>
 
                                     </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-portrait"></i></span>
                                         </div>
-                                        <input type="img" className="form-control my-2" placeholder="Picture"></input>
+                                        <input type="img" className="form-control my-2" name="imagen"  placeholder="Picture"></input>
                                     </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" className="form-control my-2" placeholder="Password"></input>
+                                        <input type="password" className="form-control my-2" name="password" placeholder="Password"></input>
                                     </div>
                                   
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-envelope"></i></span>
                                         </div>
-                                        <input type="mail" className="form-control my-2" placeholder="Email"></input>
+                                        <input type="mail" className="form-control my-2" name="email"  placeholder="Email"></input>
                                     </div>
 
                                     <div className="form-group">

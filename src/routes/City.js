@@ -4,11 +4,13 @@ import axios from 'axios';
 import Button from "@mui/material/Button";
 import InformationCity from "../components/InformationCity";
 import Itinerary from "../components/Itinerary";
-import Slider from "../components/Slider";
+
 import {useStateValue} from "../core/context/StateProvider"
 import { useParams } from "react-router-dom";
 
-import fondo from '../imagen/fondos/plano.jpg'
+
+import fondo1 from '../imagen/fondos/fondoslidercity.jpg'
+import Carousel2 from "../components/Carousel2";
 
 const City = () => {
     const [itineraries, setItineraries]=useState([])
@@ -52,28 +54,22 @@ const City = () => {
                         </div>
                     </div>
                 </div>
-
+              
                 <Itinerary itineraries={itineraries} />
 
-                <div className="mt-5 mb-5" >
-                    <div className="container mt-5 mb-0">
-                        <div className="row">
-                            <div className="col-sm-12 col-md-12 col-lg-12">
-                                <div className="titlepage text-center ">
-                                    <h2>
-                                        <Button variant="contained" href="/cities" size="large">
-                                            More City
-                                        </Button>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style={{ backgroundImage: `url(${fondo})` }}>
-                    <Slider />
-                    </div>
-                    
-                </div>
+               
+
+
+
+            <div className="text-center" >
+            <Carousel2 cities={cities} />
+
+            </div>
+
+
+           
+
+
             </main>
         </>
     );
