@@ -28,11 +28,11 @@ const Carousel2 = () => {
 
                             <h2>
                                 <Button variant="contained" href="/cities" size="large">
-                                    More City
+                                    More City 
                                 </Button>
                             </h2>
 
-                        </div>
+                        </div>    
                     </div>
 
 
