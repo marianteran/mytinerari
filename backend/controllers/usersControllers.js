@@ -12,7 +12,7 @@ const usersControllers ={
             const usuarioExiste = await User.findOne({email})
 
             if (usuarioExiste) {
-                res.json({sucess:false, response:" Usuario existe, realice login"})
+                res.json({success:"falseUE", response:" Usuario existe, realice login"})
             }
             else{
                 const passwordHash = bcryptjs.hashSync(password,10)
@@ -23,12 +23,12 @@ const usersControllers ={
                     password:passwordHash
                 })
                 await newUser.save()
-                res.json({sucess:true, response:"Usuario creado exitosamente"})
+                res.json({success:"trueUE", response:"Usuario creado exitosamente"})
             }
 
             
         } catch (error) {
-            res.json({sucess:false, response:null, error:error})
+            res.json({success:"falseUE", response:null, error:error})
             
         }
 

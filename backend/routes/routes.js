@@ -5,6 +5,7 @@ const {ObtenerTodosLosDatos , ObtenerItinerary, ObtenerComentarios}= citiesContr
 const usersControllers =require("../controllers/usersControllers")
 const {nuevoUsuario}= usersControllers
 
+const validator= require("../controllers/validator")
 
 
 Router.route("/datos")
@@ -14,7 +15,7 @@ Router.route("/itinerary/:city")
 .get(ObtenerItinerary)
 
 Router.route("/signup")
-.post(nuevoUsuario)
+.post(validator,nuevoUsuario)
 
 
 Router.route("/comments")

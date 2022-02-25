@@ -11,11 +11,21 @@ const SignUp = () => {
                     lastname:event.target[1].value,
                     email:event.target[2].value,
                     password:event.target[3].value}
-
-        
         
       await axios.post("http://localhost:4000/api/signup",{NuevoUsuario}) 
-      .then(response=>alert(response.data.response)) 
+      .then(response=>
+
+        displayMessage(response.data)
+        )
+
+        function displayMessage(data){
+            if (data.success === "falseVAL") {
+                console.log(data.response.error.details)
+                data.response.error.details.map(error=>alert(error.message))
+                
+            }
+        }
+        
     }
 
 
