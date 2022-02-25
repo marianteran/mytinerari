@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 import { Link as LinkRouter } from "react-router-dom";
 
-const Register = () => {
+const SignUp = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
@@ -62,7 +62,7 @@ const Register = () => {
                             </div>
                             <div className="card-footer">
                                 <div className="d-flex justify-content-center links">
-                                    You have an account?<LinkRouter to="/login">Sign In</LinkRouter>
+                                    You have an account?<LinkRouter to="/signin">Sign In</LinkRouter>
                                 </div>
 
                             </div>
@@ -75,4 +75,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default SignUp

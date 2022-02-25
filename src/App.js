@@ -4,8 +4,8 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import City from './routes/City';
 import Cities from './routes/Cities';
-import Login from './routes/Login';
-import Register from './routes/Register';
+import SignIn from './routes/SignIn';
+import SignUp from './routes/SignUp';
 import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect } from "react";
@@ -46,8 +46,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="cities" element={<Cities />} />
           <Route path="city/:id" element={<City />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
 
         </Routes>
 

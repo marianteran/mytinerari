@@ -75,8 +75,8 @@ const Navbar = () => {
                                     <i className="fas fa-users"></i>
                                 </button>
                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><LinkRouter className="dropdown-item" to="/login"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
-                                    <li><LinkRouter className="dropdown-item" to="/register"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
+                                    <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
+                                    <li><LinkRouter className="dropdown-item" to="/signup"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
 
                                 </ul>
                             </div>
