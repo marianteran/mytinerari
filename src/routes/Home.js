@@ -22,6 +22,7 @@ import fondo from "../imagen/fondos/file.jpg";
 import bannertour from "../imagen/fondos/banner_viajes.png";
 
 
+
 const Home = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -230,6 +231,14 @@ const Home = () => {
                 </div>
 
                 <Slider2 />
+
+           
+
+
+                
+
+
+
             </main>
         </>
     );

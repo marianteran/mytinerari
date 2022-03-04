@@ -14,15 +14,18 @@ const SignUp = () => {
         
       await axios.post("http://localhost:4000/api/signup",{NuevoUsuario}) 
       .then(response=>
-
         displayMessage(response.data)
         )
-
         function displayMessage(data){
             if (data.success === "falseVAL") {
                 console.log(data.response.error.details)
-                data.response.error.details.map(error=>alert(error.message))
+                alert(data.response.error.details.map(error=>error.message))
                 
+            }else if(data.success ==="trueUE"){
+                alert(data.response)
+
+            }else if(data.success ==="falseUE"){
+                alert(data.response)
             }
         }
         

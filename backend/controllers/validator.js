@@ -23,10 +23,12 @@ const validator =(req,res,next)=>{
         }),
 
 
-        password:joi.string().max(30).min(6).trim().pattern(new RegExp("^[a-zA-Z0-9]+$")).required().messages({
+        password:joi.string().max(20).min(6).pattern(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/).required().messages({
 
+            "string.pattern.base":"El password debe contener minimo 6 caracteres y ser alfanumerico",
             "string.min":"El password debe contener minimo 6 caracteres",
-            "string.alphanum":"El password debe ser alfanumerico"
+            "string.max":"El password debe contener maximo 20 caracteres"
+            
         }) 
 
 
