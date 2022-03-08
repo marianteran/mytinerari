@@ -1,16 +1,31 @@
 import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import logo from "../imagen/fondos/logo.png"
-
+import axios from 'axios';
 import gmail from '../imagen/fondos/g.png'
 import face from '../imagen/fondos/f.png'
 import discord from '../imagen/fondos/d.png'
 import twiter from '../imagen/fondos/t.png'
 import insta from '../imagen/fondos/i.png'
 
+import { useStateValue } from '../core/context/StateProvider';
+
 
 
 const Navbar = () => {
+    const [{user}, dispatch] = useStateValue()
+
+    async function cerrarSesion() {
+        const email = user.datosUser.email
+       
+        await axios.post("http://localhost:4000/api/signout",{email})
+        .then(response => 
+         console.log(response)
+        )
+
+
+    }
+
     return (
         <>
             <header className="fixed-top">
@@ -74,8 +89,14 @@ const Navbar = () => {
                                     aria-expanded="false">
                                     <i className="fas fa-users"></i>
                                 </button>
+
+
                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
+                                    { !user?
+                                        <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
+                                        :  <li><div className="dropdown-item" onClick={()=>cerrarSesion()} ><i className="fas fa-sign-in-alt"></i>Sign Out</div></li> 
+                                    }
+                                    
                                     <li><LinkRouter className="dropdown-item" to="/signup"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
 
                                 </ul>

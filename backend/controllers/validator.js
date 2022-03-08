@@ -7,27 +7,27 @@ const validator =(req,res,next)=>{
 
         firstname:joi.string().max(10).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
 
-            "string.min":"El nombre debe contener minimo 3 caracteres",
-            "string.empty":"El campo no puede estar vacio"
+            "string.min":"The name must contain at least 3 characters",
+            "string.empty":"The field cannot be empty"
         }),
 
         lastname:joi.string().max(20).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
 
-            "string.min":"El apellido debe contener minimo 3 caracteres",
-            "string.empty":"El campo no puede estar vacio"
+            "string.min":"The last name must contain at least 3 characters",
+            "string.empty":"The field cannot be empty"
         }),
 
         email:joi.string().email({minDomainSegments:2}).required().messages({
 
-            "string.email":"formato de email incorrecto"
+            "string.email":"Wrong email format"
         }),
 
 
         password:joi.string().max(20).min(6).pattern(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/).required().messages({
 
-            "string.pattern.base":"El password debe contener minimo 6 caracteres y ser alfanumerico",
-            "string.min":"El password debe contener minimo 6 caracteres",
-            "string.max":"El password debe contener maximo 20 caracteres"
+            "string.pattern.base":"The password must contain at least 6 characters, uppercase and be alphanumeric",
+            "string.min":"The password must contain at least 6 characters",
+            "string.max":"The password must contain a maximum of 20 characters"
             
         }) 
 

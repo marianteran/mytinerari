@@ -14,7 +14,7 @@ const CardCities = () => {
 
                         return (
                             <div className="wrapper" key={item._id}>
-                                <div className="container">
+                                <div className="container ">
 
                                     <img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
                                     <div className="bottom">

@@ -3,7 +3,7 @@ const citiesController = require("../controllers/datosControllers")
 const {ObtenerTodosLosDatos , ObtenerItinerary, ObtenerComentarios}= citiesController
 
 const usersControllers =require("../controllers/usersControllers")
-const {nuevoUsuario, verifyEmail}= usersControllers
+const {nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion}= usersControllers
 
 const validator= require("../controllers/validator")
 
@@ -19,6 +19,13 @@ Router.route("/signup")
 
 Router.route("/verify/:uniqueText")
 .get(verifyEmail)
+
+
+Router.route("/signIn")
+.post(accesoUsuario)
+
+Router.route("/signout")
+.post(cerrarSesion)
 
 
 Router.route("/comments")

@@ -1,9 +1,54 @@
 import React,{useEffect} from "react";
-
-
+import axios from "axios";
 import { Link as LinkRouter } from "react-router-dom";
 
+import { actionTypes } from "../core/context/reducer";
+import { useStateValue } from '../core/context/StateProvider';
+
+
 const SignIn = () => {
+
+    const [{user}, dispatch] = useStateValue()
+
+
+    async function loginUser(event) {
+        console.log(event)
+        event.preventDefault()
+        const userData= {
+                    email:event.target[0].value,
+                    password:event.target[1].value}
+
+        
+      await axios.post("http://localhost:4000/api/signIn",{userData}) 
+      .then(response=> 
+        displayMessage(response.data),
+
+        )
+        function displayMessage(data){
+            if (!data.success) {
+                console.log(alert(data.error))
+
+            }
+            else{
+                console.log(data.response)
+            }
+            
+            dispatch({
+                type: actionTypes.USER,
+                user: data.response
+            })
+        
+            
+        }
+        
+    }
+
+
+
+
+
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
@@ -20,7 +65,7 @@ const SignIn = () => {
 
                             </div>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={loginUser}>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-envelope"></i></span>
@@ -37,7 +82,7 @@ const SignIn = () => {
 
 
                                     <div className="form-group">
-                                        <input type="submit" value="Login" className="btn float-right login_btn mt-4"></input>
+                                        <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
                                     </div>
                                 </form>
 
