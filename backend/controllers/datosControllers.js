@@ -48,7 +48,7 @@ const citiesController={
         
     },
 
-    ObtenerComentarios:async(req,resp)=>{
+  /*   ObtenerComentarios:async(req,resp)=>{
         let comments
         let error=null
 
@@ -65,7 +65,7 @@ const citiesController={
             error:error
         })
 
-    }
+    } */
 
   
 }

@@ -2,25 +2,28 @@ export const initialState={
     cities:[],
     itineraries:[],
     user:null,
+    filterCity:[],
 
 }
 
 export const actionTypes={
     CITIESDB: "CITIESDB",
     ITINERARIESDB:"ITINERARIESDB",
-    USER:"USER"
+    USER:"USER",
+    FILTER: "FILTER",
 
 }
 
 const reducer =(state,action)=>{
-    console.log(action)
-    console.log(state)
+    //console.log(action)
+    //console.log(state)
 
     switch (action.type) {
         case "CITIESDB":
             return{
                 ...state,
-                cities:action.cities
+                cities:action.cities,
+                filterCity:action.cities
             }
 
             case "ITINERARIESDB":
@@ -34,6 +37,15 @@ const reducer =(state,action)=>{
                     ...state,
                     user:action.user
                 }
+
+
+            case "FILTER":
+                const filterCity= state.cities.filter(city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim()))
+                 
+                return{
+                     ...state,
+                     filterCity:filterCity
+                }
     
         default:
             return state;
@@ -41,3 +53,13 @@ const reducer =(state,action)=>{
 }
 
 export default reducer;
+
+
+
+/* const filterCity= state.cities?state.cities.filter(city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim())):
+                                            state.cities.filter(city=>city.continent.toLowerCase().startsWith(action.value.toLowerCase().trim())) */
+
+
+
+                                            /* const filterCity= state.cities.filter? (city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim())):
+                                            (city=>city.continent.toLowerCase().startsWith(action.value.toLowerCase().trim())) */

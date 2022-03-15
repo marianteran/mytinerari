@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import City from './routes/City';
 import Cities from './routes/Cities';
 import SignIn from './routes/SignIn';
+import User from './routes/User';
+
 import SignUp from './routes/SignUp';
 import Home from './routes/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -34,7 +36,7 @@ function App() {
   }, [])
 
 
-  console.log(cities)
+  //console.log(cities)
 
 
 
@@ -47,7 +49,9 @@ function App() {
           <Route path="cities" element={<Cities />} />
           <Route path="city/:id" element={<City />} />
           <Route path="signin" element={<SignIn />} />
+          <Route path="user" element={<User/>} />
           <Route path="signup" element={<SignUp />} />
+
 
         </Routes>
 

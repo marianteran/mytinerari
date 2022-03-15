@@ -14,21 +14,18 @@ import {useStateValue} from "../core/context/StateProvider"
 const Itinerary = (props) => {
 
     const itineraries=props.itineraries
-    /* const [{cities,itineraries}, dispatch]= useStateValue()
-
-    const itinerarySelect= props.itineraries
-
-    const cityItinerary= itineraries.filter(city=> city.city == itinerarySelect)
-
    
-    console.log(cityItinerary) */
-
-    // const itineraries = props.itineraries
-    // console.log(itineraries)
-
 
     const [like, setLike] = useState(0);
     const [see, setSee] = useState(false);
+
+    /* const [button, setButton] = useState(false);
+
+    const toogleButton = () => {
+        setButton(!button);
+       
+    }; */
+
 
 
     return (
@@ -115,7 +112,7 @@ const Itinerary = (props) => {
                                             </div>
                                         </div>
 
-                                        <Comments />
+                                        <Comments itinerario={item._id} />
 
 
                                     </div>

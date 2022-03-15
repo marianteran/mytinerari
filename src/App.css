@@ -24,11 +24,12 @@
   background: rgb(6, 129, 156);
 }
 
-.fa-user-plus,
-.fa-sign-in-alt {
+/* .fa-user-plus,
+.fa-sign-in-alt,
+.fa-person-running{
   color: white;
   margin-right: 8%;
-}
+} */
 
 header {
   background: url("imagen/fondos/titulo.png");
@@ -123,6 +124,24 @@ header {
 
 .nav-link:hover {
   color: rgb(6, 129, 156) !important;
+}
+
+
+.usernav{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+
+.dropdown-item{
+  color: white;
+ 
+}
+.dropdown-item i{
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /* ******************************* C O M P O N E N T E - T O U R S*************************** */
@@ -493,23 +512,50 @@ header {
   border-radius: 20px;
   margin-bottom: 4%;
   color: black;
+  padding: 1%;
 }
 
 .comentario-user-imag {
   width: 45px;
   height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+ 
 }
 
 .comentario-user-imag img {
   width: 100%;
   border-radius: 50%;
-  margin: 15%;
+  margin-left: 5rem;
+  
+  
 }
 
-.comentario-user-tex {
+.comentario-user-imag p{
+  margin-left: 5%;
+}
+
+
+/* .comentario-user-tex {
   padding: 1% 5% 1% 5%;
   text-align: justify;
+} */
+
+.comentario-user-tex input{
+  background-color: rgb(217, 233, 255);
+  padding: 1% 5% 1% 5%;
+  width: 100%;
+  height: 100%;
+  border: none !important;
 }
+
+.btn-delete-up{
+  text-align: right;
+}
+
+
 
 .city-texarea {
   width: 100%;
@@ -1083,7 +1129,7 @@ footer i {
   text-align: right;
 }
 
-/* *******************************R O U T E S   L O G I N ****************************************************** */
+/* *******************************R O U T E S   S I G N I N ****************************************************** */
 .login {
   background-image: url("imagen/fondos/login.svg");
   background-size: cover;
@@ -1147,7 +1193,8 @@ form i {
   font-size: 25px;
 }
 
-/* *********************************** R O U T E S    R E G I S T E R *************************************************** */
+/* *********************************** R O U T E S    S I G N U P *************************************************** */
+
 
 .register {
   background-image: url("imagen/fondos/register.svg");
@@ -1212,6 +1259,189 @@ form i {
   font-size: 25px;
 }
 
+.content-btn-signup{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.signupbtn-faceb{
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: rgb(76, 105, 186);
+ 
+
+  
+
+}
+
+
+.signupbtn-faceb .iconface{
+  color: white;
+  margin-right: 5px;
+  font-size: 20px;
+
+ 
+}
+
+
+/* *********************************** R O U T E S    D A T O S  - - U S E R *************************************************** */
+
+.main-datosUser{
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+}
+
+
+.banner-datoUser {
+  background:url(./imagen/datouser/bgdatouser.jpg);
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 4% 2% 2% 2%;
+  margin-top: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+
+.datoUser-title{
+  color:white;
+  font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  text-transform: uppercase;
+  font-size: 4rem;
+
+}
+
+
+.datoUser-subtitle{
+  color:white;
+  font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+
+.content-marco{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ margin: auto;
+  margin-bottom: 5vh;
+
+}
+
+.marco{
+  background-image: url(./imagen/datouser/marco.jpg);
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.marco img{
+  padding: 10px;
+  height: 70%;
+  border-radius: 2rem;
+}
+
+.marco-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  line-height: 30px;
+
+}
+
+/* itinerarios user */
+
+.myItinerari{
+  text-align: center;
+}
+.container-user-itinerari{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+
+.content-user-itinerari{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(25, 135, 84, 0.5);
+}
+
+.content-user-itinerari h5{
+  text-align: center;
+  padding: 1rem;
+}
+
+
+.content-user-itinerari-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 1rem;
+
+}
+
+.content-img{
+  height: 100px;
+  width: 150px;
+  object-fit: cover;
+  border: 2px solid yellow;
+  border-radius: 2rem;
+  
+
+}
+
+.content-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.content-user-itinerari-comment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 1rem;
+}
+
+.content-user-itinerari-comment p{
+  text-align: justify;
+}
+
 /********************************************** M E D I A -Q U E R Y************************ */
 
 @media screen and (min-width: 992px) and (max-width: 1280px) {
@@ -1268,6 +1498,11 @@ form i {
   .swiper-city {
     width: 180px !important;
   }
+
+
+
+
+
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -1329,6 +1564,14 @@ form i {
   .swiper-city {
     width: 150px !important;
   }
+
+  
+  .datoUser-subtitle{
+    font-size: 2rem;
+  }
+
+
+
 }
 
 @media screen and (max-width: 575px) {
@@ -1408,6 +1651,11 @@ form i {
   .tours-card {
     width: 200px;
   }
+
+  
+  .datoUser-subtitle{
+    font-size: 1.7rem;
+  }
 }
 
 @media screen and (min-width: 421px) and (max-width: 574px) {
@@ -1468,6 +1716,15 @@ form i {
   .about-image img {
     text-align: center;
     width: 80%;
+  }
+
+  .datoUser-title{
+    font-size: 2rem;
+  }
+  
+  .datoUser-subtitle{
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
 

@@ -5,7 +5,7 @@ const validator =(req,res,next)=>{
 
     const Schema=joi.object({
 
-        firstname:joi.string().max(10).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
+        firstname:joi.string().max(40).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
 
             "string.min":"The name must contain at least 3 characters",
             "string.empty":"The field cannot be empty"
@@ -23,13 +23,15 @@ const validator =(req,res,next)=>{
         }),
 
 
-        password:joi.string().max(20).min(6).pattern(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/).required().messages({
+        password:joi.string().max(40).min(6).pattern(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/).required().messages({
 
             "string.pattern.base":"The password must contain at least 6 characters, uppercase and be alphanumeric",
             "string.min":"The password must contain at least 6 characters",
             "string.max":"The password must contain a maximum of 20 characters"
             
-        }) 
+        }) ,
+
+        from: joi.string()
 
 
 

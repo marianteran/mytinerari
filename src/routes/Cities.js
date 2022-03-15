@@ -1,7 +1,9 @@
 import React,{useEffect} from "react";
 import CardCities from "../components/CardCities";
-import Switch from "../components/Switch";
+
 import Button from "@mui/material/Button";
+
+import Search from "../components/Search"
 
 
 const Cities = () => {
@@ -20,7 +22,7 @@ const Cities = () => {
 
                 </div>
 
-                <Switch />
+                <Search/>
                 <CardCities/>       
 
             </main>

@@ -5,6 +5,9 @@ const {ObtenerTodosLosDatos , ObtenerItinerary, ObtenerComentarios}= citiesContr
 const usersControllers =require("../controllers/usersControllers")
 const {nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion}= usersControllers
 
+const commentControllers= require("../controllers/comentariosControllers")
+const {cargaComentarios,obtenerComentarios,borrarComentario, modificarComentario}= commentControllers
+
 const validator= require("../controllers/validator")
 
 
@@ -29,7 +32,13 @@ Router.route("/signout")
 
 
 Router.route("/comments")
-.get(ObtenerComentarios)
+.post(cargaComentarios)
+
+Router.route("/comments/:id")
+.get(obtenerComentarios)
+.delete(borrarComentario)
+.put(modificarComentario)
+
 
 module.exports= Router
 

@@ -6,7 +6,7 @@ import dolar from '../imagen/fondos/dolar.png'
 
 const InformationCity = (props) => {
     const cities = props.citySelect
-    console.log(cities)
+    //console.log(cities)
 
     return (
 

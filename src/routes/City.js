@@ -18,7 +18,7 @@ const City = () => {
     const{id}= useParams()
     const citySelect= cities.filter(item=>item._id === id)
 
-    console.log(itineraries)
+    //console.log(itineraries)
 
      
     useEffect(() => {
@@ -33,7 +33,7 @@ const City = () => {
     
       }, [])
 
-      console.log(itineraries)
+      //console.log(itineraries)
 
 
    

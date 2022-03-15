@@ -4,13 +4,13 @@ import { Link as LinkRouter } from "react-router-dom";
 import {useStateValue} from "../core/context/StateProvider"
 
 const CardCities = () => {
-    const [{cities}, dispatch]= useStateValue()
+    const [{filterCity}, dispatch]= useStateValue()
 
     return (
         <>
             <div className="container contenedor-city">
                 <div className="card_city_body center" >
-                    {cities.map((item) => { 
+                    {filterCity?.map((item) => { 
 
                         return (
                             <div className="wrapper" key={item._id}>

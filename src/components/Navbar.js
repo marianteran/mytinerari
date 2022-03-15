@@ -7,21 +7,29 @@ import face from '../imagen/fondos/f.png'
 import discord from '../imagen/fondos/d.png'
 import twiter from '../imagen/fondos/t.png'
 import insta from '../imagen/fondos/i.png'
+import avatar from '../imagen/avatar/avatar1.jpg'
+
 
 import { useStateValue } from '../core/context/StateProvider';
-
+import { actionTypes } from "../core/context/reducer";
 
 
 const Navbar = () => {
-    const [{user}, dispatch] = useStateValue()
+    const [{ user }, dispatch] = useStateValue()
 
     async function cerrarSesion() {
         const email = user.datosUser.email
-       
-        await axios.post("http://localhost:4000/api/signout",{email})
-        .then(response => 
-         console.log(response)
-        )
+
+        await axios.post("http://localhost:4000/api/signout", { email })
+            .then(response => {
+                //console.log(response)
+                dispatch({
+                    type: actionTypes.USER,
+                    user: null
+                })
+
+
+            })
 
 
     }
@@ -42,7 +50,7 @@ const Navbar = () => {
                         </div>
                         <div className="col-xs-8 col-sm-8 col-md-8 d-flex" id="navbarNavAltMarkup">
                             <div className="nav-first-icon ">
-                            <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
+                                <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
                                 <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><img src={insta} alt=""></img></a>
                                 <a href="https://es-la.facebook.com/" target="blank" className="nav-first" ><img src={face} alt=""></img></a>
                                 <a href="https://twitter.com/?lang=es" target="blank" className="nav-first"><img src={twiter} alt=""></img></a>
@@ -84,32 +92,44 @@ const Navbar = () => {
                             </ul>
 
 
+                            {!user ?
                             <div className="dropdown icon-login">
                                 <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     <i className="fas fa-users"></i>
                                 </button>
-
-
                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    { !user?
-                                        <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
-                                        :  <li><div className="dropdown-item" onClick={()=>cerrarSesion()} ><i className="fas fa-sign-in-alt"></i>Sign Out</div></li> 
-                                    }
-                                    
+                                    <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
                                     <li><LinkRouter className="dropdown-item" to="/signup"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
-
                                 </ul>
                             </div>
 
+                            :
+                            <div className="dropdown icon-login">
+                                <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img className="usernav" src={avatar}></img>
+                                </button>
+                                <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                                    <li><LinkRouter className="dropdown-item " onClick={() => cerrarSesion()} to="/">Sign Out<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
+
+                                </ul>
+
+                            </div>
+                            }
+
+
                         </div>
+
+
+
 
 
                     </div>
 
                 </nav>
 
-            </header>
+            </header >
 
         </>
     );

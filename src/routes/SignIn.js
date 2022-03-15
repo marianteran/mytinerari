@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Link as LinkRouter } from "react-router-dom";
 
@@ -6,57 +6,67 @@ import { actionTypes } from "../core/context/reducer";
 import { useStateValue } from '../core/context/StateProvider';
 
 
+import swal from 'sweetalert';
+
+
+import FacebookIN from "../components/signinbtn/FacebookIN";
+import GoogleIN from "../components/signinbtn/GoogleIN";
+
+
+
 const SignIn = () => {
 
-    const [{user}, dispatch] = useStateValue()
+    const [{ user }, dispatch] = useStateValue()
 
+   
 
     async function loginUser(event) {
         console.log(event)
         event.preventDefault()
-        const userData= {
-                    email:event.target[0].value,
-                    password:event.target[1].value}
-
-        
-      await axios.post("http://localhost:4000/api/signIn",{userData}) 
-      .then(response=> 
-        displayMessage(response.data),
-
-        )
-        function displayMessage(data){
-            if (!data.success) {
-                console.log(alert(data.error))
-
-            }
-            else{
-                console.log(data.response)
-            }
-            
-            dispatch({
-                type: actionTypes.USER,
-                user: data.response
-            })
-        
-            
+        const userData = {
+            email: event.target[0].value,
+            password: event.target[1].value
         }
-        
+
+
+        await axios.post("http://localhost:4000/api/signIn", { userData })
+            .then(response => {
+
+                if (response.data.success === false) {
+                    swal({
+                        title: "error",
+                        icon: "error",
+                        text: response.data.error,
+                        buttons: "ok",
+                        customClass:"swal"
+                    })
+                } else if (response.data.success === true) {
+                    swal({
+                        title: "Welcome",
+                        icon: "success",
+                        buttons: "ok",
+                        customClass:"swal"
+                    })
+                }
+                dispatch({
+                    type: actionTypes.USER,
+                    user: response.data.response
+                })
+
+
+
+            })
+
     }
 
-
-
-
-
-
-
     useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
+        window.scrollTo(0, 0);
+    }, []);
 
-      
+
     return (
         < >
-            <main className='login' > 
+            <main className='login' >
                 <div className="container contenedor-login" >
                     <div className="d-flex justify-content-center h-100">
                         <div className="card-login">
@@ -81,13 +91,38 @@ const SignIn = () => {
                                     </div>
 
 
+
                                     <div className="form-group">
-                                        <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
+
+                                    <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
+
+
+                                   {/*  {loginUser? <LinkRouter className="dropdown-item "to="/user">
+                                            <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
+                                        </LinkRouter> :''} */}
+
+
+                                    
+                                       {/*  <LinkRouter className="dropdown-item "to="/user">
+                                            <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
+                                        </LinkRouter> */}
                                     </div>
                                 </form>
 
 
+                              
+
+
                             </div>
+
+                            <div className="content-btn-signup">
+                                <GoogleIN />
+                                <FacebookIN />
+                            </div>
+
+
+
+
                             <div className="card-footer">
                                 <div className="d-flex justify-content-center links">
                                     Don't have an account yet?<LinkRouter to="/signup">Sign Up</LinkRouter>
