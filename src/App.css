@@ -21,7 +21,8 @@
 }
 
 .dropdown-menu {
-  background: rgb(6, 129, 156);
+  background: red;
+  /* background: rgb(6, 129, 156); */
 }
 
 /* .fa-user-plus,
