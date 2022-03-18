@@ -6,12 +6,19 @@ import swal from 'sweetalert';
 import Facebook from "../components/signupbtn/Facebook";
 import Google from "../components/signupbtn/Google";
 
+
+import like from "../imagen/sign/like.png"
+import comment from "../imagen/sign/comment.png"
+import create from "../imagen/sign/create.png"
+import bguser from "../imagen/datouser/avatar1.png"
+
 const SignUp = () => {
 
     async function crearUsuario(event) {
         console.log(event)
         event.preventDefault()
         const NuevoUsuario = {
+            
             firstname: event.target[0].value,
             lastname: event.target[1].value,
             email: event.target[2].value,
@@ -20,40 +27,40 @@ const SignUp = () => {
         }
 
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
-            .then(response =>{ 
-                //console.log(response)
+            .then(response => {
+                console.log(response)
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details
                     //console.log(detailsError)
-                        detailsError.map(error => 
+                    detailsError.map(error =>
                         swal({
-                        title:" error",
-                        icon: "error",
-                        text:error.message,
-                        buttons:"ok"
+                            title: " error",
+                            icon: "error",
+                            text: error.message,
+                            buttons: "ok"
                         }))
                 }
                 else if (response.data.success === true) { //nuevo usuario creado envia email
                     //console.log(alert(data.response))
                     swal({
-                        title:response.data.response,
-                        icon:"success",
+                        title: response.data.response,
+                        icon: "success",
                         buttons: "ok"
                     })
-    
-    
+
+
                 } else if (response.data.success === false) {
                     //console.log(alert(data.response)) // usuario ya existe
                     swal({
-                        title:response.data.response,
-                        icon:"success",
+                        title: response.data.response,
+                        icon: "success",
                         buttons: "ok"
                     })
-    
+
                 }
-                
+
             })
-            
+
 
 
     }
@@ -66,19 +73,50 @@ const SignUp = () => {
 
 
     return (
+
+
         <>
+
+
             <main className='register'>
+
+                <div className="title-siginup">
+
+                    <h1 className="text-center">Create Account</h1>
+                    <h4 className="text-center">Please fill in the form to get access to all the features.</h4>
+
+                </div>
                 <div className="container contenedor-register">
-                    <div className="d-flex justify-content-center h-100">
+
+
+                    <div className="contenedor-signup">
                         <div className="card-register">
-                            <div className="card-header">
+                            {/* <div className="card-header">
                                 <h3 className='mt-4'>Sign Up!</h3>
-                               
-
-
-                            </div>
+                            </div> */}
                             <div className="card-body">
-                                <form onSubmit={crearUsuario}>
+                                <form onSubmit={crearUsuario} className="mx-auto">
+
+                                    <div className="content-changeUser"> 
+                                    <div
+                                        className="changeUser"
+                                        style={{ backgroundImage: `url(${bguser})` }}></div>
+
+                                    <input
+                                        name='avatar'
+                                        type='file'
+                                        accept='/images/*'
+                                        id='upload-button'
+                                        hidden
+
+                                    //onChange={(e) => this.handlePhoto(e)}
+                                    ></input>
+                                    <label >
+                                        <button color='primary' component='span' size='small'>
+                                            Change Photo
+                                        </button>
+                                    </label>
+                                    </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>
@@ -86,6 +124,8 @@ const SignUp = () => {
                                         <input type="text" className="form-control my-2" name="firstname" placeholder="First Name"></input>
 
                                     </div>
+
+
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-users-cog"></i></span>
@@ -114,14 +154,18 @@ const SignUp = () => {
                                     </div>
                                 </form>
 
-
                             </div>
 
                             <div className="content-btn-signup">
-                                <Google />
-                                <Facebook />
-                            </div>
 
+                                <div className="boton-goog-face">
+                                    <Google />
+                                </div>
+                                <div className="boton-goog-face">
+                                    <Facebook />
+                                </div>
+
+                            </div>
 
                             <div className="card-footer">
                                 <div className="d-flex justify-content-center links">
@@ -131,12 +175,27 @@ const SignUp = () => {
                             </div>
 
 
-
-
-
-
                         </div>
+
+
+                        <div className="benefitsContainer" >
+                            <div className="description">
+                                <img src={like} alt="" ></img>
+                                <p>You will be able to like itineraries you want and save them in your profile to watch them later.</p>
+                            </div>
+                            <div className="description">
+                                <p>Without registration you can read all users comments. But post a new comment is only available for registered users.</p>
+                                <img src={comment} alt="" ></img>
+                            </div>
+                         
+                        </div>
+
+
+
+
                     </div>
+
+
                 </div>
             </main>
         </>

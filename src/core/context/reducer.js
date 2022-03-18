@@ -3,6 +3,7 @@ export const initialState={
     itineraries:[],
     user:null,
     filterCity:[],
+    continent:[]
 
 }
 
@@ -11,6 +12,7 @@ export const actionTypes={
     ITINERARIESDB:"ITINERARIESDB",
     USER:"USER",
     FILTER: "FILTER",
+    CONTINENT:"CONTINENT"
 
 }
 
@@ -23,7 +25,8 @@ const reducer =(state,action)=>{
             return{
                 ...state,
                 cities:action.cities,
-                filterCity:action.cities
+                filterCity:action.cities,
+                filterContinent:action.cities
             }
 
             case "ITINERARIESDB":
@@ -40,12 +43,30 @@ const reducer =(state,action)=>{
 
 
             case "FILTER":
-                const filterCity= state.cities.filter(city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim()))
-                 
+                const filterCity= []
+                            if( action.value.filterBy === "Filter by Cities" ){
+                              filterCity.push(...state.cities.filter(city=>city.city.toLowerCase().startsWith(action.value.value.toLowerCase().trim()))) 
+                            } else {
+                                filterCity.push(...state.cities.filter(city=>city.country.toLowerCase().startsWith(action.value.value.toLowerCase().trim()))) 
+                            }
+                                     
                 return{
                      ...state,
                      filterCity:filterCity
                 }
+
+                case "CONTINENT":
+                    const filterContinent = state.cities.filter(city => city.continent)
+
+
+                    return{
+                        ...state,
+                        filterContinent:filterContinent
+                    }
+    
+
+
+
     
         default:
             return state;
@@ -53,13 +74,3 @@ const reducer =(state,action)=>{
 }
 
 export default reducer;
-
-
-
-/* const filterCity= state.cities?state.cities.filter(city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim())):
-                                            state.cities.filter(city=>city.continent.toLowerCase().startsWith(action.value.toLowerCase().trim())) */
-
-
-
-                                            /* const filterCity= state.cities.filter? (city=>city.city.toLowerCase().startsWith(action.value.toLowerCase().trim())):
-                                            (city=>city.continent.toLowerCase().startsWith(action.value.toLowerCase().trim())) */

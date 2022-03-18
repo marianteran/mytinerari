@@ -32,10 +32,10 @@
 } */
 
 header {
-  background: url("imagen/fondos/titulo.png");
+  /* background: url("imagen/fondos/titulo.png"); */
   background-size: auto;
   box-shadow: #060606 0px 0px 3px 0px;
-  z-index: 999;
+  /* z-index: 999; */
   width: 100%;
   left: 0;
   top: 0;
@@ -44,6 +44,7 @@ header {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: rgb(9, 98,130);
+  /* clip-path: polygon(40% 52%, 100% 81%, 100% 100%, 0 100%, 0 0, 28% 0); */
 }
 
 .navbar-brand {
@@ -99,6 +100,14 @@ header {
   font-size: 18px;
 }
 
+.pruebados{
+  background-color: white;
+ width: 70%;
+  background-size: 100% 100%;
+  padding-top:20px ;
+  margin-top: 0 !important;
+  clip-path: polygon(100% 0, 100% 81%, 100% 100%, 19% 100%, 0 0, 28% 0);
+}
 .nav-first-icon {
   display: flex;
   flex-direction: row;
@@ -108,6 +117,7 @@ header {
   align-content: center;
   text-align: center;
   margin: 0 !important;
+  background-color: white;
 }
 
 .nav-first {
@@ -1146,10 +1156,10 @@ footer i {
 }
 
 .card-login {
-  height: 350px;
+  height: 400px;
   margin-top: auto;
   margin-bottom: auto;
-  width: 400px;
+  width: 450px;
   background-color: rgba(0, 0, 0, 0.5) !important;
   text-align: center;
 }
@@ -1200,22 +1210,67 @@ form i {
   background-image: url("imagen/fondos/register.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
-  border: 1px outset transparent;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  
+  
 }
 
-.contenedor-register {
+.title-siginup{
+  text-align: center;
+  color: whitesmoke;
+  margin: 5%;
+  font-weight: bold;
+  text-shadow: black 0.1em 0.1em 0.5em;
+}
+
+.contenedor-signup{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+/* .contenedor-register {
   height: 100%;
   align-content: center;
-  margin-top: 50vh;
-  margin-bottom: 40vh;
+
+} */
+
+
+div.benefitsContainer{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6vw;
+  color: whitesmoke;
+}
+
+
+div.benefitsContainer .description{
+  margin: 3vh 0;
+  display: flex;
+}
+
+div.description{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+div.description img{
+  width: 120px;
+  margin-right: 1em;
 }
 
 .card-register {
   /* height: 460px; */
   margin-top: auto;
   margin-bottom: auto;
-  width: 400px;
+  width: 450px;
   background-color: rgba(0, 0, 0, 0.5) !important;
   text-align: center;
 }
@@ -1261,11 +1316,11 @@ form i {
 
 .content-btn-signup{
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 
 }
 
@@ -1278,9 +1333,13 @@ form i {
  
 
   
-
 }
 
+.boton-goog-face{
+  margin: 1%;
+ 
+  
+}
 
 .signupbtn-faceb .iconface{
   color: white;
@@ -1288,6 +1347,44 @@ form i {
   font-size: 20px;
 
  
+}
+
+.content-changeUser{
+ 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.changeUser{
+  width: 150px;
+  height: 150px;
+  
+  border-radius: 50%;
+  box-shadow: 0px 2px 3px 2px rgba(255, 254, 254, 0.75);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ text-align: center;
+ 
+ 
+  
+}
+
+.changeUser img{
+  width: 100%;
+  
+}
+
+.content-changeUser label{
+  padding: 10px;
+}
+
+.content-changeUser button{
+  border: none;
+  background-color: transparent;
+  color: #ffc312;
 }
 
 
@@ -1442,6 +1539,221 @@ form i {
   text-align: justify;
 }
 
+
+
+
+/* *********************************** R O U T E S    C O N T I N E N T *************************************************** */
+
+.continent{
+  margin-top: 5vh;
+}
+ 
+.banner-cities1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./imagen/fondos/banner-city.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  height: 470px;
+  
+  text-align: center;
+  margin-top: 5%;
+  clip-path: polygon(
+    50% 0%,
+    82% 0,
+    100% 0,
+    100% 90%,
+    81% 94%,
+    50% 100%,
+    20% 94%,
+    0 90%,
+    0 0,
+    21% 0
+  );
+  
+} 
+
+
+/* .banner-cities1 {
+  background:url("./imagen/continent/bg2.jpg" );
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 4% 2% 2% 2%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+} */
+
+.continent-image {
+
+  margin-top: -6%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 4% 2% 0% 2%;
+ 
+
+}
+
+
+.continent-image img{
+  width: 100%;
+}
+
+.contenedor-btn-continent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+
+ 
+}
+.container-btn-continent{
+ 
+  margin: 0% 2% 2% 2%;
+  background-color: white;
+  border: 2px solid transparent;
+  box-shadow: 1px 2px 17px 0px  rgb(5, 133, 160);
+  border-radius: 1rem;
+  padding: 2px;
+}
+
+
+
+.container-btn-continent:hover{
+  transform: translateY(10px);
+}
+
+.btn-continent{
+  width: 70px;
+  height: 70px;
+  border: none;
+  background-color: white;
+}
+.btn-continent1{
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+ 
+}
+
+.btn-continent1 img{
+  width: 100%;
+  border-radius: 1rem;
+ 
+}
+
+.btn-continent img{
+  width: 100%;
+  border-radius: 1rem;
+  
+}
+
+/* cardddddd continent */
+.portfolio__container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  margin: auto;
+
+}
+
+
+.flip-container {
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
+  perspective: 1000px; 
+  margin: 1rem;
+  
+
+}
+
+.portfolio__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 1px 2px 17px 0px  rgb(5, 133, 160);
+  border-radius: 1rem;
+  background: #ffc312;
+  
+}
+
+
+.flip-container:hover .portfolio__card {
+  transform: rotateY(180deg);
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.front {
+
+padding: 0.2rem;
+border-radius: 1rem;
+
+
+  
+}
+
+.front img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+
+.back {
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(180deg);
+  border-radius: 1rem;
+  border: 2px solid blue;
+}
+
+
+.back p{
+  text-align: justify;
+  padding: 1% 3% 1% 3%;
+  font-size: 12px;
+}
+
+
+.back h4{
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.back h6{
+  text-align: left !important;
+}
+
+
+
 /********************************************** M E D I A -Q U E R Y************************ */
 
 @media screen and (min-width: 992px) and (max-width: 1280px) {
@@ -1500,8 +1812,21 @@ form i {
   }
 
 
+  .benefitsContainer{
+    width: 100% !important;
+}
 
 
+.title-siginup{
+  
+  
+  margin: 12% 0% 10% 0%;
+}
+
+
+.pruebados{
+  width: 90%;
+}
 
 }
 
@@ -1570,6 +1895,19 @@ form i {
     font-size: 2rem;
   }
 
+  .benefitsContainer{
+    width: 100% !important;
+}
+
+.title-siginup{
+  
+  
+  margin: 15% 0% 10% 0%;
+}
+
+.pruebados{
+  width: 90%;
+}
 
 
 }
@@ -1656,6 +1994,20 @@ form i {
   .datoUser-subtitle{
     font-size: 1.7rem;
   }
+
+  .benefitsContainer{
+    width: 100% !important;
+}
+
+  .title-siginup{
+    margin: 20% 0% 10% 0%;  
+  }
+
+  .pruebados{
+    width: 100%;
+  }
+
+
 }
 
 @media screen and (min-width: 421px) and (max-width: 574px) {
@@ -1726,6 +2078,29 @@ form i {
     text-align: center;
     font-size: 1.5rem;
   }
+
+  .benefitsContainer{
+    width: 100% !important;
+  }
+
+  .title-siginup{
+  
+    margin: 30% 0% 10% 0%;
+  
+  }
+  .pruebados{
+    width: 100%;
+  }
+
+  .btn-continent{
+    width: 50px;
+    height: 50px;
+    
+  }
+
+
+
+
 }
 
 .slider-static {
@@ -1793,4 +2168,5 @@ form i {
   background-repeat: no-repeat;
   object-fit: contain;
 }
+
 

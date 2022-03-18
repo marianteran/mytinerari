@@ -49,7 +49,7 @@ const GoogleIN = () => {
   return (
     <div> <GoogleLogin
     clientId="831751011945-deholj4p37i86qm68sg5nkfctlvcrone.apps.googleusercontent.com"
-    buttonText="Sign In"
+    buttonText="Sign In With Google"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
     cookiePolicy={'single_host_origin'}

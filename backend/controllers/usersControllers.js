@@ -3,6 +3,7 @@ const bcryptjs = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+const { response } = require("express");
 
 
 async function sendEmail(email, uniqueText) {
@@ -135,7 +136,8 @@ const usersControllers = {
                     let passwordCoincide = bcryptjs.compareSync(password,usuario.password);
 
                     if (passwordCoincide) {
-                        const token = jwt.sign({ ...usuario }, process.env.SECRETKEY);
+                        
+                        
                         const datosUser = {
                             firstname: usuario.firstname,
                             lastname: usuario.lastname,
@@ -144,6 +146,8 @@ const usersControllers = {
                         };
                         usuario.connected = true;
                         await usuario.save();
+
+                        const token = jwt.sign({...datosUser }, process.env.SECRETKEY, {expiresIn:60*60*24});
                         res.json({
                             success: true,
                             from: "controller",
@@ -173,8 +177,25 @@ const usersControllers = {
 
         await user.save();
 
-        res.json({ success: true, response: "Closed section" });
-    },    
+        res.json({ success: true, response: "Your session has been closed" });
+    }, 
+    
+    
+    verificarToken: async(req, res)=>{
+
+        if (!req.error) {
+            res.json({success:true,
+                datosUser:{
+                firstname:req.user.firstname,
+                lastname:req.user.lastname,
+                email:req.user.email,
+                id: req.user.id },
+                response: "Welcome Back " + req.user.firstname})
+            
+        }else{
+            res.json({success:false, response:" Please sign again"})
+        }
+    }
           
 };
 

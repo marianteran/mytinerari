@@ -41,6 +41,8 @@ const SignIn = () => {
                         customClass:"swal"
                     })
                 } else if (response.data.success === true) {
+                    //console.log(response.data)
+                    localStorage.setItem("token", response.data.response.token)
                     swal({
                         title: "Welcome",
                         icon: "success",
@@ -67,11 +69,15 @@ const SignIn = () => {
     return (
         < >
             <main className='login' >
+
+
                 <div className="container contenedor-login" >
+ 
                     <div className="d-flex justify-content-center h-100">
+                        
                         <div className="card-login">
                             <div className="card-header-login">
-                                <h3 className='mt-4'>Welcome!</h3>
+                                <h3 className='mt-4'>Welcome Back!</h3>
 
                             </div>
                             <div className="card-body">
@@ -115,13 +121,18 @@ const SignIn = () => {
 
                             </div>
 
+                            
+
                             <div className="content-btn-signup">
-                                <GoogleIN />
-                                <FacebookIN />
-                            </div>
-
-
-
+                          
+                          <div className="boton-goog-face"> 
+                          <GoogleIN />
+                          </div> 
+                          <div className="boton-goog-face"> 
+                          <FacebookIN />
+                          </div> 
+                          
+                      </div>
 
                             <div className="card-footer">
                                 <div className="d-flex justify-content-center links">

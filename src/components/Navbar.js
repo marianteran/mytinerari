@@ -20,35 +20,40 @@ const Navbar = () => {
     async function cerrarSesion() {
         const email = user.datosUser.email
 
-        await axios.post("http://localhost:4000/api/signout", { email })
+        await axios.post("http://localhost:4000/api/signout", {email})
             .then(response => {
-                //console.log(response)
-                dispatch({
-                    type: actionTypes.USER,
-                    user: null
-                })
+                
+                if(response.data.success){
+                    localStorage.removeItem("token")
+                    dispatch({
+                        type: actionTypes.USER,
+                        user: null
+                    })
+                }
 
-
+                alert(response.data.response)
+               
             })
 
+            
 
-    }
+    } //console.log(user)
 
     return (
         <>
             <header className="fixed-top">
-                <nav className="mt-3  ">
-                    <div className="container-fluid d-flex ">
-                        <div className="ccol-xs-4 col-sm-4 col-md-4 d-flex">
+                <nav className="container-fluid d-flex ">
+                   
+                        <div className="col-xs-4 col-sm-4 col-md-4 d-flex">
                             <nav className="navbar-light ">
                                 <div className="container">
-                                    <LinkRouter className="navbar-brand" to="/">
-                                        <img src={logo} alt="logo" />
+                                    <LinkRouter className="navbar-brand " to="/">
+                                        <img src={logo} alt="logo" className="pt-2" />
                                     </LinkRouter>
                                 </div>
                             </nav>
                         </div>
-                        <div className="col-xs-8 col-sm-8 col-md-8 d-flex" id="navbarNavAltMarkup">
+                        <div className="col-xs-8 col-sm-8 col-md-8 d-flex pruebados" id="navbarNavAltMarkup" >
                             <div className="nav-first-icon ">
                                 <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
                                 <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><img src={insta} alt=""></img></a>
@@ -60,7 +65,7 @@ const Navbar = () => {
 
                             </div>
                         </div>
-                    </div>
+                    
                 </nav>
                 <nav className="navbar  navbar-expand-lg navbar-light   ">
                     <div className="container-fluid">

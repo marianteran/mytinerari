@@ -46,11 +46,13 @@ const Google = () => {
 
             
                 <GoogleLogin
+
                     clientId="831751011945-deholj4p37i86qm68sg5nkfctlvcrone.apps.googleusercontent.com"
-                    buttonText="SignUp"
+                    buttonText="Sign Up With Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}
                     cookiePolicy={'single_host_origin'}
+                    className="google"
                     />
 
         </div>
