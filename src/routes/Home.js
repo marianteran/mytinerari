@@ -63,6 +63,8 @@ const Home = () => {
 
                 {/* section about */}
 
+                <h1>probando rama master </h1>
+
                 <div className="container about">
                     <div className="row mx-auto">
                         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7  about-parraf">
