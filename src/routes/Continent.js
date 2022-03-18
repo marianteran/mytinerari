@@ -50,13 +50,10 @@ const Continent = () => {
 	const filtroContinent = (continent) => {
 
 
-		if ("true") {
+		if (true) {
 			setData = datos.filter(city => city.continent === continent)
 
-		}else{
-			return datos
 		}
-
 		
 		console.log(setData)
 	}
@@ -111,7 +108,7 @@ const Continent = () => {
 
 			</div>
 
-
+			<h1>Holaaaaprueba rama master</h1>
 
 			<div className='contenedor-btn-continent'>
 

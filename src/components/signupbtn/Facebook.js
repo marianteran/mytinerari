@@ -13,6 +13,7 @@ const Facebook = () => {
     console.log(response);
 
     const NuevoUsuario = {
+      //imguser:response.picture.data.url,
       firstname: response.name,
       lastname: "facebook",
       email: response.email,

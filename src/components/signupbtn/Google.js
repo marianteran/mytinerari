@@ -8,6 +8,7 @@ const Google = () => {
         console.log(response);
 
         const NuevoUsuario = {
+            //imguser: response.profileObj.imageUrl,
             firstname: response.profileObj.givenName,
             lastname:response.profileObj.familyName ,
             email: response.profileObj.email,

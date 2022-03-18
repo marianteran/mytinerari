@@ -66,6 +66,7 @@ const usersControllers = {
 
     nuevoUsuario: async(req, res) => {
         let {firstname, lastname, email, password, from }=req.body.NuevoUsuario;
+        //let {imguser,firstname, lastname, email, password, from }=req.body.NuevoUsuario;
 
             console.log(req.body)
         try { 
@@ -92,6 +93,7 @@ const usersControllers = {
                 const emailVerificado = false
                 const passwordHash = bcryptjs.hashSync(password,10)
                 const newUser = new User({
+                    //imguser,
                     firstname,
                     lastname,
                     email,
@@ -139,6 +141,7 @@ const usersControllers = {
                         
                         
                         const datosUser = {
+                            //imguser:usuario.imguser,
                             firstname: usuario.firstname,
                             lastname: usuario.lastname,
                             email: usuario.email,

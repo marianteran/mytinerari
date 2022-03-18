@@ -48,24 +48,7 @@ const citiesController={
         
     },
 
-  /*   ObtenerComentarios:async(req,resp)=>{
-        let comments
-        let error=null
 
-        try {
-            comments=await Comments.find()
-        } catch (err) {
-            error=err
-            console.log(error)
-        }
-
-        resp.json({
-            response:error?"ERROR":{comments},
-            success:error? false:true,
-            error:error
-        })
-
-    } */
 
   
 }

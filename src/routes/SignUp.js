@@ -9,7 +9,6 @@ import Google from "../components/signupbtn/Google";
 
 import like from "../imagen/sign/like.png"
 import comment from "../imagen/sign/comment.png"
-import create from "../imagen/sign/create.png"
 import bguser from "../imagen/datouser/avatar1.png"
 
 const SignUp = () => {
@@ -18,12 +17,24 @@ const SignUp = () => {
         console.log(event)
         event.preventDefault()
         const NuevoUsuario = {
-            
             firstname: event.target[0].value,
             lastname: event.target[1].value,
             email: event.target[2].value,
             password: event.target[3].value,
             from: "signup"
+
+
+           /*  imguser:event.target[0].value,
+            firstname: event.target[1].value,
+            lastname: event.target[2].value,
+            email: event.target[3].value,
+            password: event.target[4].value,
+            from: "signup"
+ */
+
+
+
+
         }
 
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
@@ -91,19 +102,17 @@ const SignUp = () => {
 
                     <div className="contenedor-signup">
                         <div className="card-register">
-                            {/* <div className="card-header">
-                                <h3 className='mt-4'>Sign Up!</h3>
-                            </div> */}
+                           
                             <div className="card-body">
                                 <form onSubmit={crearUsuario} className="mx-auto">
-
-                                    <div className="content-changeUser"> 
+                                    
+                                    {/* <div className="content-changeUser"> 
                                     <div
                                         className="changeUser"
                                         style={{ backgroundImage: `url(${bguser})` }}></div>
 
                                     <input
-                                        name='avatar'
+                                        name='imguser'
                                         type='file'
                                         accept='/images/*'
                                         id='upload-button'
@@ -116,7 +125,7 @@ const SignUp = () => {
                                             Change Photo
                                         </button>
                                     </label>
-                                    </div>
+                                    </div> */}
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>
