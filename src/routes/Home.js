@@ -64,6 +64,9 @@ const Home = () => {
                 {/* section about */}
 
                 <h1>probando rama master </h1>
+                <h1>probando rama master </h1>
+                <h1>probando rama master </h1>
+                <h1>probando rama master </h1>
 
                 <div className="container about">
                     <div className="row mx-auto">
