@@ -1,7 +1,7 @@
 const Router = require("express").Router();
 const passport=require("../config/passport")
 const citiesController = require("../controllers/datosControllers")
-const {ObtenerTodosLosDatos , ObtenerItinerary, ObtenerComentarios}= citiesController
+const {ObtenerTodosLosDatos , ObtenerItinerary,likeDislike}= citiesController
 
 const usersControllers =require("../controllers/usersControllers")
 const {nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion,verificarToken}= usersControllers
@@ -33,7 +33,7 @@ Router.route("/signout")
 
 
 Router.route("/comments")
-.post(cargaComentarios)
+.post(cargaComentarios)  
 
 Router.route("/comments/:id")
 .get(obtenerComentarios)
@@ -42,6 +42,9 @@ Router.route("/comments/:id")
 
 Router.route("/signInToken")
 .get(passport.authenticate("jwt", {session:false}), verificarToken)
+
+Router.route("/likesDislike/:id")
+.put(passport.authenticate("jwt", {session:false}), likeDislike)
 
 
 module.exports= Router

@@ -7,7 +7,8 @@ const itinerarySchema= new mongoose.Schema({
     description:{type:String},
     price:{type:Number},
     time:{type:Number},
-    image:{type:Array} 
+    image:{type:Array} , 
+    likes:{type:Array}
 
 })
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useStateValue } from "../core/context/StateProvider"
 import axios from "axios";
 
-import avatar1 from '../imagen/avatar/avatar1.jpg'
+import avatar1 from '../imagen/avatar/avatar.png'
 
 import swal from 'sweetalert';
 
@@ -31,7 +31,7 @@ const Comments = (props) => {
         await axios.post("http://localhost:4000/api/comments", { dataComents })
             .then(response =>
                 setComment(response.data.response.comentario))
-        setReload(!reload)
+                setReload(!reload)
     }
 
 
@@ -43,7 +43,7 @@ const Comments = (props) => {
                 setComment(response.data.response.comentario)
             })
 
-        console.log(comment)
+        //console.log(comment)
 
     }, [reload])
 
@@ -57,6 +57,7 @@ const Comments = (props) => {
                     buttons: "ok",
                 })
             })
+        setReload(!reload)
     }
 
 
@@ -74,8 +75,12 @@ const Comments = (props) => {
                     text: response.data.mensage,
                     buttons: "ok",
                 })
+
+                console.log(response)
             })
         setReload(!reload)
+
+        
 
 
 
@@ -111,9 +116,9 @@ const Comments = (props) => {
                         </div>
 
                         <div className='btn-delete-up'>
-                            <button className='btn btn-primary mx-2' onClick={() => borrarComentario(item._id)}><i class="fas fa-trash-alt"></i></button>
+                            <button className='btn btn-primary mx-2' onClick={() => borrarComentario(item._id)}><i className="fas fa-trash-alt"></i></button>
 
-                            <button className='btn btn-primary' onClick={() => modificar(item._id)}><i class="fas fa-edit"></i></button>
+                            <button className='btn btn-primary' onClick={() => modificar(item._id)}><i className="fas fa-edit"></i></button>
                         </div>
 
 

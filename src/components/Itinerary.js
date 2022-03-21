@@ -1,31 +1,26 @@
 import React from 'react'
 import { useState } from "react";
 
-import avatar1 from '../imagen/avatar/avatar1.jpg'
+
 import billete from '../imagen/fondos/billete.png'
 import clock from '../imagen/fondos/clock.png'
 import idioma from '../imagen/fondos/idioma.png'
 
 import Comments from './Comments';
-import {useStateValue} from "../core/context/StateProvider"
+import { useStateValue } from "../core/context/StateProvider"
+import LikesC from './LikesC';
 
 
 
 const Itinerary = (props) => {
 
-    const itineraries=props.itineraries
-   
+    const itineraries = props.itineraries
 
-    const [like, setLike] = useState(0);
+    console.log(itineraries)
+
     const [see, setSee] = useState(false);
 
-    /* const [button, setButton] = useState(false);
-
-    const toogleButton = () => {
-        setButton(!button);
-       
-    }; */
-
+  
 
 
     return (
@@ -55,20 +50,7 @@ const Itinerary = (props) => {
                             })}
                         </div>
 
-                        <div className='content-usuario my-4 mx-auto'>
-
-                            <div className='avatar'>
-                                <img src={avatar1} alt=""></img>
-                                <p className='user'>User</p>
-                            </div>
-
-                            <div className='like '>
-                                <button className="btn btn-like" onClick={() => setLike(like + 1)}><i className="far fa-heart"></i></button>
-                                <span>{like}</span>
-
-                            </div>
-
-                        </div>
+                        <LikesC likes={item.likes} id={item._id} />
 
                         <div className="accordion" id="accordionExample">
                             <div className="accordion-item">
@@ -112,7 +94,7 @@ const Itinerary = (props) => {
                                             </div>
                                         </div>
 
-                                        <Comments itinerario={item._id} />
+                                    <Comments itinerario={item._id} />
 
 
                                     </div>

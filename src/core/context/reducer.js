@@ -58,7 +58,6 @@ const reducer =(state,action)=>{
                 case "CONTINENT":
                     const filterContinent = state.cities.filter(city => city.continent)
 
-
                     return{
                         ...state,
                         filterContinent:filterContinent

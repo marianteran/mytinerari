@@ -19,8 +19,12 @@ import oceania from '../imagen/continent/oceania.jpg'
 
 
 
+
 const Continent = () => {
-	const [{ cities, filterContinent }, dispatch] = useStateValue()
+	const [{ cities, filterContinent,filterCity }, dispatch] = useStateValue()
+
+
+
 	/* console.log(cities[0].continent) */
 
 	/* const [data, setData] = useState([]);
@@ -34,30 +38,35 @@ const Continent = () => {
 	/* console.log("soy filtro cities"+ cities[0].continent)
 	console.log("soy filtro continent"+ filterContinent.continent) */
 
-	var newArray = cities.filter(function(x){
-		return (x.continent ==="Asia")
+	var newArray = cities.filter(function (x) {
+		return (x.continent === "Asia")
 	})
-	console.log(newArray)
+	//console.log(newArray)
 
-	
 
-	const [data, setData] = useState(cities);
 
-	var datos =data
+	/* const [data, setData] = useState(cities);
+
+	var datos = data */
 
 	//console.log(data)
 
-	const filtroContinent = (continent) => {
-
+/* 	const filtroContinent = (continent) => {
 
 		if (true) {
 			setData = datos.filter(city => city.continent === continent)
 
 		}
-		
+
 		console.log(setData)
 	}
+ */
 
+	/* const filtroC = (continent) => {
+		const filtro= cities.filter(city => city.continent === continent)
+
+		console.log(filtro)
+	} */
 
 
 	/* const filtroContinent2 = () => {
@@ -71,21 +80,27 @@ const Continent = () => {
 
 
 
-	/* const filtrarContinent = (event) => {
+	const filtroC = (event) => {
 		dispatch({
-            type: actionTypes.FILTER,
-            value: event.target.value,
+			type: actionTypes.CONTINENT,
+			value: event.target.value
 
-        })
-	} */
+		})
+		console.log(event)
+	}
+	
 
 
 
-	/* useEffect(() => {
-		window.scrollTo(0, 0)
-
-	}, []) */
-
+/* 	const filtroC = name => {
+		let filterCo = [];
+		if (name === "All") {
+		  filterCo = cities;
+		} else {
+		  filterCo = cities.filter(cities => cities.continent === name
+		  );
+		} */
+	
 
 
 
@@ -108,11 +123,11 @@ const Continent = () => {
 
 			</div>
 
-			<h1>Holaaaaprueba rama master</h1>
+
 
 			<div className='contenedor-btn-continent'>
 
-				<button className='container-btn-continent' onClick>
+				<button className='container-btn-continent' onClick={()=>filtroC("All") } >
 					<div className='btn-continent'>
 						<img src={globo} alt="imagenMundo" ></img>
 					</div>
@@ -120,7 +135,7 @@ const Continent = () => {
 				</button>
 
 
-				<button className='container-btn-continent' onClick={() =>{filtroContinent("America")}}>
+				<button className='container-btn-continent'  onClick={()=>filtroC("America") }>
 					<div className='btn-continent'>
 						<img src={america} alt="america"></img>
 					</div>
@@ -128,7 +143,7 @@ const Continent = () => {
 				</button >
 
 
-				<button className='container-btn-continent' onClick={() =>filtroContinent("Europe")}>
+				<button className='container-btn-continent' onClick={()=>filtroC("Europe")}>
 					<div className='btn-continent'>
 						<img src={europa} alt="europa" ></img>
 					</div>
@@ -136,7 +151,7 @@ const Continent = () => {
 				</button>
 
 
-				<button className='container-btn-continent' onClick={() =>filtroContinent("Africa")}>
+				<button className='container-btn-continent' onClick={()=>filtroC("Africa")}>
 					<div className='btn-continent'>
 						<img src={africa} alt="africa"></img>
 					</div>
@@ -145,7 +160,7 @@ const Continent = () => {
 
 
 
-				<button className='container-btn-continent' onClick={() =>filtroContinent("Asia")}>
+				<button className='container-btn-continent' onClick={()=>filtroC("Asia")}>
 					<div className='btn-continent'>
 						<img src={asia} alt="asia"></img>
 					</div>
@@ -153,7 +168,7 @@ const Continent = () => {
 				</button>
 
 
-				<button className='container-btn-continent' onClick={() =>filtroContinent("Oceania")}>
+				<button className='container-btn-continent' onClick={()=>filtroC("Oceania")}>
 					<div className='btn-continent'>
 						<img src={oceania} alt="oceania"></img>
 					</div>
@@ -162,40 +177,41 @@ const Continent = () => {
 
 			</div>
 
+		
+
+			<div className="container portfolio__container my-5">
 
 
-			<div className="container portfolio__container">
+				{filterContinent?.map((item) => {
 
 
-				{cities.map((item)=>{
+					return (
+						
+							<div key={item._id} className="flip-container">
+								<div className="portfolio__card">
+									<div className="front">
+										<img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
+									</div>
+									<div className="back">
+										<h4>{item.city}</h4>
+										<h6>{item.country}</h6>
+										<p>{item.description}</p>
+										<button className='btn btn-primary'>
+											<LinkRouter to={`/city/${item._id}`}>
+												<i className="fas fa-angle-double-right"></i>
+											</LinkRouter>
+										</button>
+									</div>
+								</div>
+							</div>
 
-
-				return(
-
-					<div key={item._id} className="flip-container">
-					<div className="portfolio__card">
-						<div className="front">
-						<img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
-						</div>
-						<div className="back">
-							<h4>{item.city}</h4>
-							<h6>{item.country}</h6>
-							<p>{item.description}</p>
-							<button className='btn btn-primary'>
-								<LinkRouter to={`/city/${item._id}`}>
-									<i className="fas fa-angle-double-right"></i>
-								</LinkRouter>
-							</button>
-						</div>
-					</div>
-				</div>
-
-
+					
 
 
 
-				)})}
-			
+					)
+				})}
+
 			</div>
 
 		</>

@@ -16,7 +16,7 @@ import { actionTypes } from './core/context/reducer';
 import { useStateValue } from './core/context/StateProvider';
 
 
-
+import Prueba from './components/Prueba'
 
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
             'Authorization':'Bearer '+token
           }
         })
+        
           .then(user=> { 
         if (user.data.success) {
 
@@ -79,6 +80,8 @@ function App() {
           <Route path="signin" element={<SignIn />} />
           <Route path="user" element={<User/>} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="prueba" element={<Prueba />} />
+
 
 
         </Routes>

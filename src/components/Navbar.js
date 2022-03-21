@@ -7,7 +7,7 @@ import face from '../imagen/fondos/f.png'
 import discord from '../imagen/fondos/d.png'
 import twiter from '../imagen/fondos/t.png'
 import insta from '../imagen/fondos/i.png'
-import avatar from '../imagen/avatar/avatar1.jpg'
+import avatar from '../imagen/avatar/avatar.png'
 
 
 import { useStateValue } from '../core/context/StateProvider';

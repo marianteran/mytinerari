@@ -13,7 +13,7 @@ async function sendEmail(email, uniqueText) {
         secure: true,
         auth: {
             user: "mytinerarymt@gmail.com",
-            pass: "mitinerari123456",
+            pass:process.env.NODEMAILER,
         },
     });
 
@@ -23,18 +23,21 @@ async function sendEmail(email, uniqueText) {
         to: email,
         subject: "User verification email",
         html: `
-            <div style=" width: 50%;margin:10vh auto;box-shadow: 0px -1px 5px 6px rgba(201,247,254,1); padding: 8px; background: #096684;">
-                <h1 style="color: #fff; font-family: Dancing Script; font-style: italic; font-size: 40px; text-align: center;">
-                    MyTinerary
-                </h1>
-  
-                <h2 style="color: #fff; font-size: 20px;text-align: center;">
-                    Click <a style="color: #75e8fd; font-style: italic" href=http://localhost:4000/api/verify/${uniqueText}>here
-                            </a> to validate your e-mail
-                </h2>
-    
-                <h6 style="color: #fff; font-size: 12px;text-align: center;">All Rights Reserved Copyright - 2022</h6>
+            <div style="width:300px; margin: auto; ">
+                <div style=" width:300px;height: 200px;margin:auto;box-shadow: 0px -1px 5px 6px rgba(201,247,254,1); padding: 5px; background: #096684;
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);border-radius: 2rem;">
+                    <h1 style="color: #fff; font-family: Dancing Script; font-style: italic; font-size: 40px; text-align: center;">
+                        MyTinerary
+                    </h1>
+                    <h2 style="color: #fff; font-size: 20px;text-align: center;">Validate your e-mail</h2>
+                </div>
 
+                <div style="text-align: right;">
+                    <button style="width:100px; height:50px; padding: 10px; border-radius: 2rem; background:#096684; color: white; font-size: 15px;">
+                        <a href=http://localhost:4000/api/verify/${uniqueText}></a>Click Here</button>
+                </div>
+
+                <h6 style="color: #096684; font-size: 12px;text-align: center;">All Rights Reserved Copyright - 2022</h6>
             </div>
         `,
     };
@@ -185,7 +188,7 @@ const usersControllers = {
     
     
     verificarToken: async(req, res)=>{
-
+        console.log(req)
         if (!req.error) {
             res.json({success:true,
                 datosUser:{
@@ -198,7 +201,11 @@ const usersControllers = {
         }else{
             res.json({success:false, response:" Please sign again"})
         }
-    }
+    },
+
+
+
+    
           
 };
 

@@ -39,10 +39,10 @@ const SignUp = () => {
 
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
-                console.log(response)
+              
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details
-                    //console.log(detailsError)
+                    
                     detailsError.map(error =>
                         swal({
                             title: " error",
@@ -78,6 +78,7 @@ const SignUp = () => {
 
 
 
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -102,10 +103,10 @@ const SignUp = () => {
 
                     <div className="contenedor-signup">
                         <div className="card-register">
-                           
+
                             <div className="card-body">
                                 <form onSubmit={crearUsuario} className="mx-auto">
-                                    
+
                                     {/* <div className="content-changeUser"> 
                                     <div
                                         className="changeUser"
@@ -196,7 +197,7 @@ const SignUp = () => {
                                 <p>Without registration you can read all users comments. But post a new comment is only available for registered users.</p>
                                 <img src={comment} alt="" ></img>
                             </div>
-                         
+
                         </div>
 
 
@@ -212,3 +213,49 @@ const SignUp = () => {
 }
 
 export default SignUp
+
+
+
+
+
+/*  imguser:event.target[0].value,
+ firstname: event.target[1].value,
+ lastname: event.target[2].value,
+ email: event.target[3].value,
+ password: event.target[4].value,
+ from: "signup"
+*/
+
+
+
+/* .then(response => {
+              
+    if (response.data.success === "falseVAL") {
+        let detailsError = response.data.response.error.details
+        
+        detailsError.map(error =>
+            swal({
+                title: " error",
+                icon: "error",
+                text: error.message,
+                buttons: "ok"
+            }))
+    }
+    else if (response.data.success === true) { //nuevo usuario creado envia email
+        //console.log(alert(data.response))
+        swal({
+            title: response.data.response,
+            icon: "success",
+            buttons: "ok"
+        })
+
+
+    } else if (response.data.success === false) {
+        //console.log(alert(data.response)) // usuario ya existe
+        swal({
+            title: response.data.response,
+            icon: "success",
+            buttons: "ok"
+        })
+
+    } */

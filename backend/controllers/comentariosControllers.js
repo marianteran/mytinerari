@@ -69,13 +69,13 @@ const commentControllers={
     modificarComentario:async(req, res) =>{
         let id=req.params.id;
         console.log(req.body)
-        let newComents= {comment:req.body.data}
+        let newComents= req.body.data
 
         console.log(newComents)
        
         let comentario
         try {
-            comentario=await Comments.findOneAndUpdate({_id:id}, newComents )
+            comentario=await Comments.findOneAndUpdate({_id:id}, {comment:newComents},{new:true} )
 
         } catch (error) {
             console.log(error)
