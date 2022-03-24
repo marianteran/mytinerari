@@ -10,10 +10,10 @@ import {ImFacebook2} from 'react-icons/im'
 const Facebook = () => {
 
   const responseFacebook = async (response) => {
-    console.log(response);
+    //console.log(response);
 
     const NuevoUsuario = {
-      //imguser:response.picture.data.url,
+      imguser:response.picture.data.url,
       firstname: response.name,
       lastname: "facebook",
       email: response.email,
@@ -73,7 +73,6 @@ const Facebook = () => {
         autoLoad={false}
         fields="name,email,picture"
         callback={responseFacebook}
-       
         cssClass="signupbtn-faceb"
         icon={<ImFacebook2 className='iconface' />}
         

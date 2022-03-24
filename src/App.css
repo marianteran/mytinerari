@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 * {
   margin: 0;
@@ -548,14 +549,19 @@ header {
 }
 
 
-/* .comentario-user-tex {
+.comentario-user-tex-2 {
   padding: 1% 5% 1% 5%;
-  text-align: justify;
-} */
+  text-align: center;
+}
+
+.comentario-user-tex{
+  text-align:justify ;
+  padding-left: 6%;
+}
 
 .comentario-user-tex input{
-  background-color: rgb(217, 233, 255);
-  padding: 1% 5% 1% 5%;
+  background: rgb(217, 233, 255);
+  padding: 1% 2% 2% 3%;
   width: 100%;
   height: 100%;
   border: none !important;
@@ -612,18 +618,89 @@ header {
 }
 
 /* ************************************C O M P O N E N T E -  F O T E R   ****************************************** */
-footer {
-  background-color: rgb(4, 74, 108);
-  color: white;
-  padding: 50px 20px 20px 20px;
-  text-align: center;
+div.footerContainer {
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
+  /* min-height: 55vh; */
+  background-size: cover;
+  background-position:center ;
 }
 
-footer i {
-  color: white;
-  font-size: 25px;
-  padding-right: 4%;
+
+footer .phraseNav .nameContainer h3 {
+  padding-top: 2rem;
+    color: white;
+    font-size: 7vmin;
+    font-family: "Italianno",cursive !important;
+    text-align: center;
+
 }
+
+footer p, footer span, footer a {
+  color:white;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+footer span {
+  padding-bottom: .5rem;
+  align-self: center;
+  text-align: center;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+footer nav {
+  padding-right: 2rem; 
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+footer a {
+  text-decoration: none;
+  padding-top: 0.5rem;
+  color: white;
+}
+
+
+div.socialMedia{
+  align-self: center;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.nameContainer {
+  width: 30%;
+  
+}
+
+
+
+div.bilboPhrase{
+  padding: .5rem 2rem;
+  text-align: justify;
+  
+} 
+
+div.finalContent{
+  align-self:center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+div.phraseNav {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 
 /* ***************************** +++++++++R O U T E S +++++++++++++++******************************************** */
 
@@ -648,7 +725,7 @@ footer i {
   background-repeat: no-repeat;
   background-position: center;
   color: white;
-  height: 470px;
+  height: 520px;
   margin-top: 12vh;
   width: 100%;
   text-align: center;
@@ -667,19 +744,25 @@ footer i {
 }
 
 .home-title {
-  font-size: 5rem;
+ /*  font-size: 5rem;
   color: white;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive !important;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  text-shadow: black 0.1em 0.1em 0.2em; */
+  text-transform: uppercase;
+  font-size: 14vmin;
+  font-family: "Cinzel",serif;
+  text-shadow: 1px 1px 2px #000;
+  color: #efeae4;
 }
 
 .home-letter-move {
-  font-size: 3.5rem;
+  font-size: 6vmin;
   padding-top: 3%;
   text-transform: uppercase;
   color: #ffff1c;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  text-shadow: 1px 1px 2px #000;
+  font-family: "Cinzel",serif;
 }
 
 .texto-baner {
@@ -688,7 +771,8 @@ footer i {
 }
 
 .about {
-  margin-top: 8vh;
+  margin: 7% auto;
+ 
 }
 
 .titlepage h2 {
@@ -742,6 +826,7 @@ footer i {
   width: 100% !important;
   background-size: cover;
   padding-bottom: 5%;
+  
 }
 
 .bannertour {
@@ -753,7 +838,7 @@ footer i {
 }
 
 .container-slid {
-  margin-top: 5%;
+  margin:10% auto 5% auto;
   text-align: center;
 }
 
@@ -788,12 +873,12 @@ footer i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./imagen/fondos/banner-city.jpg");
+  background-image: url("./imagen/fondos/lighthouse.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
-  height: 470px;
+  height: 520px;
   margin-top: 12vh;
   text-align: center;
   clip-path: polygon(
@@ -811,11 +896,26 @@ footer i {
 }
 
 .cities-title {
-  font-size: 5rem;
-  color: white;
+  /* font-size: 5rem; */
+ /*  color: white; */
+  
+  /* font-family: "Alfa Slab One", cursive !important; */
+  /* text-shadow: black 0.1em 0.1em 0.2em; */
   text-transform: uppercase;
-  font-family: "Alfa Slab One", cursive !important;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 14vmin;
+  font-family: "Cinzel",serif;
+  text-shadow: 1px 1px 2px #000;
+  color: #efeae4;
+}
+
+
+/*  */
+.subtitle-principal h2{
+    font-size: 7vmin;
+   color: #707279;
+    font-family: "Cinzel",serif;
+    text-align: center;
+    margin: 50px auto;
 }
 
 /* contenido de cars */
@@ -986,6 +1086,7 @@ footer i {
   background-position: center;
   padding: 4% 2% 2% 2%;
   margin-top: 12vh;
+  padding-bottom: 5%;
 }
 
 .contenedor-bandera {
@@ -997,14 +1098,21 @@ footer i {
 }
 
 .city-title {
-  font-size: 4.5rem;
+ /*  font-size: 4.5rem;
   color: white;
   text-transform: uppercase;
   font-family: "Alfa Slab One", cursive !important;
   text-shadow: black 0.1em 0.1em 0.2em;
-  /* margin-top: 50px; */
+  margin-top: 50px;
   text-align: left;
-  letter-spacing: 5px;
+  letter-spacing: 5px; */
+  text-transform: uppercase;
+  font-size: 11vmin;
+  font-family: "Cinzel",serif;
+  text-shadow: 1px 1px 2px #000;
+  color: #efeae4;
+
+
 }
 
 .container-information {
@@ -1015,13 +1123,13 @@ footer i {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3) !important;
   color: white;
-  text-shadow: black 0.1em 0.1em 0.2em;
-
+  text-shadow: 1px 1px 2px #000;
   margin-top: -20px;
+  
 }
 
 .information-text {
-  /* padding: 4%; */
+  padding: 2%;
   text-align: center;
 }
 
@@ -1029,7 +1137,7 @@ footer i {
   font-size: 18px;
   padding: 3%;
   font-weight: 400;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  text-shadow: 1px 1px 2px #000;
 }
 
 /* .information-lin{
@@ -1073,12 +1181,13 @@ footer i {
 }
 
 .slogan {
-  font-size: 25px;
+  font-size: 7vmin;
   color: #13aba6;
-  font-weight: bold;
+ 
   padding: 4% 2% 1% 2%;
-  font-style: oblique;
+ 
   text-align: center;
+  font-family: "Italianno",cursive !important;
 }
 
 .information-box-container {
@@ -1207,7 +1316,7 @@ form i {
 
 
 .register {
-  background-image: url("imagen/fondos/register.svg");
+  background-image: url("imagen/fondos/login.svg");
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 10%;
@@ -1218,12 +1327,26 @@ form i {
 
 .title-siginup{
   text-align: center;
-  color: whitesmoke;
+  color: white;
   margin: 5%;
-  font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.5em;
+
+ 
 }
 
+.title-siginup h1{
+  font-size: 8vmin;
+  color: white;
+  font-family: "Cinzel",serif;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.title-siginup h4{
+  font-size: 5vmin;
+  font-weight: bold;
+  font-family: "Cinzel",serif;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+  }
 .contenedor-signup{
   display: flex;
   flex-direction: row;
@@ -1253,12 +1376,15 @@ div.benefitsContainer{
 div.benefitsContainer .description{
   margin: 3vh 0;
   display: flex;
+  text-shadow: 1px 1px 2px #000;
 }
 
 div.description{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-shadow: 1px 1px 2px #000;
+
 }
 
 div.description img{
@@ -1350,7 +1476,6 @@ form i {
 }
 
 .content-changeUser{
- 
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1358,115 +1483,119 @@ form i {
 }
 
 .changeUser{
-  width: 150px;
-  height: 150px;
-  
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   box-shadow: 0px 2px 3px 2px rgba(255, 254, 254, 0.75);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
  text-align: center;
- 
- 
   
 }
 
 .changeUser img{
   width: 100%;
-  
 }
 
-.content-changeUser label{
-  padding: 10px;
-}
-
-.content-changeUser button{
-  border: none;
-  background-color: transparent;
+.content-changeUser p{
+  padding: 5px;
   color: #ffc312;
 }
 
 
+
+
 /* *********************************** R O U T E S    D A T O S  - - U S E R *************************************************** */
+
+
 
 .main-datosUser{
   margin-top: 8vh;
   margin-bottom: 8vh;
 }
 
+.usuario{
+  margin-top: 8%;
+}
 
-.banner-datoUser {
-  background:url(./imagen/datouser/bgdatouser.jpg);
-  height: 70vh;
+.datosUser {
+  
+  background:url(./imagen/datouser/bguserc.png  );
+  width: 100%;
+  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   background-position: center;
-  padding: 4% 2% 2% 2%;
-  margin-top: 12vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding-top: 15vh;
   
 }
 
-
-.datoUser-title{
-  color:white;
-  font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.2em;
+.user-title{
   text-transform: uppercase;
-  font-size: 4rem;
-
+  font-size: 14vmin;
+  font-family: "Cinzel",serif;
+  text-shadow: 1px 1px 2px #000;
+  color: #efeae4;
+  text-align: center;
 }
 
-
-.datoUser-subtitle{
-  color:white;
-  font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.2em;
-  text-transform: uppercase;
-  font-size: 3rem;
+.subtitle-principal-user h2{
+  font-size: 7vmin;
+  color: #efeae4;
+  font-family: "Cinzel",serif;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  margin: 50px auto;
 }
-
 
 .content-marco{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
- margin: auto;
+  margin: auto;
   margin-bottom: 5vh;
 
 }
 
+
 .marco{
-  background-image: url(./imagen/datouser/marco.jpg);
-  background-repeat: no-repeat;
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
+  height: 200px;
+  width: 200px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  
+  justify-content: center;
+  border-radius: 50%;
+  padding: 10px;
+  background: transparent;
+  backdrop-filter: blur(10px) saturate(100%) brightness(130%);
+  box-shadow: -1px 3px 91px -4px rgba(0,0,0,0.75);
+  background-position: center;
 }
 
 .marco img{
-  padding: 10px;
-  height: 70%;
-  border-radius: 2rem;
+  width: 100%;
+  border-radius:50% ;
 }
+
 
 .marco-info{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   padding: 2%;
-  line-height: 30px;
-
+  color: whitesmoke;
+  
 }
+
+.marco-info h5{
+  backdrop-filter: blur(25px) saturate(100%) brightness(130%);
+}
+
+
+
 
 /* itinerarios user */
 
@@ -1545,66 +1674,37 @@ form i {
 /* *********************************** R O U T E S    C O N T I N E N T *************************************************** */
 
 .continent{
-  margin-top: 5vh;
+  margin-top: 5%;
 }
  
-.banner-cities1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./imagen/fondos/banner-city.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
-  height: 470px;
-  
-  text-align: center;
-  margin-top: 5%;
-  clip-path: polygon(
-    50% 0%,
-    82% 0,
-    100% 0,
-    100% 90%,
-    81% 94%,
-    50% 100%,
-    20% 94%,
-    0 90%,
-    0 0,
-    21% 0
-  );
-  
-} 
 
 
-/* .banner-cities1 {
-  background:url("./imagen/continent/bg2.jpg" );
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 4% 2% 2% 2%;
-  margin-top: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
-} */
 
 .continent-image {
 
-  margin-top: -6%;
+  margin-top: 6%;
   width: 100%;
-  height: 100%;
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 4% 2% 0% 2%;
  
+ 
 
 }
+
+.subtitle-principal-continent h2{
+  font-size: 7vmin;
+  color: #707279;
+  font-family: "Cinzel",serif;
+  text-align: center;
+  margin-top: -8%;
+  margin-bottom: 2%;
+   
+}
+
+
 
 
 .continent-image img{
@@ -1616,9 +1716,6 @@ form i {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  
-
- 
 }
 .container-btn-continent{
  
@@ -1637,30 +1734,54 @@ form i {
 }
 
 .btn-continent{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: none;
   background-color: white;
-}
-.btn-continent1{
-  width: 80px;
-  height: 80px;
-  border: none;
-  background: transparent;
- 
-}
-
-.btn-continent1 img{
-  width: 100%;
-  border-radius: 1rem;
- 
 }
 
 .btn-continent img{
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 1rem; 
+}
+
+
+.btn-continent1 {
+  height: 10vmin;
+  pointer-events: none;
   
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-continent1 {
+    animation: App-logo-spin infinite 8s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+.globo-back-cities{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2% 0 2% 0;
+}
+
+
+
+
 
 /* cardddddd continent */
 .portfolio__container{
@@ -1783,6 +1904,12 @@ border-radius: 1rem;
   .contenedor-bandera {
     margin-top: 40px;
   }
+
+  .continent{
+    margin-top: 12%;
+  }
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -1832,6 +1959,14 @@ border-radius: 1rem;
 .pruebados{
   width: 90%;
 }
+
+
+.continent{
+  margin-top: 15%;
+}
+
+
+
 
 }
 
@@ -1913,6 +2048,13 @@ border-radius: 1rem;
 .pruebados{
   width: 90%;
 }
+
+
+.continent{
+  margin-top: 18%;
+}
+
+
 
 
 }
@@ -2012,6 +2154,10 @@ border-radius: 1rem;
     width: 100%;
   }
 
+  .continent{
+    margin-top: 21%;
+  }
+
 
 }
 
@@ -2020,6 +2166,34 @@ border-radius: 1rem;
     width: 130px !important;
     margin: 5px auto !important;
   }
+
+  .continent{
+    margin-top: 26%;
+  }
+
+  .btn-continent{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    
+  }
+
+.datosUser{
+  padding-top: 20vh;
+}
+
+.content-marco{
+  padding-top: 10%;
+}
+  .marco{
+    height: 150px;
+    width: 150px;
+  }
+
+  .marco-info h5{
+    font-size: 15px;
+  }
+
 }
 
 @media screen and (max-width: 420px) {
@@ -2097,13 +2271,48 @@ border-radius: 1rem;
     width: 100%;
   }
 
+  .container-btn-continent h6{
+    font-size: 4vmin;
+  }
   .btn-continent{
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
     
   }
 
+  .continent{
+    margin-top: 32%;
+  }
 
+  
+.continent-image {
+
+  margin-top: 30%;
+ 
+ 
+
+}
+
+.datosUser{
+  padding-top: 20vh;
+}
+
+.content-marco{
+  padding-top: 10%;
+  text-align: center;
+  justify-content: center;
+}
+  .marco{
+    height: 150px;
+    width: 150px;
+  }
+
+
+
+  .marco-info h5{
+    font-size: 15px;
+  }
 
 
 }

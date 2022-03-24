@@ -56,8 +56,8 @@ const reducer =(state,action)=>{
                 }
 
                 case "CONTINENT":
-                    const filterContinent = state.cities.filter(city => city.continent)
-
+                    const filterContinent = state.cities.filter(city => city.continent.includes(action.value))
+                  
                     return{
                         ...state,
                         filterContinent:filterContinent

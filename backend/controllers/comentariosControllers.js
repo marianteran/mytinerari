@@ -11,7 +11,7 @@ const commentControllers={
 
     cargaComentarios: async(req, res) => {
         let {itinerario, mensage, user }=req.body.dataComents;
-        console.log(req.body.dataComents)
+        //console.log(req.body.dataComents)
 
         new Comments({itinerario: itinerario,
                         user: user,
@@ -32,7 +32,7 @@ const commentControllers={
     },
     
     obtenerComentarios:async(req, res) =>{
-        console.log(req.body)
+        //console.log(req.body)
         let id =req.params.id;
         
         let comentario
@@ -68,10 +68,10 @@ const commentControllers={
     
     modificarComentario:async(req, res) =>{
         let id=req.params.id;
-        console.log(req.body)
+        //console.log(req.body)
         let newComents= req.body.data
 
-        console.log(newComents)
+        //console.log(newComents)
        
         let comentario
         try {

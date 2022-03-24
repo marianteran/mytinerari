@@ -34,12 +34,10 @@ const Search = () => {
 
 
             <div className="container mt-4">
-                <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-12">
-                        <div className="titlepage text-center ">
-                            <h2>Filter Your City</h2>
-                        </div>
-                    </div>
+
+
+                <div className='subtitle-principal'>
+                    <h2>Find your new Adventure!</h2>
                 </div>
 
                 <div className="row">
@@ -75,19 +73,14 @@ const Search = () => {
                         <div className="col-sm-12 col-md-12 col-lg-12">
                             <div className="text-center ">
 
-                                <h6 className='text-center'>FILTER BY CONTINENT</h6>
+                                <h6 className='text-center'>Filter by Continent</h6>
 
                             </div>
 
                             <div className="col-sm-12 col-md-12col-lg-12  content-input-switch">
 
-                               
-
-
-                                <LinkRouter  to="/continent">
-                                    <button className='btn-continent1'>
-                                        <img src={globo} alt="world" ></img>
-                                    </button>
+                                <LinkRouter to="/continent" >
+                                    <img src={globo} alt="world" className="btn-continent1"></img>
                                 </LinkRouter>
 
                             </div>

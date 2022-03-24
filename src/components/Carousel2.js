@@ -61,7 +61,7 @@ const Carousel2 = () => {
                         {cities.map((item) => {
 
                             return (
-                                <SwiperSlide className='swiper-slide-city' >
+                                <SwiperSlide className='swiper-slide-city' key={item._id} >
                                     <img src={process.env.PUBLIC_URL + `/imagen/city/${item.image.second}`} alt=""></img>
                                 </SwiperSlide>
                             )
@@ -93,7 +93,7 @@ const Carousel2 = () => {
                         {cities.map((item) => {
 
                             return (
-                                <SwiperSlide className='swiper-slide-city'>
+                                <SwiperSlide className='swiper-slide-city' key={item._id}>
                                     <img src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt=""></img>
                                 </SwiperSlide>
                             )

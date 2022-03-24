@@ -1,11 +1,11 @@
 const joi = require("joi")
 
 const validator =(req,res,next)=>{
-    console.log(req.body.NuevoUsuario)
+    //console.log(req.body.NuevoUsuario)
 
     const Schema=joi.object({
 
-        //imguser:
+        imguser:joi.string().required(),
 
         firstname:joi.string().max(40).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
 

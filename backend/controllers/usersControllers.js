@@ -32,9 +32,9 @@ async function sendEmail(email, uniqueText) {
                     <h2 style="color: #fff; font-size: 20px;text-align: center;">Validate your e-mail</h2>
                 </div>
 
-                <div style="text-align: right;">
-                    <button style="width:100px; height:50px; padding: 10px; border-radius: 2rem; background:#096684; color: white; font-size: 15px;">
-                        <a href=http://localhost:4000/api/verify/${uniqueText}></a>Click Here</button>
+                <div style="text-align: center; margin-top:20px">
+                   
+                        <a href=http://localhost:4000/api/verify/${uniqueText} style="width:100px; height:50px; padding: 10px; border-radius: 2rem; background:#096684; color: white; font-size: 15px; text-decoration: none; ">Click Here</a>
                 </div>
 
                 <h6 style="color: #096684; font-size: 12px;text-align: center;">All Rights Reserved Copyright - 2022</h6>
@@ -68,10 +68,11 @@ const usersControllers = {
     },
 
     nuevoUsuario: async(req, res) => {
-        let {firstname, lastname, email, password, from }=req.body.NuevoUsuario;
-        //let {imguser,firstname, lastname, email, password, from }=req.body.NuevoUsuario;
+        /* let {firstname, lastname, email, password, from }=req.body.NuevoUsuario; */
+        let {imguser,firstname, lastname, email, password, from }=req.body.NuevoUsuario;
+            
 
-            console.log(req.body)
+            //console.log(req.body)
         try { 
             const usuarioExiste = await User.findOne({email})
 
@@ -79,6 +80,7 @@ const usersControllers = {
                
                 if(from!=="signup") { 
                     const passwordHash = bcryptjs.hashSync(password,10)
+                    usuarioExiste.imguser=imguser
                     usuarioExiste.password = passwordHash
                     usuarioExiste.emailVerificado = true
                     usuarioExiste.from = from
@@ -96,7 +98,7 @@ const usersControllers = {
                 const emailVerificado = false
                 const passwordHash = bcryptjs.hashSync(password,10)
                 const newUser = new User({
-                    //imguser,
+                    imguser,
                     firstname,
                     lastname,
                     email,
@@ -106,7 +108,7 @@ const usersControllers = {
                     connected:false,
                     from, 
                 })
-
+                    //console.log(newUser.imguser)
                 if(from!=="signup") {
                     //usuario no existe y se crea
                     newUser.emailVerificado = true
@@ -141,10 +143,9 @@ const usersControllers = {
                     let passwordCoincide = bcryptjs.compareSync(password,usuario.password);
 
                     if (passwordCoincide) {
-                        
-                        
+                         
                         const datosUser = {
-                            //imguser:usuario.imguser,
+                            imguser:usuario.imguser,
                             firstname: usuario.firstname,
                             lastname: usuario.lastname,
                             email: usuario.email,
@@ -188,10 +189,11 @@ const usersControllers = {
     
     
     verificarToken: async(req, res)=>{
-        console.log(req)
+        //console.log(req)
         if (!req.error) {
             res.json({success:true,
                 datosUser:{
+                imguser:req.user.imguser,
                 firstname:req.user.firstname,
                 lastname:req.user.lastname,
                 email:req.user.email,

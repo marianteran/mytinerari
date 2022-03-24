@@ -96,19 +96,17 @@ const SignIn = () => {
                                         <input type="password" className="form-control my-2" placeholder="Password"></input>
                                     </div>
 
-
-
                                     <div className="form-group">
+
 
                                     <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
 
+                                    
 
                                         {/*  {loginUser? <LinkRouter className="dropdown-item "to="/user">
                                             <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
                                         </LinkRouter> :''} */}
 
-
-                                    
                                        {/*  <LinkRouter className="dropdown-item "to="/user">
                                             <button type="submit" value="Login" className="btn float-right login_btn mt-4">Sign In</button>
                                         </LinkRouter> */}

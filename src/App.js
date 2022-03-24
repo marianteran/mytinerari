@@ -15,13 +15,16 @@ import React, { useEffect } from "react";
 import { actionTypes } from './core/context/reducer';
 import { useStateValue } from './core/context/StateProvider';
 
-
 import Prueba from './components/Prueba'
+
+
+
+
 
 
 function App() {
 
-  const [{ cities}, dispatch] = useStateValue()
+  const [{ cities, user}, dispatch] = useStateValue()
 
 
   useEffect(() => {
@@ -77,12 +80,15 @@ function App() {
           <Route path="cities" element={<Cities />} />
           <Route path="city/:id" element={<City />} />
           <Route path="continent" element={<Continent />} />
+
+          {!user?
           <Route path="signin" element={<SignIn />} />
-          <Route path="user" element={<User/>} />
+          :
+          <Route path="signin" element={<User/>} />
+          }
           <Route path="signup" element={<SignUp />} />
+
           <Route path="prueba" element={<Prueba />} />
-
-
 
         </Routes>
 

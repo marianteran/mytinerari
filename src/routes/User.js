@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import axios from 'axios';
 
-import avatar from '../imagen/avatar/avatar1.jpg'
+
+
+import avatar from '../imagen/datouser/avatar1.png'
 
 import marco from '../imagen/datouser/marco.jpg'
 
@@ -11,53 +14,99 @@ import it4 from '../imagen/datouser/athensHighlights1.jpg'
 import it5 from '../imagen/datouser/athensHighlights2.jpg'
 import it6 from '../imagen/datouser/athensHighlights3.jpg'
 
-
+import { useStateValue } from '../core/context/StateProvider';
+import { actionTypes } from '../core/context/reducer';
 
 
 
 const DatosUser = () => {
+  const [{ user }, dispatch] = useStateValue()
+
+
+
+  /*   useEffect(() => {
+      const token= localStorage.getItem("token")
+  
+      axios.get("http://localhost:4000/api/signInToken",{
+            headers:{
+              'Authorization':'Bearer '+token
+            }
+          })
+  
+          .then(user=> { 
+              dispatch({
+                type:actionTypes.USER,
+                user:user.data
+              })
+            console.log(user)
+          })
+  
+        
+  
+    }, []) */
+
+
+
+  //console.log(user)
+
+  const usuario = user.datosUser
+  console.log(usuario)
+
   return (
-    <>
-
-
-
+    < div className='usuario'>
 
       <div className='datosUser'>
+
+        <h1 className="user-title">Welcome</h1>
+
         <div className="banner-datoUser">
-          <h1 className="datoUser-title">welcome</h1>
-          <h2 className="datoUser-subtitle">Find your best destination</h2>
+
+          <div className='container content-marco'>
+            <div className='marco'>
+              <img src={user.datosUser.imguser} alt='user'></img>
+             {/*  {user ? <img className="logo" src={user.datosUser.imguser} alt="user"/> : <img src={avatar} alt='user'></img>  }   */}
+            </div>
+            <div className='marco-info'>
+              <h5 style={{ textTransform: "uppercase" }}> {user.datosUser.firstname}</h5>
+              <h5>{user.datosUser.email}</h5>
+            </div>
+
+          </div>
+
+          <div className='subtitle-principal-user '>
+            <h2>Start your Travel</h2>
+          </div>
         </div>
       </div>
 
 
-  
 
       <div className='main-datosUser'>
-
-      <div className='container content-marco'>
-        <div className='marco'>
-
-          <img src={avatar} alt='user' ></img>
-
-        </div>
-        <div className='marco-info'>
-          <h4>Nombre User</h4>
-          <h6>mytinerary@mytinerary.com</h6>
-        </div>
-
-
-      </div>
-
-
-
-
-
-
-
-       
-      <h4 className='myItinerari'>My itineraries</h4>
-        <div className='container-user-itinerari'>
+        {/* 
+      {usuario.map(item => 
         
+        <div className='container content-marco'>
+          <div className='marco'>
+
+            <img src={avatar} alt='user'></img>
+
+          </div>
+          <div className='marco-info'>
+            <h4>{item.firstname}</h4>
+            <h6>mytinerary@mytinerary.com</h6>
+          </div>
+
+
+        </div>
+       )}   */}
+
+
+
+
+
+        <h4 className='myItinerari'>My itineraries</h4>
+        <div className='container-user-itinerari'>
+
 
           <div className='content-user-itinerari'>
 
@@ -153,7 +202,7 @@ const DatosUser = () => {
 
 
           </div>
-        
+
 
         </div>
 
@@ -165,7 +214,7 @@ const DatosUser = () => {
       </div>
 
 
-    </>
+    </ div>
   )
 }
 

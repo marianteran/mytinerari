@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useStateValue } from "../core/context/StateProvider"
 import { actionTypes } from '../core/context/reducer';
 import { Link as LinkRouter } from "react-router-dom";
-import axios from 'axios';
 
-import bg2 from '../imagen/continent/PPPPPPP.jpg'
 
-import CardCities from "../components/CardCities";
-
-import imagen from '../imagen/city/rio.jpg'
-
+import bg2 from '../imagen/fondos/map.png'
 import globo from '../imagen/continent/globo.png'
 import america from '../imagen/continent/america.jpg'
 import europa from '../imagen/continent/europa.jpg'
@@ -21,121 +16,43 @@ import oceania from '../imagen/continent/oceania.jpg'
 
 
 const Continent = () => {
-	const [{ cities, filterContinent,filterCity }, dispatch] = useStateValue()
+	const [{ filterContinent }, dispatch] = useStateValue()
 
 
-
-	/* console.log(cities[0].continent) */
-
-	/* const [data, setData] = useState([]);
-	const [filter, setFilter] = useState(cities);
-
-	const filterProduct =(continent)=>{
-		const updateList = data.filter((x)=> x.continent === continent);
-		setFilter(updateList)
-	} */
-
-	/* console.log("soy filtro cities"+ cities[0].continent)
-	console.log("soy filtro continent"+ filterContinent.continent) */
-
-	var newArray = cities.filter(function (x) {
-		return (x.continent === "Asia")
-	})
-	//console.log(newArray)
-
-
-
-	/* const [data, setData] = useState(cities);
-
-	var datos = data */
-
-	//console.log(data)
-
-/* 	const filtroContinent = (continent) => {
-
-		if (true) {
-			setData = datos.filter(city => city.continent === continent)
-
-		}
-
-		console.log(setData)
-	}
- */
-
-	/* const filtroC = (continent) => {
-		const filtro= cities.filter(city => city.continent === continent)
-
-		console.log(filtro)
-	} */
-
-
-	/* const filtroContinent2 = () => {
-		return cities.filter((city) => (city.continent === "America"))
-		
-	}
-	console.log(filtroContinent2)
- */
-
-
-
-
-
-	const filtroC = (event) => {
+	const filtroC = (value) => {
 		dispatch({
 			type: actionTypes.CONTINENT,
-			value: event.target.value
+			value: value
 
 		})
-		console.log(event)
+		console.log(value)
 	}
-	
 
+	//console.log(filterContinent)
 
-
-/* 	const filtroC = name => {
-		let filterCo = [];
-		if (name === "All") {
-		  filterCo = cities;
-		} else {
-		  filterCo = cities.filter(cities => cities.continent === name
-		  );
-		} */
-	
-
-
-
-
-
-
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
 	return (
-		<>
-
-			<div className="banner-cities1">
-
-				<h1 className="cities-title">The Best City</h1>
-
-			</div>
+		< div className="continent">
 
 
 			<div className='continent-image'>
 				<img src={bg2} alt="imagen"></img>
-
 			</div>
-
-
+			<div className='subtitle-principal-continent'>
+				<h2>Find a new Adventure!</h2>
+			</div>
+			<div className="globo-back-cities">
+				<LinkRouter to="/cities" className="m">
+						<img src={globo} alt="world"  className="btn-continent1"></img>
+				</LinkRouter>
+			</div>
 
 			<div className='contenedor-btn-continent'>
 
-				<button className='container-btn-continent' onClick={()=>filtroC("All") } >
-					<div className='btn-continent'>
-						<img src={globo} alt="imagenMundo" ></img>
-					</div>
-					<h6 className='mt-1'>World</h6>
-				</button>
-
-
-				<button className='container-btn-continent'  onClick={()=>filtroC("America") }>
+				<button className='container-btn-continent' onClick={() => filtroC("America")}>
 					<div className='btn-continent'>
 						<img src={america} alt="america"></img>
 					</div>
@@ -143,7 +60,7 @@ const Continent = () => {
 				</button >
 
 
-				<button className='container-btn-continent' onClick={()=>filtroC("Europe")}>
+				<button className='container-btn-continent' onClick={() => filtroC("Europe")}>
 					<div className='btn-continent'>
 						<img src={europa} alt="europa" ></img>
 					</div>
@@ -151,7 +68,7 @@ const Continent = () => {
 				</button>
 
 
-				<button className='container-btn-continent' onClick={()=>filtroC("Africa")}>
+				<button className='container-btn-continent' onClick={() => filtroC("Africa")}>
 					<div className='btn-continent'>
 						<img src={africa} alt="africa"></img>
 					</div>
@@ -160,7 +77,7 @@ const Continent = () => {
 
 
 
-				<button className='container-btn-continent' onClick={()=>filtroC("Asia")}>
+				<button className='container-btn-continent' onClick={() => filtroC("Asia")}>
 					<div className='btn-continent'>
 						<img src={asia} alt="asia"></img>
 					</div>
@@ -168,7 +85,7 @@ const Continent = () => {
 				</button>
 
 
-				<button className='container-btn-continent' onClick={()=>filtroC("Oceania")}>
+				<button className='container-btn-continent' onClick={() => filtroC("Oceania")}>
 					<div className='btn-continent'>
 						<img src={oceania} alt="oceania"></img>
 					</div>
@@ -177,7 +94,7 @@ const Continent = () => {
 
 			</div>
 
-		
+
 
 			<div className="container portfolio__container my-5">
 
@@ -186,26 +103,26 @@ const Continent = () => {
 
 
 					return (
-						
-							<div key={item._id} className="flip-container">
-								<div className="portfolio__card">
-									<div className="front">
-										<img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
-									</div>
-									<div className="back">
-										<h4>{item.city}</h4>
-										<h6>{item.country}</h6>
-										<p>{item.description}</p>
-										<button className='btn btn-primary'>
-											<LinkRouter to={`/city/${item._id}`}>
-												<i className="fas fa-angle-double-right"></i>
-											</LinkRouter>
-										</button>
-									</div>
+
+						<div key={item._id} className="flip-container">
+							<div className="portfolio__card">
+								<div className="front">
+									<img className="top" src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
+								</div>
+								<div className="back">
+									<h4>{item.city}</h4>
+									<h6>{item.country}</h6>
+									<p>{item.description}</p>
+									<button className='btn btn-primary'>
+										<LinkRouter to={`/city/${item._id}`}>
+											<i className="fas fa-angle-double-right"></i>
+										</LinkRouter>
+									</button>
 								</div>
 							</div>
+						</div>
 
-					
+
 
 
 
@@ -214,7 +131,7 @@ const Continent = () => {
 
 			</div>
 
-		</>
+		</ div>
 	)
 }
 

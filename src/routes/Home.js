@@ -28,6 +28,9 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, []);
 
+ 
+
+
     return (
         <>
             <main className=" home">
@@ -51,21 +54,15 @@ const Home = () => {
                     </h1>
                 </div>
 
-                <div className="container mt-4">
-                    <div className="row">
-                        <div className="col-sm-12 col-md-12 col-lg-12">
-                            <div className="titlepage text-center ">
-                                <h2>“Life is either a daring adventure or nothing at all.”</h2>
-                            </div>
-                        </div>
+                <div className="container">
+                    <div className='subtitle-principal '>
+                        <h2>“Life is a journey and whoever travels lives twicet”</h2>
                     </div>
                 </div>
 
                 {/* section about */}
 
-              
-
-                <div className="container about">
+                <div className="container about ">
                     <div className="row mx-auto">
                         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7  about-parraf">
                             <h1>Enjoy your trip</h1>
@@ -216,12 +213,12 @@ const Home = () => {
 
 
                 <div>
-                    <div className="container mt-5">
-                    <div className=" bannertour">
-                                <img src={bannertour} alt="" className=""></img>
-                            </div>
-                        <div className="row mt-5">
-                            
+                    <div className="container mt-5 mb-5">
+                        <div className=" bannertour">
+                            <img src={bannertour} alt="" className=""></img>
+                        </div>
+                        <div className="row ">
+
                             <div className="col-sm-12 col-md-12 col-lg-12">
                                 <div className="titlepage text-center mt-5 ">
                                     <h2>THE BEST TOURS</h2>
@@ -234,10 +231,13 @@ const Home = () => {
 
                 <Slider2 />
 
-           
 
 
-                
+
+
+
+
+
 
 
 

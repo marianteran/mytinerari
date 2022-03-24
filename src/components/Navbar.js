@@ -17,6 +17,7 @@ import { actionTypes } from "../core/context/reducer";
 const Navbar = () => {
     const [{ user }, dispatch] = useStateValue()
 
+   
     async function cerrarSesion() {
         const email = user.datosUser.email
 
@@ -116,6 +117,8 @@ const Navbar = () => {
                                     <img className="usernav" src={avatar}></img>
                                 </button>
                                 <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                                    <h6>Nombreusuario </h6>
+                                    <li><LinkRouter className="dropdown-item " to="/signin">Me<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
                                     <li><LinkRouter className="dropdown-item " onClick={() => cerrarSesion()} to="/">Sign Out<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
 
                                 </ul>

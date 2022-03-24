@@ -18,7 +18,7 @@ const Cities = () => {
             <main className="cities">
                 <div className="banner-cities">
 
-                    <h1 className="cities-title">The Best City</h1> 
+                    <h1 className="cities-title">The best Cities</h1> 
 
                 </div>
 

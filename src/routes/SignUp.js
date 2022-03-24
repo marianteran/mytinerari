@@ -17,32 +17,26 @@ const SignUp = () => {
         console.log(event)
         event.preventDefault()
         const NuevoUsuario = {
-            firstname: event.target[0].value,
-            lastname: event.target[1].value,
-            email: event.target[2].value,
-            password: event.target[3].value,
-            from: "signup"
 
-
-           /*  imguser:event.target[0].value,
+            imguser: event.target[0].value,
             firstname: event.target[1].value,
             lastname: event.target[2].value,
             email: event.target[3].value,
             password: event.target[4].value,
             from: "signup"
- */
-
-
 
 
         }
 
+        //console.log(NuevoUsuario)
+        //console.log(event.target)
+
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
-              
+
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details
-                    
+
                     detailsError.map(error =>
                         swal({
                             title: " error",
@@ -105,28 +99,24 @@ const SignUp = () => {
                         <div className="card-register">
 
                             <div className="card-body">
+
+                                <div className="content-changeUser">
+                                    <div className="changeUser"
+                                        style={{ backgroundImage: `url(${bguser})` }}></div>
+                                    <p>Change photo enter url</p>
+
+                                </div>
+                             
+
                                 <form onSubmit={crearUsuario} className="mx-auto">
 
-                                    {/* <div className="content-changeUser"> 
-                                    <div
-                                        className="changeUser"
-                                        style={{ backgroundImage: `url(${bguser})` }}></div>
+                                    <div className="input-group form-group ">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text my-2"><i className="fas fa-image"></i></span>
+                                        </div>
+                                        <input name='imguser' type='text' className="form-control my-2" placeholder="Url img"></input>
 
-                                    <input
-                                        name='imguser'
-                                        type='file'
-                                        accept='/images/*'
-                                        id='upload-button'
-                                        hidden
-
-                                    //onChange={(e) => this.handlePhoto(e)}
-                                    ></input>
-                                    <label >
-                                        <button color='primary' component='span' size='small'>
-                                            Change Photo
-                                        </button>
-                                    </label>
-                                    </div> */}
+                                    </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>
@@ -138,7 +128,7 @@ const SignUp = () => {
 
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
-                                            <span className="input-group-text my-2"><i className="fas fa-users-cog"></i></span>
+                                            <span className="input-group-text my-2"><i className="fas fa-user-plus"></i></span>
                                         </div>
                                         <input type="text" className="form-control my-2" name="lastname" placeholder="Last Name"></input>
 

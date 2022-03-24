@@ -28,7 +28,7 @@ const Itinerary = (props) => {
 
             {itineraries.map((item) => {
                 return (
-                    <div className='fondo-comentario mx-auto' >
+                    <div className='fondo-comentario mx-auto' key={item._id} >
 
                         <h2 className='name-comentario'>{item.name}</h2>
                         <div className='imagenes-comentario'>

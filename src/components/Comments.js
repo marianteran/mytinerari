@@ -16,7 +16,7 @@ const Comments = (props) => {
 
     const [cambio, setCambio] = useState()
 
-    /*  let owner = props.user.datosUser.id === props._id ? true : false */
+    
 
     const submitComent = async (event) => {
 
@@ -31,7 +31,7 @@ const Comments = (props) => {
         await axios.post("http://localhost:4000/api/comments", { dataComents })
             .then(response =>
                 setComment(response.data.response.comentario))
-                setReload(!reload)
+        setReload(!reload)
     }
 
 
@@ -49,8 +49,8 @@ const Comments = (props) => {
 
 
 
-    const borrarComentario = (id) => {
-        axios.delete(`http://localhost:4000/api/comments/${id} `)
+    const borrarComentario = async (id) => {
+        await axios.delete(`http://localhost:4000/api/comments/${id} `)
             .then(response => {
                 swal({
                     text: response.data.mensage,
@@ -66,10 +66,10 @@ const Comments = (props) => {
 
     }
 
-    const modificar = (id) => {
+    const modificar = async (id) => {
         console.log(id)
         let data = cambio
-        axios.put(`http://localhost:4000/api/comments/${id} `, { data })
+        await axios.put(`http://localhost:4000/api/comments/${id} `, { data })
             .then(response => {
                 swal({
                     text: response.data.mensage,
@@ -80,21 +80,12 @@ const Comments = (props) => {
             })
         setReload(!reload)
 
-        
-
-
 
     }
 
 
-    /*  const aviso =()=>{
-         return( 
-         swal({
-             text: "You must to be logged in to post a comment",
-             buttons: "ok",
- 
-         }))
-     } */
+    //console.log(comment)
+    //console.log(user)
 
 
     return (
@@ -104,63 +95,54 @@ const Comments = (props) => {
             <div className="comentarios-user">
 
                 {comment?.map(item =>
-                    <div className='acordion-box'>
+                    <div className='acordion-box' key={item.comment}>
                         <div className='comentario-user-imag'>
-                            <img src={avatar1} alt=""></img>
+                            <img src={item.user.imguser} alt=""></img>
                             <p>{item.user.firstname}</p>
                         </div>
 
 
-                        <div className='comentario-user-tex'>
-                            <input onKeyUp={handelChange} defaultValue={item.comment}></input>
-                        </div>
+                        {user?.datosUser.id === item.user._id ?
+                            <div>
+                                <div className='comentario-user-tex'>
+                                    <input onKeyUp={handelChange} defaultValue={item.comment}></input>
+                                </div>
 
-                        <div className='btn-delete-up'>
-                            <button className='btn btn-primary mx-2' onClick={() => borrarComentario(item._id)}><i className="fas fa-trash-alt"></i></button>
+                                <div className='btn-delete-up'>
+                                    <button className='btn btn-primary mx-2' onClick={() => borrarComentario(item._id)}><i className="fas fa-trash-alt"></i></button>
 
-                            <button className='btn btn-primary' onClick={() => modificar(item._id)}><i className="fas fa-edit"></i></button>
-                        </div>
-
-
-                            {/* enviado x adrian */}
-                      {/*   {!modifyComment 
-                        ? 
-				            <p>{props.newComment.comment}</p>
-                        :<>
-                            <input type="text" defaultValue={props.newComment.comment} ref={handelChange}/>
-                            <img src="/assets/check.svg" alt="send" onClick={()=>props.edit(props.newComment._id, handelChange.current.value, props.token)}/>
-                        </>
-                        } */}
-
-                            {/* modificado */}
-
-                        {/*   {!modificar 
-                        ? 
-				            <p>{props.newComment.comment}</p>
-                        :<>
-                            <input type="text" defaultValue={props.newComment.comment} ref={inputHandler}/>
-                            <img src="/assets/check.svg" alt="send" onClick={()=>props.edit(props.newComment._id, inputHandler.current.value, props.token)}/>
-                        </>
-                        } */}
-
+                                    <button className='btn btn-primary' onClick={() => modificar(item._id)}><i className="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+                            :
+                            <div className='comentario-user-tex'>
+                                <div >{item.comment}</div>
+                            </div>
+                        }
 
 
                     </div>
 
                 )}
-                <div className="mb-3">
 
-                    <form onSubmit={submitComent}>
-                        <textarea name="textarea" placeholder="Write us ....."
-                            className='city-texarea'>
-                        </textarea>
-                        <div className="btn-comentario-form">
-                            <button type='submit' className="btn btn-primary" >Send<i className="fas fa-paper-plane"></i></button>
-                        </div>
-                    </form>
+                {user ?
+                    <div className="mb-3">
+                        <form onSubmit={submitComent}>
+                            <textarea name="textarea" placeholder="Write us ....."
+                                className='city-texarea'>
+                            </textarea>
 
+                            <div className="btn-comentario-form">
+                                <button type='submit' className="btn btn-primary" >Send<i className="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
 
-                </div>
+                    </div>
+                    :
+                    <div className='comentario-user-tex-2'>
+                        <p className='mx-auto'>Sign in and leave your comment</p>
+                    </div>
+                }
             </div>
 
 
@@ -174,7 +156,7 @@ const Comments = (props) => {
 export default Comments
 
 
-     {/*   {owner ?
+{/*   {owner ?
                         <form onSubmit={submitComent}>
                             <textarea name="textarea" placeholder="Write us ....."
                                 className='city-texarea'></textarea>

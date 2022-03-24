@@ -10,49 +10,50 @@ const GoogleIN = () => {
   const [{ user }, dispatch] = useStateValue()
 
   const responseGoogle = async (response) => {
-  console.log(response);
+    //console.log(response);
 
-  const userData = {
+    const userData = {
       email: response.profileObj.email,
-      password: response.googleId+"aA",
-  }
+      password: response.googleId + "aA",
+    }
 
 
-  await axios.post("http://localhost:4000/api/signIn", { userData })
+    await axios.post("http://localhost:4000/api/signIn", { userData })
       .then(response => {
 
-          if (response.data.success === false) {
-              swal({
-                  title: "error",
-                  icon: "error",
-                  text: response.data.error,
-                  buttons: "ok"
-              })
-          } else if (response.data.success === true) {
-              swal({
-                  title: "Welcome",
-                  icon: "success",
-                  buttons: "ok"
-              })
-          }
-          dispatch({
-              type: actionTypes.USER,
-              user: response.data.response
+        if (response.data.success === false) {
+          swal({
+            title: "error",
+            icon: "error",
+            text: response.data.error,
+            buttons: "ok"
           })
+        } else if (response.data.success === true) {
+          localStorage.setItem("token", response.data.response.token)
+          swal({
+            title: "Welcome",
+            icon: "success",
+            buttons: "ok"
+          })
+        }
+        dispatch({
+          type: actionTypes.USER,
+          user: response.data.response
+        })
 
 
 
       })
 
 
-}
+  }
   return (
     <div> <GoogleLogin
-    clientId="831751011945-deholj4p37i86qm68sg5nkfctlvcrone.apps.googleusercontent.com"
-    buttonText="Sign In With Google"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
+      clientId="831751011945-deholj4p37i86qm68sg5nkfctlvcrone.apps.googleusercontent.com"
+      buttonText="Sign In With Google"
+      onSuccess={responseGoogle}
+      onFailure={responseGoogle}
+      cookiePolicy={'single_host_origin'}
     /></div>
   )
 }

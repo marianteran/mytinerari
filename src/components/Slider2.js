@@ -7,6 +7,9 @@ import { useStateValue } from "../core/context/StateProvider"
 
 const Slider2 = () => {
   const [{ cities }, dispatch] = useStateValue()
+
+    
+
   return (
     <div className="slider-static">
 
@@ -28,7 +31,7 @@ const Slider2 = () => {
       >
         {cities.map((item) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item._id}>
               <img src={process.env.PUBLIC_URL + `/imagen/city/${item.image.principal}`} alt={item.city} />
             </SwiperSlide>
           )

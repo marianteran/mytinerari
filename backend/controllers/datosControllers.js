@@ -25,7 +25,7 @@ const citiesController={
 
     ObtenerItinerary:async(req,resp)=>{
         let itinerary
-        console.log(req.params)
+        //console.log(req.params)
         const city =req.params.city
 
         let error=null
@@ -52,8 +52,8 @@ const citiesController={
         const id = req.params.id;
         const user= req.user.id
 
-        console.log(id)
-        console.log(user)
+        //console.log(id)
+        //console.log(user)
         let itinerary
 
         try {

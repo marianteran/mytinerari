@@ -16,8 +16,8 @@ const InformationCity = (props) => {
                 const fondo = process.env.PUBLIC_URL + `/imagen/city/${item.image.second}`
                 return (
 
-                    <div>
-                        <div className=" text-center" key={item.city}>
+                    <div key={item.city}>
+                        <div className=" text-center" >
                             <div
                                 className="information"
                                 style={{ backgroundImage: `url(${fondo})` }}>
@@ -28,7 +28,7 @@ const InformationCity = (props) => {
                                 </div>
                                 <div className=" container-information text-center  mx-auto">
                                     <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 information-text">
-                                        <h1 className="city-title text-center">{item.city}</h1>
+                                        <h1 className="city-title text-center"> Welcome to {item.city}</h1>
                                         <p>{item.description}</p>
                                     </div>
                                     <div className="col-xs-12 col-sm-12 col-md-5 city-container-image col-lg-5 text-center ">
@@ -38,7 +38,7 @@ const InformationCity = (props) => {
                             </div>
                         </div>
 
-                        <div className="container mx-auto">
+                        <div className="container mx-auto mt-5">
                             <div className="information-box-container">
                                 <div className="information-box blue">
                                     <h4>Country</h4>

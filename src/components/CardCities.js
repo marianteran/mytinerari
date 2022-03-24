@@ -5,7 +5,8 @@ import {useStateValue} from "../core/context/StateProvider"
 
 const CardCities = () => {
     const [{filterCity}, dispatch]= useStateValue()
-
+    
+    
     return (
         <>
             <div className="container contenedor-city">
