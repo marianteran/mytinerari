@@ -60,6 +60,12 @@ const Home = () => {
                     </div>
                 </div>
 
+                <div className="container">
+                    <div className='subtitle-principal '>
+                        <h2>“prueba”</h2>
+                    </div>
+                </div>
+
                 {/* section about */}
 
                 <div className="container about ">
