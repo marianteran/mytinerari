@@ -21,7 +21,7 @@ const Navbar = () => {
     async function cerrarSesion() {
         const email = user.datosUser.email
 
-        await axios.post("http://localhost:4000/api/signout", {email})
+        await axios.post("https://mytinerary-marianela.herokuapp.com/api/signout", {email})
             .then(response => {
                 
                 if(response.data.success){

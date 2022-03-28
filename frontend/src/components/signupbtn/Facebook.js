@@ -21,7 +21,7 @@ const Facebook = () => {
       from:"facebook"
     }
 
-    await axios.post("http://localhost:4000/api/signup",{NuevoUsuario}) 
+    await axios.post("https://mytinerary-marianela.herokuapp.com/api/signup",{NuevoUsuario}) 
     .then(response =>{ 
       //console.log(response)
       if (response.data.success === "falseVAL") {

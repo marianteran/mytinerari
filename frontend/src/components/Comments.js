@@ -28,7 +28,7 @@ const Comments = (props) => {
             user: user.datosUser.id
         }
 
-        await axios.post("http://localhost:4000/api/comments", { dataComents })
+        await axios.post("https://mytinerary-marianela.herokuapp.com/api/comments", { dataComents })
             .then(response =>
                 setComment(response.data.response.comentario))
         setReload(!reload)
@@ -38,7 +38,7 @@ const Comments = (props) => {
 
     useEffect(() => {
         let id = props.itinerario
-        axios.get(`http://localhost:4000/api/comments/${id} `)
+        axios.get(`https://mytinerary-marianela.herokuapp.com/api/comments/${id} `)
             .then(response => {
                 setComment(response.data.response.comentario)
             })
@@ -50,7 +50,7 @@ const Comments = (props) => {
 
 
     const borrarComentario = async (id) => {
-        await axios.delete(`http://localhost:4000/api/comments/${id} `)
+        await axios.delete(`https://mytinerary-marianela.herokuapp.com/api/comments/${id} `)
             .then(response => {
                 swal({
                     text: response.data.mensage,
@@ -69,7 +69,7 @@ const Comments = (props) => {
     const modificar = async (id) => {
         console.log(id)
         let data = cambio
-        await axios.put(`http://localhost:4000/api/comments/${id} `, { data })
+        await axios.put(`https://mytinerary-marianela.herokuapp.com/api/comments/${id} `, { data })
             .then(response => {
                 swal({
                     text: response.data.mensage,

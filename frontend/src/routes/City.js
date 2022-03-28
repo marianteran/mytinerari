@@ -27,7 +27,7 @@ const City = () => {
         
         citySelect.map(city=> 
         
-          axios.get(`http://localhost:4000/api/itinerary/${city.city}`)
+          axios.get(`https://mytinerary-marianela.herokuapp.com/api/itinerary/${city.city}`)
           .then(response =>setItineraries(response.data.response.itinerary))
           )
     

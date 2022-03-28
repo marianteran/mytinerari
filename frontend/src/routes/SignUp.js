@@ -31,7 +31,7 @@ const SignUp = () => {
         //console.log(NuevoUsuario)
         //console.log(event.target)
 
-        await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
+        await axios.post("https://mytinerary-marianela.herokuapp.com/api/signup", { NuevoUsuario })
             .then(response => {
 
                 if (response.data.success === "falseVAL") {

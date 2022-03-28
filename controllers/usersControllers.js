@@ -34,7 +34,7 @@ async function sendEmail(email, uniqueText) {
 
                 <div style="text-align: center; margin-top:20px">
                    
-                        <a href=http://localhost:4000/api/verify/${uniqueText} style="width:100px; height:50px; padding: 10px; border-radius: 2rem; background:#096684; color: white; font-size: 15px; text-decoration: none; ">Click Here</a>
+                        <a href=https://mytinerary-marianela.herokuapp.com/api/verify/${uniqueText} style="width:100px; height:50px; padding: 10px; border-radius: 2rem; background:#096684; color: white; font-size: 15px; text-decoration: none; ">Click Here</a>
                 </div>
 
                 <h6 style="color: #096684; font-size: 12px;text-align: center;">All Rights Reserved Copyright - 2022</h6>
