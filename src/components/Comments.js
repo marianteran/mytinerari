@@ -140,7 +140,7 @@ const Comments = (props) => {
                     </div>
                     :
                     <div className='comentario-user-tex-2'>
-                        <p className='mx-auto'>Sign in and leave your comment</p>
+                        <p className='mx-auto'>You must be logged in to comment</p>
                     </div>
                 }
             </div>
