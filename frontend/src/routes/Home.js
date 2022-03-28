@@ -62,7 +62,7 @@ const Home = () => {
 
                 <div className="container">
                     <div className='subtitle-principal '>
-                        <h2>“prueba”</h2>
+                        <h2>“prueba de cargar de pagina ”</h2>
                     </div>
                 </div>
 
