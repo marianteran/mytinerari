@@ -58,7 +58,7 @@ const usersControllers = {
         if (user) {
             user.emailVerificado = true;
             await user.save();
-            res.redirect("http://localhost:3000/signin");
+            res.redirect("https://mytinerary-marianela.herokuapp.com/signin");
         } else {
             res.json({
                 success: false,

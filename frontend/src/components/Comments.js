@@ -9,17 +9,13 @@ import swal from 'sweetalert';
 const Comments = (props) => {
 
     const [comment, setComment] = useState()
-
     const [{ user }, dispatch] = useStateValue()
-
     const [reload, setReload] = useState(false)
-
     const [cambio, setCambio] = useState()
 
-    
+    console.log(comment)
 
     const submitComent = async (event) => {
-
         event.preventDefault()
 
         const dataComents = {
