@@ -20,202 +20,157 @@ import { actionTypes } from '../core/context/reducer';
 
 
 const DatosUser = () => {
-  const [{ user }, dispatch] = useStateValue()
+	const [{ user }, dispatch] = useStateValue()
 
 
 
-  /*   useEffect(() => {
-      const token= localStorage.getItem("token")
-  
-      axios.get("http://localhost:4000/api/signInToken",{
-            headers:{
-              'Authorization':'Bearer '+token
-            }
-          })
-  
-          .then(user=> { 
-              dispatch({
-                type:actionTypes.USER,
-                user:user.data
-              })
-            console.log(user)
-          })
-  
-        
-  
-    }, []) */
+	const usuario = user.datosUser
+	console.log(usuario)
 
+	useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
+	return (
+		< div className='usuario'>
 
-  //console.log(user)
+			<div className='datosUser'>
 
-  const usuario = user.datosUser
-  console.log(usuario)
+				<h1 className="user-title">Welcome</h1>
 
-  return (
-    < div className='usuario'>
+				<div className="banner-datoUser">
 
-      <div className='datosUser'>
+					<div className='container content-marco'>
+						<div className='marco'>
+							<img src={user.datosUser.imguser} alt='user'></img>
+							{/*  {user ? <img className="logo" src={user.datosUser.imguser} alt="user"/> : <img src={avatar} alt='user'></img>  }   */}
+						</div>
+						<div className='marco-info'>
+							<h5 style={{ textTransform: "uppercase" }}> {user.datosUser.firstname}</h5>
+							<h5>{user.datosUser.email}</h5>
+						</div>
 
-        <h1 className="user-title">Welcome</h1>
+					</div>
 
-        <div className="banner-datoUser">
+					<div className='subtitle-principal-user '>
+						<h2>Start your Travel</h2>
+					</div>
+				</div>
+			</div>
 
-          <div className='container content-marco'>
-            <div className='marco'>
-              <img src={user.datosUser.imguser} alt='user'></img>
-             {/*  {user ? <img className="logo" src={user.datosUser.imguser} alt="user"/> : <img src={avatar} alt='user'></img>  }   */}
-            </div>
-            <div className='marco-info'>
-              <h5 style={{ textTransform: "uppercase" }}> {user.datosUser.firstname}</h5>
-              <h5>{user.datosUser.email}</h5>
-            </div>
 
-          </div>
 
-          <div className='subtitle-principal-user '>
-            <h2>Start your Travel</h2>
-          </div>
-        </div>
-      </div>
+			<div className='main-datosUser'>
 
+				<h4 className='myItinerari'>My itineraries</h4>
+				<div className='container-user-itinerari'>
 
 
-      <div className='main-datosUser'>
-        {/* 
-      {usuario.map(item => 
-        
-        <div className='container content-marco'>
-          <div className='marco'>
+					<div className='content-user-itinerari'>
 
-            <img src={avatar} alt='user'></img>
 
-          </div>
-          <div className='marco-info'>
-            <h4>{item.firstname}</h4>
-            <h6>mytinerary@mytinerary.com</h6>
-          </div>
 
+						<div className='content-user-itinerari-image'>
 
-        </div>
-       )}   */}
+							<div className='content-img'>
+								<img src={it1} alt='user'></img>
+							</div>
 
+							<div className='content-img'>
+								<img src={it2} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it3} alt='user'></img>
+							</div>
 
+						</div>
 
 
 
-        <h4 className='myItinerari'>My itineraries</h4>
-        <div className='container-user-itinerari'>
+						<div className='content-user-itinerari-comment'>
+							<h5>Day trip to Arraial do Cabo from Rio</h5>
+							<h5>Rio de Janeiro</h5>
+							<p>beautiful place to meet and travel around the world</p>
 
+						</div>
 
-          <div className='content-user-itinerari'>
 
+					</div>
 
 
-            <div className='content-user-itinerari-image'>
+					<div className='content-user-itinerari'>
 
-              <div className='content-img'>
-                <img src={it1} alt='user'></img>
-              </div>
 
-              <div className='content-img'>
-                <img src={it2} alt='user'></img>
-              </div>
-              <div className='content-img'>
-                <img src={it3} alt='user'></img>
-              </div>
 
-            </div>
+						<div className='content-user-itinerari-image'>
 
+							<div className='content-img'>
+								<img src={it4} alt='user'></img>
+							</div>
 
+							<div className='content-img'>
+								<img src={it5} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it6} alt='user'></img>
+							</div>
 
-            <div className='content-user-itinerari-comment'>
-              <h5>Day trip to Arraial do Cabo from Rio</h5>
-              <h5>Rio de Janeiro</h5>
-              <p>beautiful place to meet and travel around the world</p>
+						</div>
 
-            </div>
 
 
-          </div>
+						<div className='content-user-itinerari-comment'>
+							<h5>Athens Highlights: A Mythological Tour</h5>
+							<h5>Athens</h5>
+							<p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
 
+						</div>
 
-          <div className='content-user-itinerari'>
 
+					</div>
 
 
-            <div className='content-user-itinerari-image'>
+					<div className='content-user-itinerari'>
 
-              <div className='content-img'>
-                <img src={it4} alt='user'></img>
-              </div>
 
-              <div className='content-img'>
-                <img src={it5} alt='user'></img>
-              </div>
-              <div className='content-img'>
-                <img src={it6} alt='user'></img>
-              </div>
 
-            </div>
+						<div className='content-user-itinerari-image'>
 
+							<div className='content-img'>
+								<img src={it1} alt='user'></img>
+							</div>
 
+							<div className='content-img'>
+								<img src={it2} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it3} alt='user'></img>
+							</div>
 
-            <div className='content-user-itinerari-comment'>
-              <h5>Athens Highlights: A Mythological Tour</h5>
-              <h5>Athens</h5>
-              <p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
+						</div>
 
-            </div>
 
 
-          </div>
+						<div className='content-user-itinerari-comment'>
+							<h5>Day trip to Arraial do Cabo from Rio</h5>
+							<h5>Rio de Janeiro</h5>
+							<p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
 
+						</div>
 
-          <div className='content-user-itinerari'>
 
+					</div>
 
 
-            <div className='content-user-itinerari-image'>
+				</div>
 
-              <div className='content-img'>
-                <img src={it1} alt='user'></img>
-              </div>
 
-              <div className='content-img'>
-                <img src={it2} alt='user'></img>
-              </div>
-              <div className='content-img'>
-                <img src={it3} alt='user'></img>
-              </div>
 
-            </div>
+			</div>
 
 
-
-            <div className='content-user-itinerari-comment'>
-              <h5>Day trip to Arraial do Cabo from Rio</h5>
-              <h5>Rio de Janeiro</h5>
-              <p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-
-
-
-
-      </div>
-
-
-    </ div>
-  )
+		</ div>
+	)
 }
 
 export default DatosUser

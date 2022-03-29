@@ -41,9 +41,9 @@ const Search = () => {
                 </div>
 
                 <div className="row">
-                    <div className='col-sm-12 col-md-6 col-lg-6'>
+                    <div className='col-sm-12 col-md-6 col-lg-6 '>
                         <h6 className='text-center'>{filtro}</h6>
-                        <div className="col-sm-12 col-md-12col-lg-12">
+                        <div className="col-sm-12 col-md-12col-lg-12 search-cont">
                             <div className="text-center ">
                                 <Switch
                                     checked={checked}
@@ -68,9 +68,9 @@ const Search = () => {
 
                     </div>
 
-                    <div className='col-sm-12 col-md-6 col-lg-6'>
+                    <div className='col-sm-12 col-md-6 col-lg-6 '>
 
-                        <div className="col-sm-12 col-md-12 col-lg-12">
+                        <div className="col-sm-12 col-md-12 col-lg-12 search-cont">
                             <div className="text-center ">
 
                                 <h6 className='text-center'>Filter by Continent</h6>
