@@ -15,7 +15,6 @@ import React, { useEffect } from "react";
 import { actionTypes } from './core/context/reducer';
 import { useStateValue } from './core/context/StateProvider';
 
-import Prueba from './components/Prueba'
 
 
 
@@ -57,7 +56,7 @@ function App() {
         }else {
           localStorage.removeItem("token")
         }
-        console.log(user)
+        //console.log(user)
       })
       }
 
@@ -88,7 +87,7 @@ function App() {
           }
           <Route path="signup" element={<SignUp />} />
 
-          <Route path="prueba" element={<Prueba />} />
+
 
         </Routes>
 

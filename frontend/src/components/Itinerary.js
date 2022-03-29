@@ -7,7 +7,6 @@ import clock from '../imagen/fondos/clock.png'
 import idioma from '../imagen/fondos/idioma.png'
 
 import Comments from './Comments';
-import { useStateValue } from "../core/context/StateProvider"
 import LikesC from './LikesC';
 
 
@@ -16,7 +15,7 @@ const Itinerary = (props) => {
 
     const itineraries = props.itineraries
 
-    console.log(itineraries)
+    //console.log(itineraries)
 
     const [see, setSee] = useState(false);
 
@@ -26,9 +25,9 @@ const Itinerary = (props) => {
     return (
         <>
 
-            {itineraries.map((item) => {
+            {itineraries.map((item,index) => {
                 return (
-                    <div className='fondo-comentario mx-auto' key={item._id} >
+                    <div className='fondo-comentario mx-auto' key={item.index} >
 
                         <h2 className='name-comentario'>{item.name}</h2>
                         <div className='imagenes-comentario'>

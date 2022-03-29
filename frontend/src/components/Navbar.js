@@ -12,6 +12,7 @@ import avatar from '../imagen/avatar/avatar.png'
 
 import { useStateValue } from '../core/context/StateProvider';
 import { actionTypes } from "../core/context/reducer";
+import swal from "sweetalert";
 
 
 const Navbar = () => {
@@ -32,7 +33,12 @@ const Navbar = () => {
                     })
                 }
 
-                alert(response.data.response)
+                swal({
+                    
+                    text:response.data.response,
+                    buttons:"ok"
+                })
+                //alert(response.data.response)
                
             })
 
@@ -114,10 +120,10 @@ const Navbar = () => {
                             <div className="dropdown icon-login">
                                 <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img className="usernav" src={avatar}></img>
+                                    <img className="usernav" src={user.datosUser.imguser}></img>
                                 </button>
                                 <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                                    <h6>Nombreusuario </h6>
+                                    <h6 className="user-nabvar-name">Welcome {user.datosUser.firstname}</h6>
                                     <li><LinkRouter className="dropdown-item " to="/signin">Me<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
                                     <li><LinkRouter className="dropdown-item " onClick={() => cerrarSesion()} to="/">Sign Out<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
 

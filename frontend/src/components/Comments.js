@@ -155,24 +155,3 @@ const Comments = (props) => {
 
 export default Comments
 
-
-{/*   {owner ?
-                        <form onSubmit={submitComent}>
-                            <textarea name="textarea" placeholder="Write us ....."
-                                className='city-texarea'></textarea>
-                            <div className="btn-comentario-form">
-                                <button type='submit' className="btn btn-primary">Send <i className="fas fa-paper-plane"></i></button>
-                            </div>
-
-                        </form>
-
-                        :   
-                        <form onSubmit={submitComent}>
-                            <textarea name="textarea" placeholder="Write us ....."
-                                className='city-texarea'></textarea>
-                            <div className="btn-comentario-form">
-                                <button type='submit' className="btn btn-primary" onClick={aviso}>Send <i className="fas fa-paper-plane"></i></button>
-                            </div>
-
-                        </form>
-                         } */}

@@ -2,11 +2,6 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 
 
-
-import avatar from '../imagen/datouser/avatar1.png'
-
-import marco from '../imagen/datouser/marco.jpg'
-
 import it1 from '../imagen/datouser/arraialcaboriojaneiro1.jpg'
 import it2 from '../imagen/datouser/arraialcaboriojaneiro2.jpg'
 import it3 from '../imagen/datouser/arraialcaboriojaneiro3.jpg'
@@ -15,7 +10,7 @@ import it5 from '../imagen/datouser/athensHighlights2.jpg'
 import it6 from '../imagen/datouser/athensHighlights3.jpg'
 
 import { useStateValue } from '../core/context/StateProvider';
-import { actionTypes } from '../core/context/reducer';
+
 
 
 
@@ -25,7 +20,7 @@ const DatosUser = () => {
 
 
 	const usuario = user.datosUser
-	console.log(usuario)
+	//console.log(usuario)
 
 	useEffect(() => {
         window.scrollTo(0, 0);

@@ -12,8 +12,8 @@ const LikesC = (props) => {
     const [{ user}, dispatch] = useStateValue()
     const [likes, setLikes] = useState(props.likes);
 
-    console.log(props)
-    console.log(user)
+    //console.log(props)
+    //console.log(user)
 
 
     const likeDislike = async()=>{
@@ -41,12 +41,12 @@ const LikesC = (props) => {
                 {user? 
                     <div className='avatar'>
                         <img src={user.datosUser.imguser} alt=""></img>
-                        <p className='user'>{user.datosUser.firstname}r</p>
+                        
                     </div>
                 :
                     <div className='avatar'>
                         <img src={avatar1} alt=""></img>
-                        <p className='user'>User</p>
+                       
                     </div>
                 }
                 

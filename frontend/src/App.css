@@ -2387,3 +2387,8 @@ border-radius: 1rem;
 .search-cont{
   margin: 10px;
 }
+
+.user-nabvar-name{
+  color: white;
+  margin-left:5px ;
+}
