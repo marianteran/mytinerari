@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.120e61f7.css",
+    "main.css": "/static/css/main.c39c663a.css",
     "main.js": "/static/js/main.eece80a1.js",
     "static/js/787.36aff8c1.chunk.js": "/static/js/787.36aff8c1.chunk.js",
     "static/media/texture.svg": "/static/media/texture.cfff8d3a3195bbd8b224.svg",
     "static/media/flag.gif": "/static/media/flag.85a913c2abf1426d58b3.gif",
     "static/media/banner_viajes.png": "/static/media/banner_viajes.22aefb5f146d9579b4b3.png",
-    "static/media/bguserc.png": "/static/media/bguserc.8a4bca6d17339365bb3a.png",
+    "static/media/bguserc.svg": "/static/media/bguserc.3a59060bcd314d7d93ad.svg",
     "static/media/zurich2.jpg": "/static/media/zurich2.bdbf5ec735c74a974e41.jpg",
     "static/media/map.png": "/static/media/map.782ca830f0ad70c5c769.png",
-    "static/media/lighthouse.jpg": "/static/media/lighthouse.9833e8b8fb9f968e67dd.jpg",
+    "static/media/lighthouse.svg": "/static/media/lighthouse.7fa78f231aded53ea420.svg",
     "static/media/login.svg": "/static/media/login.ae60e9af9875067f367b.svg",
     "static/media/i.png": "/static/media/i.80e598d8df0c0a94d580.png",
+    "static/media/viajes-a-medida.svg": "/static/media/viajes-a-medida.fd496835797af00cf064.svg",
     "static/media/paris.jpg": "/static/media/paris.d6946d17aea7b0d4e790.jpg",
     "static/media/amsterdam.jpg": "/static/media/amsterdam.56dfa055f98beee8dc5b.jpg",
     "static/media/tokio1.jpg": "/static/media/tokio1.82b545c8b81eb52be472.jpg",
-    "static/media/viajes-a-medida.jpg": "/static/media/viajes-a-medida.0ef55c66f4967e093af9.jpg",
     "static/media/fondo2Home.jpg": "/static/media/fondo2Home.6183dad59b531f072b5f.jpg",
     "static/media/footerbanner.jpg": "/static/media/footerbanner.cfc97151c325102be39c.jpg",
     "static/media/tokio.jpg": "/static/media/tokio.9c6659ecae273d89ac51.jpg",
@@ -49,12 +49,12 @@
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
-    "main.120e61f7.css.map": "/static/css/main.120e61f7.css.map",
+    "main.c39c663a.css.map": "/static/css/main.c39c663a.css.map",
     "main.eece80a1.js.map": "/static/js/main.eece80a1.js.map",
     "787.36aff8c1.chunk.js.map": "/static/js/787.36aff8c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.120e61f7.css",
+    "static/css/main.c39c663a.css",
     "static/js/main.eece80a1.js"
   ]
 }
