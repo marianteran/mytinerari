@@ -1,0 +1,110 @@
+
+
+			{/* <div className='main-datosUser'>
+
+				<h4 className='myItinerari'>My itineraries</h4>
+				<div className='container-user-itinerari'>
+
+
+					<div className='content-user-itinerari'>
+
+
+
+						<div className='content-user-itinerari-image'>
+
+							<div className='content-img'>
+								<img src={it1} alt='user'></img>
+							</div>
+
+							<div className='content-img'>
+								<img src={it2} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it3} alt='user'></img>
+							</div>
+
+						</div>
+
+
+
+						<div className='content-user-itinerari-comment'>
+							<h5>Day trip to Arraial do Cabo from Rio</h5>
+							<h5>Rio de Janeiro</h5>
+							<p>beautiful place to meet and travel around the world</p>
+
+						</div>
+
+
+					</div>
+
+
+					<div className='content-user-itinerari'>
+
+
+
+						<div className='content-user-itinerari-image'>
+
+							<div className='content-img'>
+								<img src={it4} alt='user'></img>
+							</div>
+
+							<div className='content-img'>
+								<img src={it5} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it6} alt='user'></img>
+							</div>
+
+						</div>
+
+
+
+						<div className='content-user-itinerari-comment'>
+							<h5>Athens Highlights: A Mythological Tour</h5>
+							<h5>Athens</h5>
+							<p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
+
+						</div>
+
+
+					</div>
+
+
+					<div className='content-user-itinerari'>
+
+
+
+						<div className='content-user-itinerari-image'>
+
+							<div className='content-img'>
+								<img src={it1} alt='user'></img>
+							</div>
+
+							<div className='content-img'>
+								<img src={it2} alt='user'></img>
+							</div>
+							<div className='content-img'>
+								<img src={it3} alt='user'></img>
+							</div>
+
+						</div>
+
+
+
+						<div className='content-user-itinerari-comment'>
+							<h5>Day trip to Arraial do Cabo from Rio</h5>
+							<h5>Rio de Janeiro</h5>
+							<p> beautiful place, travel around the world in this city beautiful place, travel around the world in this city</p>
+
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+
+
+			</div>
+ */}

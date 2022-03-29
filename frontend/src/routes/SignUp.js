@@ -114,14 +114,14 @@ const SignUp = () => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-image"></i></span>
                                         </div>
-                                        <input name='imguser' type='text' className="form-control my-2" placeholder="Url img"></input>
+                                        <input name='imguser' type='text' className="form-control my-2" placeholder="Put image url"></input>
 
                                     </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" className="form-control my-2" name="firstname" placeholder="First Name"></input>
+                                        <input type="text" className="form-control my-2" name="firstname" placeholder="First Name" required></input>
 
                                     </div>
 
@@ -130,21 +130,21 @@ const SignUp = () => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user-plus"></i></span>
                                         </div>
-                                        <input type="text" className="form-control my-2" name="lastname" placeholder="Last Name"></input>
+                                        <input type="text" className="form-control my-2" name="lastname" placeholder="Last Name" required></input>
 
                                     </div>
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-envelope"></i></span>
                                         </div>
-                                        <input type="mail" className="form-control my-2" name="email" placeholder="Email"></input>
+                                        <input type="mail" className="form-control my-2" name="email" placeholder="Email" required></input>
                                     </div>
 
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend ">
                                             <span className="input-group-text my-2"><i className="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" className="form-control my-2" name="password" placeholder="Password"></input>
+                                        <input type="password" className="form-control my-2" name="password" placeholder="Password" required></input>
                                     </div>
 
 
