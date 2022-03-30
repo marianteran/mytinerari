@@ -12,12 +12,19 @@ import it6 from '../imagen/datouser/athensHighlights3.jpg'
 
 import { useStateValue } from '../core/context/StateProvider';
 
-import avatar from "../imagen/datouser/avatar1.png"
+import avatar from "../imagen/datouser/avatarme.png"
+
+import Avatar from '@mui/material/Avatar';
+import { red } from '@mui/material/colors';
+import woman from '../imagen/datouser/avatarmujer.jpg'
+import male from '../imagen/datouser/avatarhombre.jpg'
 
 
 const DatosUser = () => {
 	const [{ user }, dispatch] = useStateValue()
 
+
+	
 
 
 	const usuario = user.datosUser
@@ -27,7 +34,7 @@ const DatosUser = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const cargarImagen = () => {
+/* 	const cargarImagen = () => {
 		if (user.datosUser.imguser === "") {
 			return avatar
 
@@ -36,7 +43,7 @@ const DatosUser = () => {
 		}
 
 
-	}
+	} */
 
 
 
@@ -51,8 +58,21 @@ const DatosUser = () => {
 
 					<div className='container content-marco'>
 						<div className='marco'>
-							<img src={cargarImagen()} alt='user'></img>
+							{/* <img src={cargarImagen()} alt='user'></img> */}
 							{/* {user? <img className="logo" src={cargarImagen()} alt="user"/> : <img src={avatar} alt='user'></img>  } */}
+
+								{user.datosUser.from !== "signup"? 
+                                    
+									<img  src={user.datosUser.imguser}></img>
+                                   
+                                    :
+									<div className="avatar-sigup-user">
+										{user.datosUser.imguser}
+									</div>
+                                }
+
+
+							{/* <img src={woman} alt='user'></img>	 */}
 
 						</div>
 						<div className='marco-info'>

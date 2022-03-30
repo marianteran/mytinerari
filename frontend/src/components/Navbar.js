@@ -8,11 +8,16 @@ import discord from '../imagen/fondos/d.png'
 import twiter from '../imagen/fondos/t.png'
 import insta from '../imagen/fondos/i.png'
 import avatar from '../imagen/avatar/avatar.png'
-
+/* import Avatar from '@mui/material/Avatar';
+import { red } from '@mui/material/colors';
+ */
 
 import { useStateValue } from '../core/context/StateProvider';
 import { actionTypes } from "../core/context/reducer";
 import swal from "sweetalert";
+
+
+
 
 
 const Navbar = () => {
@@ -120,7 +125,15 @@ const Navbar = () => {
                             <div className="dropdown icon-login">
                                 <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
                                     aria-expanded="false">
+                                    {user.datosUser.from === "signup"? 
+                                    
+                                    <div className="usernav1">
+                                        {user.datosUser.imguser}
+                                    </div>
+                                    :
                                     <img className="usernav" src={user.datosUser.imguser}></img>
+                                    } 
+
                                 </button>
                                 <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
                                     <h6 className="user-nabvar-name">Welcome {user.datosUser.firstname}</h6>

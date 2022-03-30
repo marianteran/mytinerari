@@ -5,9 +5,7 @@ const validator =(req,res,next)=>{
 
     const Schema=joi.object({
 
-        imguser:joi.string().required().messages({
-            "string.empty":" you must add an url "
-        }),
+        imguser:joi.string().required(),
 
         firstname:joi.string().max(40).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({
 

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb38f414.css",
-    "main.js": "/static/js/main.313839cb.js",
+    "main.css": "/static/css/main.6017ce99.css",
+    "main.js": "/static/js/main.eda2c3d6.js",
     "static/js/787.36aff8c1.chunk.js": "/static/js/787.36aff8c1.chunk.js",
     "static/media/texture.svg": "/static/media/texture.cfff8d3a3195bbd8b224.svg",
     "static/media/flag.gif": "/static/media/flag.85a913c2abf1426d58b3.gif",
@@ -43,18 +43,19 @@
     "static/media/africa.jpg": "/static/media/africa.4b0b319430423547a82c.jpg",
     "static/media/like.png": "/static/media/like.347dc95b57ec5455cbc5.png",
     "static/media/d.png": "/static/media/d.d437d824dc068f075720.png",
+    "static/media/avatarme.png": "/static/media/avatarme.3c4bc4a4ef2bfde65752.png",
     "static/media/idioma.png": "/static/media/idioma.8d07f3a3b85b31ba93bb.png",
     "static/media/g.png": "/static/media/g.4194b48b98b27651d7d7.png",
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
-    "main.cb38f414.css.map": "/static/css/main.cb38f414.css.map",
-    "main.313839cb.js.map": "/static/js/main.313839cb.js.map",
+    "main.6017ce99.css.map": "/static/css/main.6017ce99.css.map",
+    "main.eda2c3d6.js.map": "/static/js/main.eda2c3d6.js.map",
     "787.36aff8c1.chunk.js.map": "/static/js/787.36aff8c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb38f414.css",
-    "static/js/main.313839cb.js"
+    "static/css/main.6017ce99.css",
+    "static/js/main.eda2c3d6.js"
   ]
 }
