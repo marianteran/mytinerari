@@ -131,7 +131,7 @@ const Navbar = () => {
                                         {user.datosUser.imguser}
                                     </div>
                                     :
-                                    <Avatar sx={{ bgcolor: red[500] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
+                                    <Avatar sx={{ bgcolor: red[800] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
                                         {user.datosUser.imguser}
                                     </Avatar>
                                     } 
