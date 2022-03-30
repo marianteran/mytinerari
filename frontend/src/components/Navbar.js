@@ -8,9 +8,9 @@ import discord from '../imagen/fondos/d.png'
 import twiter from '../imagen/fondos/t.png'
 import insta from '../imagen/fondos/i.png'
 import avatar from '../imagen/avatar/avatar.png'
-/* import Avatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
- */
+
 
 import { useStateValue } from '../core/context/StateProvider';
 import { actionTypes } from "../core/context/reducer";
@@ -125,13 +125,15 @@ const Navbar = () => {
                             <div className="dropdown icon-login">
                                 <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    {user.datosUser.from === "signup"? 
+                                    {user.datosUser.from !== "signup"? 
                                     
                                     <div className="usernav1">
                                         {user.datosUser.imguser}
                                     </div>
                                     :
-                                    <img className="usernav" src={user.datosUser.imguser}></img>
+                                    <Avatar sx={{ bgcolor: red[500] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
+                                        {user.datosUser.imguser}
+                                    </Avatar>
                                     } 
 
                                 </button>
