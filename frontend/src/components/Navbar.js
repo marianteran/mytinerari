@@ -23,14 +23,14 @@ import swal from "sweetalert";
 const Navbar = () => {
     const [{ user }, dispatch] = useStateValue()
 
-   
+
     async function cerrarSesion() {
         const email = user.datosUser.email
 
-        await axios.post("https://mytinerary-marianela.herokuapp.com/api/signout", {email})
+        await axios.post("https://mytinerary-marianela.herokuapp.com/api/signout", { email })
             .then(response => {
-                
-                if(response.data.success){
+
+                if (response.data.success) {
                     localStorage.removeItem("token")
                     dispatch({
                         type: actionTypes.USER,
@@ -39,15 +39,15 @@ const Navbar = () => {
                 }
 
                 swal({
-                    
-                    text:response.data.response,
-                    buttons:"ok"
+
+                    text: response.data.response,
+                    buttons: "ok"
                 })
                 //alert(response.data.response)
-               
+
             })
 
-            
+
 
     } //console.log(user)
 
@@ -55,29 +55,29 @@ const Navbar = () => {
         <>
             <header className="fixed-top">
                 <nav className="container-fluid d-flex ">
-                   
-                        <div className="col-xs-4 col-sm-4 col-md-4 d-flex">
-                            <nav className="navbar-light ">
-                                <div className="container">
-                                    <LinkRouter className="navbar-brand " to="/">
-                                        <img src={logo} alt="logo" className="pt-2" />
-                                    </LinkRouter>
-                                </div>
-                            </nav>
-                        </div>
-                        <div className="col-xs-8 col-sm-8 col-md-8 d-flex pruebados" id="navbarNavAltMarkup" >
-                            <div className="nav-first-icon ">
-                                <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
-                                <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><img src={insta} alt=""></img></a>
-                                <a href="https://es-la.facebook.com/" target="blank" className="nav-first" ><img src={face} alt=""></img></a>
-                                <a href="https://twitter.com/?lang=es" target="blank" className="nav-first"><img src={twiter} alt=""></img></a>
-                                <a href="https://discord.com/login" target="blank" className="nav-first"  ><img src={discord} alt=""></img></a>
 
-
-
+                    <div className="col-xs-4 col-sm-4 col-md-4 d-flex">
+                        <nav className="navbar-light ">
+                            <div className="container">
+                                <LinkRouter className="navbar-brand " to="/">
+                                    <img src={logo} alt="logo" className="pt-2" />
+                                </LinkRouter>
                             </div>
+                        </nav>
+                    </div>
+                    <div className="col-xs-8 col-sm-8 col-md-8 d-flex pruebados" id="navbarNavAltMarkup" >
+                        <div className="nav-first-icon ">
+                            <a href="mailto:info@mytinerary.org" target="blank" className="nav-first"  ><img src={gmail} alt=""></img></a>
+                            <a href="https://www.instagram.com/?hl=es-la" target="blank" className="nav-first"><img src={insta} alt=""></img></a>
+                            <a href="https://es-la.facebook.com/" target="blank" className="nav-first" ><img src={face} alt=""></img></a>
+                            <a href="https://twitter.com/?lang=es" target="blank" className="nav-first"><img src={twiter} alt=""></img></a>
+                            <a href="https://discord.com/login" target="blank" className="nav-first"  ><img src={discord} alt=""></img></a>
+
+
+
                         </div>
-                    
+                    </div>
+
                 </nav>
                 <nav className="navbar  navbar-expand-lg navbar-light   ">
                     <div className="container-fluid">
@@ -110,48 +110,31 @@ const Navbar = () => {
 
 
                             {!user ?
-                            <div className="dropdown icon-login">
-                                <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i className="fas fa-users"></i>
-                                </button>
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
-                                    <li><LinkRouter className="dropdown-item" to="/signup"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
-                                </ul>
-                            </div>
+                                <div className="dropdown icon-login">
+                                    <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i className="fas fa-users"></i>
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><LinkRouter className="dropdown-item" to="/signin"><i className="fas fa-sign-in-alt"></i>Sign In</LinkRouter></li>
+                                        <li><LinkRouter className="dropdown-item" to="/signup"><i className="fas fa-user-plus"></i>Sign Up</LinkRouter></li>
+                                    </ul>
+                                </div>
 
-                            :
-                            <div className="dropdown icon-login">
-                                <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    {user.datosUser.from === "signup"? 
-                                    
-                                    <div className="usernav1">
-                                        {user.datosUser.imguser}
-                                    </div>
-                                    :
+                                :
+                                <div className="dropdown icon-login">
+                                    <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img className="usernav" src={user.datosUser.imguser}></img>
+                                    </button>
+                                    <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                                        <h6 className="user-nabvar-name">Welcome {user.datosUser.firstname}</h6>
+                                        <li><LinkRouter className="dropdown-item " to="/signin">Me<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
+                                        <li><LinkRouter className="dropdown-item " onClick={() => cerrarSesion()} to="/">Sign Out<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
 
-                                    <div className="usernav">
-                                        {user.datosUser.imguser}
-                                    </div>
+                                    </ul>
 
-
-/* 
-                                    <Avatar sx={{ bgcolor: red[800] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
-                                        {user.datosUser.imguser}
-                                    </Avatar> */
-                                    } 
-
-                                </button>
-                                <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                                    <h6 className="user-nabvar-name">Welcome {user.datosUser.firstname}</h6>
-                                    <li><LinkRouter className="dropdown-item " to="/signin">Me<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
-                                    <li><LinkRouter className="dropdown-item " onClick={() => cerrarSesion()} to="/">Sign Out<i className="fas fa-sign-in-alt"></i></LinkRouter></li>
-
-                                </ul>
-
-                            </div>
+                                </div>
                             }
 
 
@@ -172,3 +155,22 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+/* {  {user.datosUser.from === "signup"? 
+                                    
+                                    <div className="usernav1">
+                                        {user.datosUser.imguser}
+                                    </div>
+                                    :
+
+                                    <div className="usernav">
+                                        {user.datosUser.imguser}
+                                    </div> 
+
+
+
+                                    <Avatar sx={{ bgcolor: red[800] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
+                                        {user.datosUser.imguser}
+                                    </Avatar>
+                                    }  */

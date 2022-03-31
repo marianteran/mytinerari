@@ -1,5 +1,34 @@
 
+cambios en imagen de usuario 
 
+
+	{/* <img src={cargarImagen()} alt='user'></img> */}
+							{/* {user? <img className="logo" src={cargarImagen()} alt="user"/> : <img src={avatar} alt='user'></img>  } */}
+
+								{user.datosUser.from !== "signup"? 
+                                    
+									<img  src={user.datosUser.imguser}></img>
+                                   
+                                    :
+									<div className="avatar-sigup-user">
+										{user.datosUser.imguser}
+									</div>
+                                }
+
+
+							{/* <img src={woman} alt='user'></img>	 */}
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------
 			{/* <div className='main-datosUser'>
 
 				<h4 className='myItinerari'>My itineraries</h4>

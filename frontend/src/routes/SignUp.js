@@ -12,17 +12,6 @@ import comment from "../imagen/sign/comment.png"
 import bguser from "../imagen/datouser/avatar1.png"
 
 
-/* import woman from '../imagen/datouser/avatarmujer.jpg'
-import male from '../imagen/datouser/avatarhombre.jpg' */
-
-const option={
-
-    defect:"",
-    woman:'../imagen/datouser/avatarmujer.jpg',
-    male:'../imagen/datouser/avatarhombre.jpg'
-}
-
-
 
 
 
@@ -34,18 +23,18 @@ const SignUp = () => {
     async function crearUsuario(event) {
         //console.log(event)
         event.preventDefault()
-        let name = event.target[0].value
+       /*  let name = event.target[0].value
         let lastName = event.target[1].value
-        let iniciales = name.charAt(0) + lastName.charAt(0)
+        let iniciales = name.charAt(0) + lastName.charAt(0) */
 
        
 
         const NuevoUsuario = {
-            imguser: iniciales.toUpperCase(),
-            firstname: event.target[0].value,
-            lastname: event.target[1].value,
-            email: event.target[2].value,
-            password: event.target[3].value,
+            imguser: event.target[0].value,
+            firstname: event.target[1].value,
+            lastname: event.target[2].value,
+            email: event.target[3].value,
+            password: event.target[4].value,
             from: "signup"
 
 
@@ -123,38 +112,25 @@ const SignUp = () => {
 
                             <div className="card-body">
 
-                                {/* <div className="content-changeUser">
+                                <div className="content-changeUser">
                                     <div className="changeUser"
                                         style={{ backgroundImage: `url(${bguser})` }}></div>
-                                    <p>Change photo enter url</p>
+                                    <p>CHANGE PHOTO ENTER A URL OF IMAGE </p>
 
-                                </div> */}
+                                </div>
 
 
                                 <form onSubmit={crearUsuario} className="mx-auto">
 
-                                    {/*  <div className="input-group form-group ">
+                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-image"></i></span>
                                         </div>
                                         <input name='imguser' type='text' className="form-control my-2" placeholder="Put image url"></input>
 
-                                    </div>  */}
+                                    </div> 
 
-                                    {/* <div className="input-group form-group ">
-                                        <div className="input-group-prepend">
-                                            <span className="input-group-text my-2"><i className="fas fa-image"></i></span>
-                                        </div>
-                                        <select value={option} className="form-control my-2" >
-                                            <option value="woman">avatar 1</option>
-                                            <option value="male">avatar 2</option>
-                                      
-                                        </select>
-
-                                    </div> */}
-
-
-
+                                   
                                     <div className="input-group form-group ">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text my-2"><i className="fas fa-user"></i></span>

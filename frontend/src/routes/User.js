@@ -58,21 +58,7 @@ const DatosUser = () => {
 
 					<div className='container content-marco'>
 						<div className='marco'>
-							{/* <img src={cargarImagen()} alt='user'></img> */}
-							{/* {user? <img className="logo" src={cargarImagen()} alt="user"/> : <img src={avatar} alt='user'></img>  } */}
-
-								{user.datosUser.from !== "signup"? 
-                                    
-									<img  src={user.datosUser.imguser}></img>
-                                   
-                                    :
-									<div className="avatar-sigup-user">
-										{user.datosUser.imguser}
-									</div>
-                                }
-
-
-							{/* <img src={woman} alt='user'></img>	 */}
+						<img  src={user.datosUser.imguser}></img>
 
 						</div>
 						<div className='marco-info'>

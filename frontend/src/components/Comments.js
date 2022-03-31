@@ -93,12 +93,7 @@ const Comments = (props) => {
                 {comment?.map(item =>
                     <div className='acordion-box' key={item.comment}>
                         <div className='comentario-user-imag'>
-                            {/* <img src={item.user.imguser} alt=""></img> */}
-
-                            
-
-
-
+                            <img src={item.user.imguser} alt=""></img>
 
                             <p>{item.user.firstname}</p>
                         </div>

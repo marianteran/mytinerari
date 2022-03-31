@@ -21,7 +21,7 @@ const SignIn = () => {
    
 
     async function loginUser(event) {
-        console.log(event)
+        //console.log(event)
         event.preventDefault()
         const userData = {
             email: event.target[0].value,
