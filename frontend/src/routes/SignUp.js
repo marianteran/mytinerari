@@ -194,6 +194,8 @@ const SignUp = () => {
 
                             </div>
 
+                            
+
                             <div className="content-btn-signup">
 
                                 <div className="boton-goog-face">
@@ -204,6 +206,8 @@ const SignUp = () => {
                                 </div>
 
                             </div>
+
+
 
                             <div className="card-footer">
                                 <div className="d-flex justify-content-center links">

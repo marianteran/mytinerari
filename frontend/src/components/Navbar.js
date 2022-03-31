@@ -125,15 +125,22 @@ const Navbar = () => {
                             <div className="dropdown icon-login">
                                 <button type="button" className="btn btn bg-transparent dropdown" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    {user.datosUser.from !== "signup"? 
+                                    {user.datosUser.from === "signup"? 
                                     
                                     <div className="usernav1">
                                         {user.datosUser.imguser}
                                     </div>
                                     :
+
+                                    <div className="usernav">
+                                        {user.datosUser.imguser}
+                                    </div>
+
+
+/* 
                                     <Avatar sx={{ bgcolor: red[800] }} style={{ padding: 2, marginTop: 6, marginLeft: 4  }}>
                                         {user.datosUser.imguser}
-                                    </Avatar>
+                                    </Avatar> */
                                     } 
 
                                 </button>

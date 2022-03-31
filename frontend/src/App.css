@@ -142,6 +142,8 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
+  background-color: #eda6fd;
   
 }
 
@@ -1459,13 +1461,11 @@ form i {
 }
 
 .content-btn-signup{
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .signupbtn-faceb{
@@ -1474,23 +1474,16 @@ form i {
   font-size: 15px;
   color: white;
   background: rgb(76, 105, 186);
- 
-
-  
 }
 
 .boton-goog-face{
   margin: 1%;
- 
-  
 }
 
 .signupbtn-faceb .iconface{
   color: white;
   margin-right: 5px;
   font-size: 20px;
-
- 
 }
 
 .content-changeUser{
