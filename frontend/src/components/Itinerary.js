@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 
 
 import billete from '../imagen/fondos/billete.png'
@@ -9,7 +9,12 @@ import idioma from '../imagen/fondos/idioma.png'
 import Comments from './Comments';
 import LikesC from './LikesC';
 
+import axios from 'axios'
 
+
+import {useStateValue} from "../core/context/StateProvider"
+import { useParams } from "react-router-dom";
+import { actionTypes } from '../core/context/reducer';
 
 const Itinerary = (props) => {
 
@@ -19,12 +24,11 @@ const Itinerary = (props) => {
 
     const [see, setSee] = useState(false);
 
-  
-
 
     return (
         <>
 
+           
             {itineraries.map((item,index) => {
                 return (
                     <div className='fondo-comentario mx-auto' key={item.index} >
@@ -104,8 +108,8 @@ const Itinerary = (props) => {
                                 <h2 className="accordion-header" id="headingOne">
                                     <button className="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
-                                        onClick={() => setSee(!see)}>
-                                        <span className="boton-comentario-text">{!see ? 'See more' : 'Hide'} </span>
+                                       >
+                                        <span className="boton-comentario-text">See More </span>
                                     </button>
                                 </h2>
                             </div>
@@ -122,3 +126,40 @@ const Itinerary = (props) => {
 }
 
 export default Itinerary
+
+
+
+  /*   const{id}= useParams()
+    const [{cities}, dispatch]= useStateValue()
+    const citySelect= cities.filter(item=>item._id === id) */
+
+
+   //let citySelect = props.citySelect
+/* 
+    const [itineraries, setItineraries]=useState([])
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        
+        citySelect.map(city=> 
+        
+          axios.get(`https://mytinerary-marianela.herokuapp.com/api/itinerary/${city.city}`)
+          .then(response =>setItineraries(response.data.response.itinerary))
+          )
+    
+      }, [])
+
+      console.log(itineraries) */
+   /*    const [{ cities, user}, dispatch] = useStateValue()
+      const [itineraries, setItineraries]=useState([])
+
+      console.log(itineraries)
+
+      useEffect(() => {
+
+        cities.map(city=>   
+        axios.get(`https://mytinerary-marianela.herokuapp.com/api/itinerary/${city.city}`)
+          .then(response => setItineraries(response.data.response.itinerary) )
+          )
+  
+    
+      }, []) */

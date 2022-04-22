@@ -94,7 +94,6 @@ const Comments = (props) => {
                     <div className='acordion-box' key={item.comment}>
                         <div className='comentario-user-imag'>
                             <img src={item.user.imguser} alt=""></img>
-
                             <p>{item.user.firstname}</p>
                         </div>
 

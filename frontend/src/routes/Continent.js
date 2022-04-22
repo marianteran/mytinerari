@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useStateValue } from "../core/context/StateProvider"
 import { actionTypes } from '../core/context/reducer';
 import { Link as LinkRouter } from "react-router-dom";
@@ -17,7 +17,18 @@ import oceania from '../imagen/continent/oceania.jpg'
 
 const Continent = () => {
 	const [{ filterContinent }, dispatch] = useStateValue()
+	//const [reload, setReload] = useState(false)
 
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	/* 	dispatch({
+			type: actionTypes.CONTINENT,
+			value: " ",
+
+		}) */
+		
+		
+	}, [])
 
 	const filtroC = (value) => {
 		dispatch({
@@ -25,18 +36,15 @@ const Continent = () => {
 			value: value
 
 		})
-		console.log(value)
+		//console.log(value)
 	}
 
 	//console.log(filterContinent)
 
-	useEffect(() => {
-		window.scrollTo(0, 0)
-	}, [])
+
 
 	return (
 		< div className="continent">
-
 
 			<div className='continent-image'>
 				<img src={bg2} alt="imagen"></img>
@@ -100,8 +108,6 @@ const Continent = () => {
 
 
 				{filterContinent?.map((item) => {
-
-
 					return (
 
 						<div key={item._id} className="flip-container">
@@ -121,10 +127,6 @@ const Continent = () => {
 								</div>
 							</div>
 						</div>
-
-
-
-
 
 					)
 				})}

@@ -18,17 +18,9 @@ import bguser from "../imagen/datouser/avatar1.png"
 
 const SignUp = () => {
 
-    
-
     async function crearUsuario(event) {
-        //console.log(event)
         event.preventDefault()
-       /*  let name = event.target[0].value
-        let lastName = event.target[1].value
-        let iniciales = name.charAt(0) + lastName.charAt(0) */
-
-       
-
+     
         const NuevoUsuario = {
             imguser: event.target[0].value,
             firstname: event.target[1].value,
@@ -39,9 +31,6 @@ const SignUp = () => {
 
 
         }
-
-        //console.log(NuevoUsuario)
-        //console.log(event.target)
 
         await axios.post("https://mytinerary-marianela.herokuapp.com/api/signup", { NuevoUsuario })
             .then(response => {
@@ -164,6 +153,7 @@ const SignUp = () => {
 
 
                                     <div className="form-group">
+                                        
                                         <button type="submit" value="" className="btn float-right login_btn my-2">Sign Up</button>
                                     </div>
                                 </form>

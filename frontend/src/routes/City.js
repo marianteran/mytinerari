@@ -12,10 +12,12 @@ import { useParams } from "react-router-dom";
 import fondo1 from '../imagen/fondos/fondoslidercity.jpg'
 import Carousel2 from "../components/Carousel2";
 
+
+
 const City = () => {
     const [itineraries, setItineraries]=useState([])
-    const [{cities}, dispatch]= useStateValue()
     const{id}= useParams()
+    const [{cities}, dispatch]= useStateValue()
     const citySelect= cities.filter(item=>item._id === id)
 
     //console.log(itineraries)
@@ -36,14 +38,12 @@ const City = () => {
       //console.log(itineraries)
 
 
-   
-   
-
     return (
         <>
             <main className="city">
 
                 <InformationCity citySelect={citySelect} />
+                {/* <InformationCity  /> */}
 
                 <div className="container mt-5 mb-0">
                     <div className="row">
@@ -55,8 +55,15 @@ const City = () => {
                     </div>
                 </div>
               
+              {/* original */}
                 <Itinerary itineraries={itineraries} />
 
+                {/* otra forma */}
+
+                {/* <Itinerary citySelect={citySelect} /> */}
+
+
+                {/* <Itinerary />*/}
                
 
 

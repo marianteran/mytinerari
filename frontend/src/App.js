@@ -25,7 +25,7 @@ function App() {
 
   const [{ cities, user}, dispatch] = useStateValue()
 
-
+  console.log(cities)
   useEffect(() => {
     axios.get("https://mytinerary-marianela.herokuapp.com/api/datos")
       .then(response => {

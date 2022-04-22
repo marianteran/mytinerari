@@ -3,7 +3,7 @@ const bcryptjs = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
-const { response } = require("express");
+//const { response } = require("express");
 
 
 async function sendEmail(email, uniqueText) {
@@ -52,6 +52,7 @@ async function sendEmail(email, uniqueText) {
 }
 
 const usersControllers = {
+    
     verifyEmail: async (req, res) => {
         const { uniqueText } = req.params;
         const user = await User.findOne({ uniqueText: uniqueText });

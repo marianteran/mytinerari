@@ -5,13 +5,18 @@ import Button from "@mui/material/Button";
 
 import Search from "../components/Search"
 
+import { actionTypes } from '../core/context/reducer';
+import {useStateValue} from "../core/context/StateProvider"
+
 
 const Cities = () => {
+  
 
-    
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
+    
+   
 
     return (
         <>

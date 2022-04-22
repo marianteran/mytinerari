@@ -1,16 +1,20 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Link as LinkRouter } from "react-router-dom";
 
 import {useStateValue} from "../core/context/StateProvider"
+import { actionTypes } from '../core/context/reducer';
+
 
 const CardCities = () => {
     const [{filterCity}, dispatch]= useStateValue()
-    
+
+   
     
     return (
         <>
             <div className="container contenedor-city">
                 <div className="card_city_body center" >
+                    
                     {filterCity?.map((item) => { 
 
                         return (

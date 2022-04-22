@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Switch from '@mui/material/Switch'
 import { actionTypes } from '../core/context/reducer';
 import { useStateValue } from "../core/context/StateProvider"
@@ -6,9 +6,13 @@ import { Link as LinkRouter } from "react-router-dom";
 
 import globo from '../imagen/continent/globo.png'
 
+
 const Search = () => {
+    
+    const [{ cities }, dispatch] = useStateValue()
     const [filtro, setFiltro] = React.useState("Filter by Cities");
     const [checked, setChecked] = React.useState(true);
+    const[reload, setReload] = React.useState(false);
 
     const handleChange = (event) => {
         setChecked(event.target.checked);
@@ -16,16 +20,23 @@ const Search = () => {
 
     }
 
-    const [{ cities }, dispatch] = useStateValue()
-    const inputSerch = (event) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      dispatch({
+        type: actionTypes.FILTER,
+        value: { value:" ", filterBy:"Filter by Cities" }
+      })
+    }, [])
 
+    const inputSerch = (event) => {
         dispatch({
             type: actionTypes.FILTER,
             value: { value: event.target.value, filterBy: filtro }
-
         })
-    }
 
+        
+    }
+  
 
 
     return (
